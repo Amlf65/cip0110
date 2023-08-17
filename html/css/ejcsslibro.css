@@ -1,0 +1,78 @@
+/*Primera linea*/
+@charset "utf-8";
+/*4.2 actividad 3*/
+body{ background-color:#09F; }
+/* https://www.openwebdesign.org */
+/*4.3 Aplicación práctica*/
+body{
+    width:90%;
+    font-size: 1em;
+    color:#333;
+    background-color: #CCC;
+}
+
+.contenedor {
+
+    background-image: url( "../img/botebajoarbol.jpg" );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0 10px;
+    background-color: #fff;
+}
+
+.contenedor1 {
+    background: url( "../img/botebajoarbol.jpg" ) no-repeat fixed 0 10px #fff; }
+
+ /*selector universal*/
+ * { color: #FFF; background-color: #999 }
+ /*selector de tipos o etiquetas*/
+ h1, h2, h3, p, span {text-align: center;}
+ /*Selectores de clases*/
+ .cuerpo_texto { font-family: Verdana, Geneva, sans-serif;}
+ p.cuerpo_texto { font-family: Verdana, Geneva, sans-serif;}
+ /*Selector de ID*/
+ #primer_parrafo { font:2em italic; color:black;}
+ /*Selector descendente*/
+ p .destacado {font: 2em italic}
+ol.lista li{font-style:italic}
+ol.lista li#tercero span.destacado{text-decoration: underline;}
+span > p { font-style: italic; }
+/*Selector adyacente*/
+p + span { font-style: italic ; }
+p + span + p { text-decoration: underline }
+/*Selectores de atributos*/
+div[title] { font-style: italic; }
+div[title="cabecera"] { font-style: italic; }
+div[class~="imagen"] { font-style: italic; }
+*[lang|="es"] { font-style: italic; }
+img[class="fondo"][style] { width: 20% }
+a[href|="http://www."] { color: #333; }
+div#cuerpo ul#menu li.enlace a[href|=”http”]{
+    text-decoration: none
+}
+/*Pseudoselectores*/
+/*pseudoclases*/
+li:hover { text-decoration: underline }
+ul li:first-child { color: #999 }
+img { width: 15% }
+img:hover { width: 40%; cursor: pointer ; }
+img:active { width: 30% }
+input { width: 10% }
+input:focus { width: 20% }p { text-decoration: underline }
+p:lang(en) { text-decoration: line-through }
+/*Pseudoelementos*/
+div p:first-line { text-decoration: underline }
+div:first-letter {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 2em;
+    font-style: italic;
+    color: #666;
+    }
+.articulo1:before { content: “Artículo 1”; fontsize : 2em }
+.articulo1:after { content: “_________________” }
+
+div.libro_capitulos { counter-reset: numero_capitulo }
+    div.capitulo:before {
+    content: "Capítulo " counter(numero_capitulo)".";
+    counter-increment: numero_capitulo;
+    }

@@ -1,0 +1,34 @@
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+}
+aside{
+    border:1px solid black;
+    width: 20%;
+    height: 150px;
+    float: right; 
+}
+header{
+    border:1px solid black;
+    width: 80%;
+    height: 50px;
+    float: left;
+}
+section{
+    border:1px solid black;
+    width: 80%;
+    height: 100px;
+    float: left;
+}
+footer{
+    border:1px solid black;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+

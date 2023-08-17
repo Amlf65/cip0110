@@ -1,0 +1,17 @@
+h1,span,div,details{border:1px solid blue;
+    text-align: center;
+}
+.rsb{
+    background-color: red;
+    color:white;
+}
+
+span>p {color:blue}
+body>div#rd{
+    background-color: green;
+}
+body div{
+    width: 100px;
+    height:100px;
+    background-color: red !important;
+}

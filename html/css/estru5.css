@@ -1,0 +1,74 @@
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-size:3vh;
+    font-family: sans-serif;
+    text-align:center;
+    }
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    border: 3px solid black;
+    }
+header{
+     width: 96%;
+     height:12vh;
+     margin: 1vh 2%;
+     border:2px solid #F00;
+    }
+nav{
+     border:2px solid #00C;
+     width:80%;
+     height:5vh;
+     margin: 6vh 1vh;
+ }
+
+aside {
+    width:20%;
+    height:54vh;
+    margin: 0 0 1vh 2%;
+    border:2px solid #0C0;
+    text-align:left;
+    float:left;
+    
+    }
+section{
+    width: 52%;
+    height: 76vh;
+    border: 2px solid #609;
+    text-align: center;
+    float: left;
+    margin: 0 0 1vh 2%;
+ }
+
+#principal{
+    width:20%;
+    height:20vh;
+    border:2px solid magenta;
+    float:left;
+    margin:0 0 1vh 2%;
+     
+ }
+ #secundario{
+     width:20%;
+     height:20vh;
+     border:2px solid #C00;
+     float:left;
+     margin:0 0 1vh 2%;
+     overflow: hidden;
+ }
+
+footer{
+    clear:both;
+    width:96%;
+    margin: 0 2% 1vh 2%;
+    border:2px solid yellow;
+    height:8vh;
+    }
+
