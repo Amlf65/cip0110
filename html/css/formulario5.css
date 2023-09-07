@@ -1,0 +1,121 @@
+/* Valores por defecto*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+  main {
+    background: #FFF;
+    border: 1px solid silver;
+    margin: 1em auto;
+    padding: 1em;
+    width: 80%;
+  }
+
+
+/* Etiquetas */
+  body {
+    font: 13px/1.6 Tahoma, sans-serif;
+    background: #F5F5F5;
+  }
+
+  h2 {
+    font: normal 2em arial, sans-serif;
+    margin-bottom: 0.3em;
+  }
+  .linea>label {  
+    width: 25%;
+    text-align: right;
+    padding-right: 2em;
+
+  }
+  .linea section{
+    width: 75%;
+  }
+  article{
+    display: flex;
+    flex-direction: column;
+  }
+  footer{
+    border-top:1px solid grey;
+    display: flex;
+    justify-content: end;
+    padding: 2em;
+  }
+
+  /* Clases */
+  .requerido {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #C00;
+  }
+
+  div.linea{
+    display: flex;
+    position:relative;
+    padding: 2em;
+    border-top:1px solid grey;
+  }
+
+  .uno{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .dos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .tres{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .rojo{
+    outline :1px solid red;
+  }
+  /* Formulario */
+  
+  input#nombre, input#apellido1, input#apellido2, input#direccion, input#email {
+    width: 50%;
+  }
+  
+  input#codigopostal {
+    width: 30%;
+  }
+  
+  input#municipio, select#provincia,  select#pais {
+    width: 40%;
+  }
+  
+  input#telefonofijo, input#telefonomovil {
+    width: 45%;
+  } 
+  input#alta{
+    padding: 1em;
+    box-shadow: 5px 5px 5px gray;
+  }
+  
+  /*Estados*/
+  p.ayuda{
+    display: none;
+  }
+  div.linea:hover{
+    background-color: lightgoldenrodyellow;
+  }
+  div.linea:hover p.ayuda {
+    display: block;
+    margin: 0.3em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+  }
+
+/*
+   input:invalid {
+    border: 1px solid red;
+  }
+  input:valid {
+    border: 1px solid green;
+  } */

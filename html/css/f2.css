@@ -1,0 +1,25 @@
+@charset "utf-8";
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+    background-color: lightgrey;
+
+}
+main{
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+main label{
+    line-height: 2rem;
+}
+.ayuda,h2{
+    border-bottom: 2px solid grey;
+}
+.ayuda{
+    
+}

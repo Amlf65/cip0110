@@ -1,0 +1,54 @@
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+html{
+    height: 100vh;
+}
+body {
+    height: 100vh;
+    text-align:center;
+    font-size:1.2rem;
+    font-family: sans-serif;
+}
+ 
+main {
+    border: #333 solid 2px;
+    width:80%;
+    margin: 0 auto;
+    height: 100vh;
+}
+header{
+    border:#F00 solid 2px;
+    line-height: 3rem;
+    height: 10vh;
+    margin:3vh 3%;
+    width:94%;
+}
+aside {
+    width:20%;
+    height:68vh;
+    border:2px solid #0C0;
+    margin: 0 3%;
+    text-align:left;
+    float:left;
+}
+ 
+section{
+    width: 71%;
+    height:68vh;
+    border:2px solid #00C;
+    text-align:center;
+    font-size:1.2em;
+    float:left;
+    margin:0 3% 3vh 0 ;
+}
+footer{
+    clear:both;
+    border:#ffff00 solid 2px;
+    line-height: 3rem;
+    height: 10vh;
+    margin: 3vh 3%;
+    width:94%;
+}

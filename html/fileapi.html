@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content='Confección páginas web - CIP - 2023'>
+    <title>File Api</title>
+    <link rel='shortcut icon' href='img/favicon.png' type='image/x-icon'>
+    <style>
+        img {
+            display: none;
+            width: 20%;
+        }
+        article{
+            width: 50%;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <input type="file" id="fileInput">
+        <div id="fileContent"></div>
+       
+    </article>
+    <article>
+        <input type="file" id="imageInput">
+        <img id="imageDisplay" alt="Imagen seleccionada" />
+    </article>
+    <script>
+        // const fileInput = document.getElementById('fileInput');
+        // const fileContent = document.getElementById('fileContent');
+
+
+
+        fileInput.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                // Leer el archivo como texto lo que disparará el evento onload 
+                reader.readAsText(file);
+
+                reader.onload = function (e) {
+                    // Asignar el contenido del archivo al div
+                    fileContent.textContent = e.target.result;
+                };
+
+
+            }
+        });
+
+        const imageInput = document.getElementById('imageInput');
+        const imageDisplay = document.getElementById('imageDisplay');
+
+        imageInput.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Asignar el contenido del archivo (Data URL) a la propiedad 'src' del elemento <img>
+                    imageDisplay.src = e.target.result;
+                    imageDisplay.style.display = 'block'; // Mostrar el elemento <img>
+                };
+
+                // Leer el archivo como Data URL
+                reader.readAsDataURL(file);
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

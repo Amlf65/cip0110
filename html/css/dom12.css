@@ -1,0 +1,18 @@
+.tema-oscuro {
+    background-color: #333; /* Un fondo oscuro */
+    color: #eee;            /* Color de texto claro */
+}
+
+/* Puedes añadir más especificidad si necesitas estilos adicionales para elementos específicos dentro del tema oscuro */
+.tema-oscuro a {
+    color: #4A90E2;        /* Por ejemplo, un color de enlace que contraste bien con un fondo oscuro */
+}
+
+.tema-oscuro button {
+    background-color: #555;
+    color: #fff;
+}
+
+.tema-oscuro header, .tema-oscuro footer {
+    background-color: #444; /* Slight variant for headers or footers */
+}

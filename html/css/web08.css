@@ -1,0 +1,28 @@
+table {
+    font: 1.5em Arial, Helvetica, sans-serif;
+    border: 1px solid #333;
+    border-collapse: collapse;
+  }
+   th, td {
+    border: 1px solid #333;
+    line-height: 2em;
+    padding: 5px;
+  }
+  tr:nth-child(odd) td{
+    background-color:#FFFFCC;
+  }
+  tbody th:first-child{
+    background:rgb(94, 122, 173);
+  }
+  tbody tr:hover {
+    background-color: #FFFF66;
+  }
+  .inverso{
+    color:white;
+    background-color: black;
+    text-align: left;
+  }
+  i{
+    margin:5px;
+    padding:5px;
+  }

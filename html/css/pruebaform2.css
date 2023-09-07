@@ -1,0 +1,7 @@
+@font-face {
+    font-family: uno;
+    src: url("../fuentes/Righteous-Regular.ttf");
+}
+body{
+    font-family: uno;
+}

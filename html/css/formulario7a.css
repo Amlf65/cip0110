@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+main{
+    width: 60%;
+    margin: 0 auto;
+}
+section{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-row-gap: .5em;
+}
+
+section div{
+    display: grid;
+}
+h3{
+    padding: 1em 0;
+}
+label{
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+}
+footer{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap:1em;
+    justify-content: center;
+}
+#id_cvv2{
+    width: 20%;
+}
+input:focus{
+    background-color: cadetblue;
+}
+
+input:keydown{
+    color: red;
+}
+input:invalid,select:invalid{
+    background-color: pink;
+}
+input:valid, select:valid{
+    background-color:greenyellow;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffa500;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}

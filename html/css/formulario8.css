@@ -1,0 +1,94 @@
+@font-face {
+  font-family: mifont;
+  src: url("Outfit.ttf");
+}
+@font-face {
+  font-family: lefont;
+  src: url("Marigold.ttf");
+}
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+form{
+  width: 80%;
+  margin: 0 auto;
+}
+fieldset{
+  box-shadow: .3em .3em .3em gray;
+  display: grid;
+  grid-row-gap:1em;
+  padding: 1em;
+  margin: 1em 1em;
+}
+
+legend{
+  color: whitesmoke;
+  background-color: rgb(43, 43, 43);
+  padding: .2em;
+  font-family: lefont;
+  font-size: .8em;
+  border-radius: .9em;
+}
+
+footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:2em;
+  padding: 0 2em;
+
+}
+
+button{
+  padding: .2em;
+  font-size: 2em;
+  box-shadow: .3em .3em .3em gray;
+  font-family: mifont;
+}
+
+p{
+  padding:1em;
+  text-align:right;
+}
+
+#id_nombre{
+  width: 80%;
+}
+#id_descripcion{
+  width: 50%;
+  resize: none;
+}
+#id_precio{
+  width: 14%;
+  text-align:right;
+}
+#id_impuestos{
+  width:4%;
+  text-align: center;
+}
+input[type="radio"]{
+  margin-left: 2em;
+}
+
+a[href="https://"]{
+  color:red;
+}
+input:valid, textarea:valid{
+  border:2px solid rgb(48, 196, 48);
+  outline: none;
+}
+input:invalid,
+textarea:invalid
+{
+  border:2px solid rgb(247, 31, 38);
+  outline: none;
+}
+input:focus, textarea:focus{
+  background-color: rgb(251, 234, 120);
+}
+
+input[type="file"]:valid,input[type="file"]:invalid{
+  border:none;
+}
+

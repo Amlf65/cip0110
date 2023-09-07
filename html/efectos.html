@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Efectos</title>
+    <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="css/efectos.css">
+</head>
+
+<body>
+    <div>
+
+        <div id="caja1">
+            <h1>Propiedades de borde</h1>
+            <h4>border-radius: 3em 1em .5em 1.5em;</h4>
+        </div>
+    </div>
+    <div>
+
+        <div id="caja2">
+            <h1>Propiedades de fondo</h1>
+            <h4>div{border:1px solid black;padding: 10px;}</h4>
+            <h4>div:hover {background-clip: content-box;}</h4>
+        </div>
+    </div>
+    <div>
+
+        <div id="caja3">
+            <h1>Sombras</h1>
+            <h4>box-shadow:.2em .4em 2em #999;</h4>
+            <h4>text-shadow:.2em .4em 2em #999;</h4>
+        </div>
+    </div>
+    <div>
+
+        <div id="caja4">
+            <h1>Transformaciones</h1>
+            <div id="t1">Rotar</div>
+            <div id="t2">Inclinar</div>
+            <div id="t3">Escalar</div>
+        </div>
+    </div>
+    <div>
+
+        <div id="caja5">
+            <h1>Transiciones</h1>
+            <h6>div{ transition-property: width, background-color;transition-duration: 1s, 2s; transition-delay: 0s, 1s;}</h6>
+            <h4>div:hover { width: 100%; background-color: red;}</h4>
+        </div>
+    </div>
+    <div>
+
+        <div id="caja6">
+            <h1>Animaciones</h1>
+            <h4>div {position: relative; animation: mymove 5s infinite;}</h4>
+            <h6>
+                @keyframes mymove {
+                    0%   {left: 0px;}
+                    25%  {left: 50px;}
+                    75%  {left: -50px;} 
+                    100% {left: 0px;}
+                  }
+                </h6>
+        </div>
+    </div>
+</body>
+
+</html>

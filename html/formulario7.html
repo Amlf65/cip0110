@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/formulario7.css">
+</head>
+
+<body>
+    <main>
+        <form action="servidor.html" method="get">
+            <h2>Por favor, rellenar y enviar el siguiente formulario</h2>
+            <h3>Información personal</h3>
+            <section>
+                <label for="id_nombre">Nombre</label>
+                <input type="text" name="nombre" id="id_nombre" placeholder="Nombre" required>
+                <label for="id_primer_ape">Primer Apellido</label>
+                <input type="text" name="primerapellido" id="id_primer_ape" placeholder="Primer apellido">
+                <label for="id_segundo_ape">Segundo Apellido</label>
+                <input type="text" name="segundoapellido" id="id_segundo_ape" placeholder="Segundo apellido">
+                <label for="id_email">e-mail</label>
+                <input type="email" name="email" id="id_email" placeholder="e-mail" required>
+                <label>Sexo</label>
+                <div>
+                    <label>
+                    <input type="radio" name="sexo" id="id_hombre" value="Hombre"> Hombre
+                </label>
+                    <label>
+                    <input type="radio" name="sexo" id="id_femenino" value="Mujer"> Mujer
+                </label>
+                </div>
+            </section>
+            <h3>Información de la tarjeta de crédito</h3>
+            <section>
+                <label for="id_tarjeta">Tipo de tarjeta</label>
+                <select name="tarjeta" id="id_tarjeta">
+                    <option value="1">Visa</option>
+                    <option value="2">American Express</option>
+                    <option value="3">PayPal</option>
+                </select>
+                <label for="id_titular">Titular de la tarjeta</label>
+                <input type="text" name="titular" id="id_titular" placeholder="Titular tarjeta">
+                <label for="id_numtarjeta">Número de la tarjeta</label>
+                <input type="text" name="numtarjeta" id="id_numtarjeta" placeholder="9999-9999-9999-9999" pattern="\d{4}-\d{4}-\d{4}-\d{4}" required>
+                <label for="id_cvv">CVV</label>
+                <input type="text" name="cvv" id="id_cvv" placeholder="CVV" size="4">
+            </section>
+            <h3>Dirección de envío</h3>
+            <section>
+                <label for="id_domicilio">Domicilio</label>
+                <input type="text" name="domicilio" id="id_domicilio" placeholder="Domicilio">
+                <label for="id_poblacion">Población</label>
+                <input type="text" name="población" id="id_poblacion" placeholder="Población">
+                <label for="id_provincia">Provincia</label>
+                <input type="text" name="provincia" id="id_provincia" placeholder="Provincia">
+                <label for="id_postal">Código Postal</label>
+                <input type="text" name="cpostal" id="id_postal" placeholder="C.Postal" pattern="\d{5}">
+            </section>
+            
+            <footer>
+                <label><input type="checkbox" name="terminos" id="id_terminos">
+                Marque la casilla para confirmar que es mayor de 18 años y está conforme con los
+                    térmimos del contrato </label>
+                <button type="submit">ENVIAR</button>
+            </footer>
+        </form>
+    </main>
+</body>
+</html>

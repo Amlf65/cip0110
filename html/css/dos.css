@@ -1,0 +1,48 @@
+@charset "utf-8";
+@font-face {
+    font-family: leroy;
+    src: url("../fuentes/Leroy.ttf");
+}
+p::first-line{
+   color:blue; 
+}
+p::first-letter{
+    font-size: 3em;
+}
+article p{
+    font-size: 2em;
+    font-family: leroy;
+}
+p:hover{
+    color:green;
+}
+body{
+    background-color: rgb(178, 198, 198);
+
+}   
+section p{
+    font-family: Tangerine;
+}
+p{
+    line-height: 100px;
+    border:1px solid green;
+    text-indent: 2rem;
+    text-decoration: underline;
+    text-transform: capitalize;
+    letter-spacing:.5rem;
+    word-spacing: 2rem;
+}
+h2{
+    border:1px solid red;
+    line-height: 148px;
+}
+pre{
+    font-size: 4rem;
+    font-family:leroy;
+}
+img{
+    display: block;
+    border:1px solid blue;
+    margin: 0 auto;
+    border-radius: 50%;
+}

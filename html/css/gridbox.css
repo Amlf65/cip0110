@@ -1,0 +1,42 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+
+body{
+    display:grid;
+    grid-template-areas:
+                        'header header'
+                        'section aside'
+                        'article aside'
+                        'footer footer';
+ grid-template-columns: 3fr 1fr;
+}
+header {
+    grid-area: header;
+    
+    border:1px solid green;
+}
+footer{
+    grid-area:footer;
+   
+    border:1px solid green;
+}
+section{
+grid-area: section;
+
+border:1px solid red;
+}
+article{
+    grid-area: article;
+
+    border:1px solid red;
+    }
+aside{ 
+    grid-area:aside;
+    border:1px solid blue;    
+
+}
+

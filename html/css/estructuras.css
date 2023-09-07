@@ -1,0 +1,34 @@
+* {margin:0;padding:0;box-sizing: border-box;}
+br{
+    clear: both;
+}
+
+main#estru1 {width: 80%;margin: 2rem auto 0;}
+#estru1 header{border:2px solid black;width: 100%;height: 50px;}
+#estru1 aside{border:1px solid black;border-left:2px solid black;width: 40%;height: 100px;float: left;}
+#estru1 section{border:1px solid black;border-right:2px solid black;width: 60%;height: 100px;float: left;}
+#estru1 footer{border:2px solid black;width: 100%;height: 50px;clear:both}
+
+main#estru2{width: 80% ; margin: 2rem auto 0;}
+#estru2 aside{border:1px solid black;float: left; height: 250px; width:20%;}
+#estru2 header{border:1px solid black;float: right; height: 70px; width: 80%;}
+#estru2 section{border:1px solid black;float: right; height: 180px; width: 30%;}
+#estru2 article{border:1px solid black;float: right; height: 50px; width: 50%;}
+#estru2 footer{border:1px solid black;float: right; height: 130px; width: 50%;}
+
+main#estru3{width: 80%;margin: 2rem auto 0;}
+#estru3 aside{border:1px solid black;width: 20%;height: 150px;float: right; }
+#estru3 header{border:1px solid black;width: 80%;height: 50px;float: left;}
+#estru3 section{border:1px solid black;width: 80%;height: 100px;float: left;}
+#estru3 footer{border:1px solid black;width: 100%;height: 100px;clear: both;}
+
+main#estru4{width: 80%;margin: 2rem auto 0;}
+#estru4 #cero{width: 20%;height: 250px;float: left; }
+#estru4 #uno{border:1px solid black;width: 100%;height: 100px;float: left;}
+#estru4 #dos{border:1px solid black;width: 100%;height: 150px;float: left;}
+#estru4 #tres{border:1px solid black;width: 20%;height: 250px;float: left;}
+#estru4 #cuatro{border:1px solid black;width: 100%;height: 150px;float: right;}
+#estru4 #cinco{border:1px solid black;width: 100%;height: 100px;float: right;}
+#estru4 #seis{border:1px solid black;width: 40%;height: 50px;float: right;}
+#estru4 #siete{border:1px solid black;width: 20%;height: 200px;float: right;}
+#estru4 #ocho{border:1px solid black;width: 20%;height: 200px;float: right;}

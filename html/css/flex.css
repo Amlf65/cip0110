@@ -1,0 +1,41 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+    .flex-container  * {
+    background-color: LightSkyBlue;
+    text-align: center;
+    line-height: 100px;
+    
+    }
+    .header{
+        border:1px solid brown;
+        width: 100%;
+    }
+    .main{
+        width: 80%;
+    }
+    .section,.article{
+        height: 100px;
+        border:1px solid brown
+    }
+    .aside{
+        width: 20%;
+        height: 200px;
+        line-height: 200px;
+        border:1px solid brown
+    }
+    .footer{
+        width: 100%;
+        border:1px solid brown
+    }

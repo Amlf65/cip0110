@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+body {
+    padding:25px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 200px 200px 200px;
+    text-align: center;
+    align-self: center;
+}
+body>div {
+    border:1px solid black;
+}
+
+body>div div {
+    width: 75%;
+    margin: 50px auto;
+    height:100px;
+}
+
+#caja4 div{
+    height: 25px;
+    float:left;
+    width: 30%;
+    margin-top:2.5%;
+    margin-left:2.5% ;
+    background-color: blue;
+    color:white;
+}
+
+#caja1{
+    background-color: rgb(206, 139, 144);
+}
+#caja2{
+    background-color: rgb(250, 244, 168);
+    background-clip: border-box;
+    border:1px solid black;
+    padding: 10px;
+}
+#caja3{
+    background-color: rgb(191, 250, 168);
+}
+#caja4{
+
+    background-color: rgb(168, 250, 236);
+}
+#caja5{
+    background-color: rgb(183, 168, 250);
+    transition-property: width, background-color;
+    transition-duration: 1s, 2s;
+    transition-delay: 0s, 1s;
+}
+#caja6{
+    background-color: rgb(247, 168, 250);
+}
+
+#caja1:hover {
+  
+    border-radius: 3em 1em .5em 1.5em;
+}
+#caja2:hover {
+    background-clip: content-box;
+}
+
+#caja3:hover{
+    box-shadow:.2em .4em 2em #999;
+}
+
+#caja3 h1:hover{
+    text-shadow: 2px 2px #FF0000;
+}
+
+#t1:hover{
+    transform: rotate(20deg);
+}
+#t2:hover{
+    transform: skewY(20deg);
+}
+#t3:hover{
+    transform: scaleY(1.5);
+}
+
+#caja5:hover{
+    width: 100%;
+    background-color: red;
+}
+
+#caja6:hover{
+    position: relative;
+    animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+    0%   {left: 0px;}
+    25%  {left: 50px;}
+    75%  {left: -50px;} 
+    100% {left: 0px;}
+  }

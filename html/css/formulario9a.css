@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1.04em;
+}
+h1{
+    font-size: 2em;
+}
+fieldset{
+    padding: 1em 3em;
+}
+form{
+    width: 90%;
+    margin: 1em auto;
+    padding: 0.5em 2em;
+}
+div{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-content: space-around;
+}
+li{
+    margin-top: .3em;
+}
+ul ul{
+    margin-left: 2em;
+}
+#id_edad,#id_dias1,#id_horas1,#id_dias2,#id_horas2,#id_antiguedad{
+    width: 3em;
+}
+select{
+    width: 8em;
+}
+button{
+    box-shadow: .3em .3em .3em grey;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: .5em 1em;
+    margin:1em 40%;
+    size: 20%;
+    background-color: lightseagreen;
+    border:none;
+
+}
+fieldset{
+    box-shadow: .3em .3em .3em grey;
+    margin-top: 1em;
+}
+legend{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+legend:before{
+    content: "< " ;
+}
+legend:after{
+    content: " >" ;
+}
+
+input:valid{
+    outline:none;
+    border:2px solid green
+}
+input:invalid{
+    outline:none;
+    border:2px solid red
+}
+
+form:invalid button{
+    background-color: rgba(155, 255, 255,.4);
+    color:rgba(0,0, 0, .4)
+}
+
+form:valid button{
+    background-color: rgb(155, 255, 255,1);
+    color:rgba(0,0, 0, 1)
+}   
