@@ -1,0 +1,32 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow:visible;
+    height: 100%;
+    width: 100%;
+}
+
+.fondo-interactivo {
+    width: 150%;  /* Mayor que el viewport */
+    height: 150%; /* Mayor que el viewport */
+    background-image: url("../img/superfondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -70%;  /* Centraliza la imagen inicialmente */
+    left: -70%; /* Centraliza la imagen inicialmente */
+    will-change: transform; /* Optimización para animaciones */
+    transition: transform 0.1s;
+    opacity: 1;
+}
+
+.pantalla{
+    width: 50%;  /* Mayor que el viewport */
+    height: 50%; /* Mayor que el viewport */
+    top:25%;  /* Centraliza la imagen inicialmente */
+    left: 25%; /* Centraliza la imagen inicialmente */
+    overflow: hidden;
+    border:5px solid red;
+    position:relative;
+}
+

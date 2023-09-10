@@ -1,0 +1,900 @@
+1.-Entrada y salida de texto:
+
+1.1 Crear un programa que pida al usuario su nombre y salude con "¡Hola, [nombre]!".
+        Algoritmo Saludo
+            Escribir "Por favor, ingresa tu nombre:"
+            Leer nombre
+            Escribir "¡Hola, " + nombre + "!"
+        FinAlgoritmo
+
+1.2 Programa que pida dos palabras y las concatene.
+        Algoritmo ConcatenarPalabras
+            Escribir "Ingresa la primera palabra:"
+            Leer palabra1
+            Escribir "Ingresa la segunda palabra:"
+            Leer palabra2
+            Escribir palabra1 + palabra2
+        FinAlgoritmo
+
+1.3 Programa que pida una palabra y muestre su longitud.
+        Algoritmo LongitudPalabra
+            Escribir "Por favor, ingresa una palabra:"
+            Leer palabra
+            longitudPalabra = longitud(palabra)
+            Escribir "La longitud de la palabra '", palabra, "' es:", longitudPalabra
+        FinAlgoritmo
+
+2.-Manipulación básica de cadenas:
+
+2.1 Convertir una palabra ingresada a mayúsculas.
+        Algoritmo ConvertirMayusculas
+            Escribir "Ingresa una palabra o frase:"
+            Leer texto
+            Escribir MAYUSCULAS(texto)
+        FinAlgoritmo
+
+2.2 Convertir una frase ingresada a minúsculas.
+        Algoritmo ConvertirMinusculas
+            Escribir "Por favor, ingresa una frase:"
+            Leer frase
+            fraseMin = MINUSCULAS(frase)
+            Escribir "La frase en minúsculas es:", fraseMin
+        FinAlgoritmo
+
+2.3 Programa que invierta el orden de una palabra o frase.
+        Algoritmo InvertirTexto
+            Escribir "Ingresa una palabra o frase:"
+            Leer texto
+            textoInvertido = ""
+            Para i = longitud(texto) Hasta 1 Con Paso -1 Hacer
+                textoInvertido = textoInvertido + texto[i]
+            FinPara
+            Escribir textoInvertido
+        FinAlgoritmo
+
+3.- Operaciones con texto:
+
+3.1 Crear un programa que cuente el número de vocales en una frase.
+        Algoritmo ContarVocales
+            Escribir "Ingresa una frase:"
+            Leer frase
+            vocales = "aeiouAEIOU"
+            contador = 0
+            Para i = 1 Hasta longitud(frase) Hacer
+                Si EnCadena(vocales, frase[i]) > 0 Entonces
+                    contador = contador + 1
+                FinSi
+            FinPara
+            Escribir "La frase tiene", contador, "vocales."
+        FinAlgoritmo
+3.2 Programa que determine si una palabra es un palíndromo.
+        Algoritmo EsPalindromo
+            Escribir "Ingresa una palabra:"
+            Leer palabra
+            palabraInvertida = ""
+            Para i = longitud(palabra) Hasta 1 Con Paso -1 Hacer
+                palabraInvertida = palabraInvertida + palabra[i]
+            FinPara
+            Si palabra = palabraInvertida Entonces
+                Escribir "La palabra es un palíndromo."
+            Sino
+                Escribir "La palabra no es un palíndromo."
+            FinSi
+        FinAlgoritmo
+
+3.3 Programa que remplace todas las ocurrencias de una palabra por otra en una frase dada.
+        Algoritmo ReemplazarPalabras
+            Escribir "Ingresa una frase:"
+            Leer frase
+            Escribir "Palabra a buscar:"
+            Leer palabraBuscar
+            Escribir "Palabra por la que reemplazar:"
+            Leer palabraReemplazo
+            fraseModificada = Reemplazar(frase, palabraBuscar, palabraReemplazo)
+            Escribir fraseModificada
+        FinAlgoritmo
+
+4.-Estructuras de Control con texto:
+
+4.1 Dada una lista de colores (por ejemplo: rojo, azul, verde), preguntar al usuario su color favorito y responder si está o no en la lista.
+        Algoritmo ColorFavorito
+            colores = ["rojo", "azul", "verde"]
+            Escribir "¿Cuál es tu color favorito?"
+            Leer colorFavorito
+            Si colorFavorito en colores Entonces
+                Escribir "¡Tu color está en la lista!"
+            Sino
+                Escribir "Tu color no está en la lista."
+            FinSi
+        FinAlgoritmo
+       
+4.2 Crear un programa que ordene alfabéticamente una lista de palabras ingresadas por el usuario.
+        Algoritmo OrdenarPalabras
+            Escribir "¿Cuántas palabras ingresará?"
+            Leer n
+            Definir palabras[1..n] Como Cadena
+            Para i = 1 Hasta n Hacer
+                Escribir "Ingresa la palabra", i, ":"
+                Leer palabras[i]
+            FinPara
+
+            Para i = 1 Hasta n-1 Hacer
+                Para j = i+1 Hasta n Hacer
+                    Si palabras[i] > palabras[j] Entonces
+                        aux = palabras[i]
+                        palabras[i] = palabras[j]
+                        palabras[j] = aux
+                    FinSi
+                FinPara
+            FinPara
+
+            Escribir "Palabras ordenadas:"
+            Para i = 1 Hasta n Hacer
+                Escribir palabras[i]
+            FinPara
+        FinAlgoritmo
+
+4.3 Pedir al usuario una frase y una vocal, y mostrar cuántas veces aparece esa vocal en la frase.
+    Algoritmo ContarVocalEnFrase
+        Escribir "Por favor, ingresa una frase:"
+        Leer frase
+        Escribir "Ingresa una vocal:"
+        Leer vocal
+
+        contador = 0
+        Para i = 1 Hasta longitud(frase) Hacer
+            Si frase[i] = vocal Entonces
+                contador = contador + 1
+            FinSi
+        FinPara
+
+        Escribir "La vocal", vocal, "aparece", contador, "veces en la frase."
+    FinAlgoritmo
+
+5 Ejercicios de complejidad intermedia:
+
+5.1 Programa que pida una frase y la divida en palabras, mostrando cada palabra en una línea distinta.
+        Algoritmo FraseEnLineas
+            Escribir "Ingresa una frase:"
+            Leer frase
+            Para i = 1 Hasta longitud(frase) Hacer
+                Si frase[i] = ' ' o i = longitud(frase) Entonces
+                    Escribir SubCadena(frase, ultimoEspacio+1, i-1)
+                    ultimoEspacio = i
+                FinSi
+            FinPara
+        FinAlgoritmo
+
+5.2 Crear un programa que pida una frase y la muestre en orden inverso (la última palabra primero).
+        Algoritmo FraseInversa
+            Escribir "Ingresa una frase:"
+            Leer frase
+            frase += " "
+            inicio = 1
+            fraseInvertida = ""
+            Para i = 1 Hasta longitud(frase) Hacer
+                Si frase[i] = " " Entonces
+                    palabra = SubCadena(frase, inicio, i-1)
+                    fraseInvertida = palabra + " " + fraseInvertida
+                    inicio = i+1
+                FinSi
+            FinPara
+            Escribir "Frase invertida:"
+            Escribir fraseInvertida
+        FinAlgoritmo
+
+5.3 Programa que pida al usuario escribir una lista de nombres y luego le permita buscar si un nombre está en esa lista.
+        Algoritmo BuscarNombreEnLista
+            Escribir "¿Cuántos nombres deseas ingresar?"
+            Leer n
+            Definir nombres[1..n] Como Cadena
+            
+            // Ingreso de nombres a la lista
+            Para i = 1 Hasta n Hacer
+                Escribir "Ingresa el nombre ", i, ":"
+                Leer nombres[i]
+            FinPara
+
+            // Consulta de nombre en la lista
+            Escribir "Ahora, ingresa el nombre que deseas buscar:"
+            Leer nombreBuscar
+            encontrado = Falso
+
+            Para i = 1 Hasta n Hacer
+                Si nombres[i] = nombreBuscar Entonces
+                    encontrado = Verdadero
+                    Salir
+                FinSi
+            FinPara
+
+            // Muestra de resultado
+            Si encontrado Entonces
+                Escribir "El nombre", nombreBuscar, "está en la lista."
+            Sino
+                Escribir "El nombre", nombreBuscar, "NO está en la lista."
+            FinSi
+        FinAlgoritmo
+
+6.- Operaciones avanzadas con texto:
+
+6.1 Crear un programa que identifique si una palabra contiene las cinco vocales sin repetirlas.
+        Algoritmo PalabraConVocales
+            Escribir "Por favor, ingresa una palabra:"
+            Leer palabra
+
+            // Convertimos la palabra a minúsculas para simplificar la verificación
+            palabra = MINUSCULAS(palabra)
+
+            vocales = "aeiou"
+            contieneTodasLasVocales = Verdadero
+
+            // Verificar si cada vocal está en la palabra
+            Para i = 1 Hasta longitud(vocales) Hacer
+                Si No EnCadena(palabra, vocales[i]) Entonces
+                    contieneTodasLasVocales = Falso
+                    Salir
+                FinSi
+            FinPara
+
+            // Verificar que no haya vocales repetidas
+            Para i = 1 Hasta longitud(vocales) Hacer
+                si (contar(palabra, vocales[i]) > 1) Entonces
+                    contieneTodasLasVocales = Falso
+                    Salir
+                FinSi
+            FinPara
+
+            // Mostrar resultado
+            Si contieneTodasLasVocales Entonces
+                Escribir "La palabra contiene las cinco vocales sin repetirlas."
+            Sino
+                Escribir "La palabra NO contiene las cinco vocales sin repetirlas o las repite."
+            FinSi
+        FinAlgoritmo
+
+        Funcion contar(cadena, caracter)
+            contador = 0
+            Para i = 1 Hasta longitud(cadena) Hacer
+                Si cadena[i] = caracter Entonces
+                    contador = contador + 1
+                FinSi
+            FinPara
+            Devolver contador
+        Fin Funcion
+
+6.2 Programa que divida un texto en frases (considerando que las frases terminan en ".", "!" o "?").
+        Algoritmo DividirEnFrases
+            Escribir "Por favor, ingresa el texto:"
+            Leer texto
+
+            inicio = 1
+            Escribir "Frases identificadas:"
+            Para i = 1 Hasta longitud(texto) Hacer
+                Si texto[i] = "." o texto[i] = "!" o texto[i] = "?" Entonces
+                    frase = SubCadena(texto, inicio, i)
+                    Escribir "- ", frase
+                    inicio = i + 2 // Suponiendo que hay un espacio después de cada signo de puntuación.
+                FinSi
+            FinPara
+        FinAlgoritmo
+
+6.3 Crear un programa que cuente el número de palabras en una frase.
+        Algoritmo ContarPalabras
+            Escribir "Por favor, ingresa una frase:"
+            Leer frase
+
+            // Añadimos un espacio al final para contar también la última palabra
+            frase += " "
+            contadorPalabras = 0
+
+            Para i = 1 Hasta longitud(frase) - 1 Hacer
+                // Si encuentra un espacio y el carácter anterior no es un espacio, cuenta una palabra
+                Si frase[i] = " " y frase[i-1] <> " " Entonces
+                    contadorPalabras = contadorPalabras + 1
+                FinSi
+            FinPara
+
+            Escribir "La frase tiene", contadorPalabras, "palabras."
+        FinAlgoritmo
+
+7.- Ejercicios prácticos:
+
+7.1 Crear un "adivina la palabra": el programa tiene una palabra definida y el usuario debe adivinarla introduciendo letras.
+        Algoritmo AdivinaLaPalabra
+
+            palabraSecreta = "elefante" // Puedes cambiarla a la palabra que prefieras
+            palabraAdivinada = ""
+            intentos = longitud(palabraSecreta)
+            
+            // Inicializamos la palabra adivinada con guiones bajos
+            Para i = 1 Hasta longitud(palabraSecreta) Hacer
+                palabraAdivinada = palabraAdivinada + "_"
+            FinPara
+
+            Escribir "¡Bienvenido al juego 'Adivina la Palabra'!"
+            Escribir "Tienes", intentos, "intentos para adivinar la palabra."
+
+            Mientras palabraAdivinada <> palabraSecreta y intentos > 0 Hacer
+                Escribir palabraAdivinada
+                Escribir "Ingresa una letra:"
+                Leer letra
+                acertado = Falso
+
+                Para i = 1 Hasta longitud(palabraSecreta) Hacer
+                    Si palabraSecreta[i] = letra Entonces
+                        palabraAdivinada[i] = letra
+                        acertado = Verdadero
+                    FinSi
+                FinPara
+                
+                Si acertado = Falso Entonces
+                    intentos = intentos - 1
+                    Escribir "Letra incorrecta. Te quedan", intentos, "intentos."
+                FinSi
+
+            FinMientras
+
+            Si palabraAdivinada = palabraSecreta Entonces
+                Escribir "¡Felicidades! Has adivinado la palabra."
+            Sino
+                Escribir "Lo siento, la palabra era:", palabraSecreta
+            FinSi
+
+        FinAlgoritmo
+
+7.2 Programa que simule un juego de "completa la frase", donde se muestra una frase con espacios en blanco y el usuario debe completarlos.
+        Algoritmo CompletaLaFrase
+
+            Definir fraseOriginal Como Cadena
+            Definir fraseConBlancos Como Cadena
+            Definir palabrasBlanco[1..10] Como Cadena // Asumiendo máximo 10 palabras a rellenar
+            Definir respuestas[1..10] Como Cadena
+
+            fraseOriginal = "El gato se subió al tejado y cazó un ratón"
+            fraseConBlancos = "El ___ se subió al ___ y cazó un ___"
+
+            palabrasBlanco[1] = "gato"
+            palabrasBlanco[2] = "tejado"
+            palabrasBlanco[3] = "ratón"
+
+            Escribir "Juego 'Completa la Frase'"
+            Escribir "Completa los espacios en blanco de la siguiente frase:"
+            Escribir fraseConBlancos
+
+            Para i = 1 Hasta 3 Hacer // Asumiendo 3 palabras a rellenar
+                Escribir "Ingresa la palabra para el hueco", i, ":"
+                Leer respuestas[i]
+            FinPara
+
+            aciertos = 0
+            Para i = 1 Hasta 3 Hacer
+                Si respuestas[i] = palabrasBlanco[i] Entonces
+                    aciertos = aciertos + 1
+                FinSi
+            FinPara
+
+            Si aciertos = 3 Entonces
+                Escribir "¡Felicitaciones! Has completado la frase correctamente."
+            Sino
+                Escribir "Has acertado", aciertos, "de 3 palabras. ¡Inténtalo de nuevo!"
+            FinSi
+
+        FinAlgoritmo
+
+7.3 Crear un programa que funcione como un pequeño diario: el usuario puede ingresar textos con fechas y leer entradas anteriores.
+        Algoritmo DiarioSimple
+
+            Definir entradas[1..100] Como Cadena
+            Definir fechas[1..100] Como Cadena
+            numEntradas = 0
+
+            Repetir
+                Escribir "MENU DIARIO"
+                Escribir "1. Agregar entrada"
+                Escribir "2. Leer entradas anteriores"
+                Escribir "3. Salir"
+                Escribir "Elige una opción:"
+                Leer opcion
+                
+                Segun opcion Hacer
+                    Caso 1:
+                        Si numEntradas < 100 Entonces
+                            numEntradas = numEntradas + 1
+                            Escribir "Fecha de la entrada (ejemplo: 01/01/2023):"
+                            Leer fechas[numEntradas]
+                            Escribir "Escribe tu entrada del diario:"
+                            Leer entradas[numEntradas]
+                        Sino
+                            Escribir "Has alcanzado el límite de entradas. No se pueden agregar más."
+                        FinSi
+                    Caso 2:
+                        Si numEntradas = 0 Entonces
+                            Escribir "No hay entradas anteriores."
+                        Sino
+                            Para i = 1 Hasta numEntradas Hacer
+                                Escribir "Fecha:", fechas[i]
+                                Escribir "Entrada:", entradas[i]
+                                Escribir "------------------------"
+                            FinPara
+                        FinSi
+                    Caso 3:
+                        Escribir "Gracias por usar el diario. ¡Hasta pronto!"
+                    De Otro Modo:
+                        Escribir "Opción no válida. Inténtalo de nuevo."
+                FinSegun
+            Hasta opcion = 3
+
+        FinAlgoritmo
+
+7.3 Crear un programa que funcione como un pequeño diario: el usuario puede ingresar textos con fechas y leer entradas anteriores.
+8.- Manipulación avanzada de texto:
+
+8.1 Crear un programa que elimine las palabras repetidas de una frase.
+        Algoritmo EliminarRepetidas
+            Escribir "Introduce una frase:"
+            Leer frase
+            
+            frase += " " // Aseguramos que podemos obtener la última palabra
+            palabraActual = ""
+            fraseSinRepetidas = ""
+            
+            Para i = 1 Hasta longitud(frase) Hacer
+                Si frase[i] <> " " Entonces
+                    palabraActual += frase[i]
+                Sino
+                    Si No EnCadena(fraseSinRepetidas, palabraActual) Entonces
+                        fraseSinRepetidas += palabraActual + " "
+                    FinSi
+                    palabraActual = ""
+                FinSi
+            FinPara
+
+            Escribir "Frase sin palabras repetidas:", fraseSinRepetidas
+        FinAlgoritmo
+
+8.2 Programa que transforme una frase al "lenguaje Pig Latin" (una forma lúdica de alterar el inglés).
+        Algoritmo PigLatin
+            Escribir "Introduce una frase en inglés:"
+            Leer frase
+
+            frase += " " // Aseguramos que podemos obtener la última palabra
+            palabraActual = ""
+            frasePigLatin = ""
+
+            Para i = 1 Hasta longitud(frase) Hacer
+                Si frase[i] <> " " Entonces
+                    palabraActual += frase[i]
+                Sino
+                    frasePigLatin += transformarAPigLatin(palabraActual) + " "
+                    palabraActual = ""
+                FinSi
+            FinPara
+
+            Escribir "Frase en Pig Latin:", frasePigLatin
+        FinAlgoritmo
+
+        Funcion transformarAPigLatin(palabra)
+            posicionVocal = buscarPrimeraVocal(palabra)
+            inicio = SubCadena(palabra, 1, posicionVocal-1)
+            resto = SubCadena(palabra, posicionVocal, longitud(palabra))
+            Devolver resto + inicio + "ay"
+        Fin Funcion
+
+        Funcion buscarPrimeraVocal(palabra)
+            vocales = "aeiouAEIOU"
+            Para i = 1 Hasta longitud(palabra) Hacer
+                Si EnCadena(vocales, palabra[i]) > 0 Entonces
+                    Devolver i
+                FinSi
+            FinPara
+            Devolver longitud(palabra) + 1
+        Fin Funcion
+
+8.3 Crear un programa que codifique y decodifique mensajes usando el cifrado César.
+        Algoritmo CifradoCesar
+
+            Escribir "MENU CIFRADO CESAR"
+            Escribir "1. Codificar"
+            Escribir "2. Decodificar"
+            Escribir "3. Salir"
+            Escribir "Elige una opción:"
+            Leer opcion
+
+            Segun opcion Hacer
+                Caso 1:
+                    Escribir "Introduce el mensaje a codificar:"
+                    Leer mensaje
+                    Escribir "Introduce el número de desplazamientos (1-25):"
+                    Leer desplazamiento
+                    mensajeCodificado = cifrar(mensaje, desplazamiento)
+                    Escribir "Mensaje codificado:", mensajeCodificado
+                Caso 2:
+                    Escribir "Introduce el mensaje a decodificar:"
+                    Leer mensaje
+                    Escribir "Introduce el número de desplazamientos (1-25):"
+                    Leer desplazamiento
+                    mensajeDecodificado = descifrar(mensaje, desplazamiento)
+                    Escribir "Mensaje decodificado:", mensajeDecodificado
+                Caso 3:
+                    Escribir "¡Hasta pronto!"
+                De Otro Modo:
+                    Escribir "Opción no válida."
+            FinSegun
+
+        FinAlgoritmo
+
+        Funcion cifrar(texto, desplazamiento)
+            alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            resultado = ""
+            Para i = 1 Hasta longitud(texto) Hacer
+                posicion = EnCadena(alfabeto, texto[i])
+                Si posicion > 0 Entonces
+                    nuevaPosicion = (posicion + desplazamiento - 1) MOD 26 + 1
+                    resultado += alfabeto[nuevaPosicion]
+                Sino
+                    resultado += texto[i]
+                FinSi
+            FinPara
+            Devolver resultado
+        Fin Funcion
+
+        Funcion descifrar(texto, desplazamiento)
+            alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            resultado = ""
+            Para i = 1 Hasta longitud(texto) Hacer
+                posicion = EnCadena(alfabeto, texto[i])
+                Si posicion > 0 Entonces
+                    nuevaPosicion = (posicion - desplazamiento - 1) MOD 26 + 1
+                    resultado += alfabeto[nuevaPosicion]
+                Sino
+                    resultado += texto[i]
+                FinSi
+            FinPara
+            Devolver resultado
+        Fin Funcion
+9.- Ejercicios con subprocesos y funciones:
+
+9.1 Crear una función que determine si una palabra es un anagrama de otra.
+        Algoritmo Anagramas
+
+            Escribir "Introduce la primera palabra:"
+            Leer palabra1
+            Escribir "Introduce la segunda palabra:"
+            Leer palabra2
+
+            Si esAnagrama(palabra1, palabra2) Entonces
+                Escribir palabra1, "y", palabra2, "son anagramas."
+            Sino
+                Escribir palabra1, "y", palabra2, "NO son anagramas."
+            FinSi
+
+        FinAlgoritmo
+
+        Funcion esAnagrama(p1, p2)
+            // Convertimos ambas palabras a mayúsculas para hacer la comparación insensible a ellas
+            p1 = MAYUSCULAS(p1)
+            p2 = MAYUSCULAS(p2)
+            
+            Si longitud(p1) <> longitud(p2) Entonces
+                Devolver Falso
+            FinSi
+
+            // Ordenamos las letras de las palabras y las comparamos
+            p1Ordenada = ordenarCadena(p1)
+            p2Ordenada = ordenarCadena(p2)
+
+            Si p1Ordenada = p2Ordenada Entonces
+                Devolver Verdadero
+            Sino
+                Devolver Falso
+            FinSi
+        Fin Funcion
+
+        Funcion ordenarCadena(cadena)
+            Definir resultado Como Cadena
+            Definir letras Como Cadena[1..longitud(cadena)]
+            Para i = 1 Hasta longitud(cadena) Hacer
+                letras[i] = cadena[i]
+            FinPara
+            Ordenar letras Ascendente
+            resultado = ""
+            Para i = 1 Hasta longitud(cadena) Hacer
+                resultado += letras[i]
+            FinPara
+            Devolver resultado
+        Fin Funcion
+
+9.2 Programa que tenga una función para determinar si una palabra es un verbo, sustantivo o adjetivo (puede ser basándose en terminaciones simples).
+        Algoritmo FuncionGramatical
+            Escribir "Introduce una palabra:"
+            Leer palabra
+            categoria = determinarCategoria(palabra)
+            Escribir "La palabra", palabra, "parece ser un", categoria
+        FinAlgoritmo
+
+        Funcion determinarCategoria(p)
+            Si terminaEn(p, "ar") o terminaEn(p, "er") o terminaEn(p, "ir") Entonces
+                Devolver "verbo"
+            Sino Si terminaEn(p, "oso") o terminaEn(p, "osa") o terminaEn(p, "ante") o terminaEn(p, "iente") Entonces
+                Devolver "adjetivo"
+            Sino Si terminaEn(p, "dad") o terminaEn(p, "ción") o terminaEn(p, "aje") Entonces
+                Devolver "sustantivo"
+            Sino
+                Devolver "desconocido" // Si no coincide con ninguna terminación conocida
+            FinSi
+        Fin Funcion
+
+        Funcion terminaEn(cadena, sufijo)
+            // Esta función verifica si una cadena termina en un sufijo específico
+            sub = SubCadena(cadena, longitud(cadena) - longitud(sufijo) + 1, longitud(cadena))
+            Si sub = sufijo Entonces
+                Devolver Verdadero
+            Sino
+                Devolver Falso
+            FinSi
+        Fin Funcion
+
+9.3 Crear un programa que tenga funciones para agregar, buscar y eliminar contactos en una agenda.
+        Algoritmo AgendaContactos
+
+            Definir nombres[1..100] Como Cadena
+            Definir telefonos[1..100] Como Cadena
+            numContactos = 0
+
+            Repetir
+                Escribir "MENU AGENDA"
+                Escribir "1. Agregar contacto"
+                Escribir "2. Buscar contacto"
+                Escribir "3. Eliminar contacto"
+                Escribir "4. Salir"
+                Escribir "Elige una opción:"
+                Leer opcion
+
+                Segun opcion Hacer
+                    Caso 1:
+                        Escribir "Introduce el nombre del contacto:"
+                        Leer nombre
+                        Escribir "Introduce el teléfono del contacto:"
+                        Leer telefono
+                        agregarContacto(nombre, telefono)
+                    Caso 2:
+                        Escribir "Introduce el nombre del contacto a buscar:"
+                        Leer nombre
+                        buscarContacto(nombre)
+                    Caso 3:
+                        Escribir "Introduce el nombre del contacto a eliminar:"
+                        Leer nombre
+                        eliminarContacto(nombre)
+                    Caso 4:
+                        Escribir "¡Hasta luego!"
+                    De Otro Modo:
+                        Escribir "Opción no válida. Inténtalo de nuevo."
+                FinSegun
+            Hasta opcion = 4
+
+        FinAlgoritmo
+
+        Procedimiento agregarContacto(n, t)
+            Si numContactos < 100 Entonces
+                numContactos = numContactos + 1
+                nombres[numContactos] = n
+                telefonos[numContactos] = t
+                Escribir "Contacto agregado exitosamente."
+            Sino
+                Escribir "Agenda llena. No se puede agregar más contactos."
+            FinSi
+        Fin Procedimiento
+
+        Procedimiento buscarContacto(n)
+            encontrado = Falso
+            Para i = 1 Hasta numContactos Hacer
+                Si nombres[i] = n Entonces
+                    Escribir "Nombre:", nombres[i]
+                    Escribir "Teléfono:", telefonos[i]
+                    encontrado = Verdadero
+                    Salir
+                FinSi
+            FinPara
+            Si encontrado = Falso Entonces
+                Escribir "Contacto no encontrado."
+            FinSi
+        Fin Procedimiento
+
+        Procedimiento eliminarContacto(n)
+            posicion = 0
+            Para i = 1 Hasta numContactos Hacer
+                Si nombres[i] = n Entonces
+                    posicion = i
+                    Salir
+                FinSi
+            FinPara
+            Si posicion <> 0 Entonces
+                Para i = posicion Hasta numContactos-1 Hacer
+                    nombres[i] = nombres[i+1]
+                    telefonos[i] = telefonos[i+1]
+                FinPara
+                numContactos = numContactos - 1
+                Escribir "Contacto eliminado exitosamente."
+            Sino
+                Escribir "Contacto no encontrado."
+            FinSi
+        Fin Procedimiento
+
+10.- Proyectos finales:
+
+10.1 Crear un programa que simule un chat simple donde dos usuarios pueden escribir y leer mensajes.
+        Algoritmo ChatSimple
+
+            Definir mensajes[1..100] Como Cadena
+            numMensajes = 0
+            terminarChat = Falso
+            
+            Escribir "¡Bienvenidos al chat simple!"
+            Escribir "Usuario 1 y Usuario 2 pueden enviar mensajes por turnos."
+            Escribir "Escribe 'SALIR' para terminar el chat."
+
+            Mientras terminarChat = Falso Hacer
+                // Turno del Usuario 1
+                Escribir "Turno de Usuario 1. Escribe tu mensaje:"
+                Leer mensaje
+                Si mensaje = "SALIR" Entonces
+                    terminarChat = Verdadero
+                    Escribir "Usuario 1 ha dejado el chat."
+                Sino
+                    numMensajes = numMensajes + 1
+                    mensajes[numMensajes] = "Usuario 1: " + mensaje
+                FinSi
+                
+                // Turno del Usuario 2
+                Si terminarChat = Falso Entonces
+                    Escribir "Turno de Usuario 2. Escribe tu mensaje o 'VER' para ver los mensajes anteriores:"
+                    Leer mensaje
+                    Si mensaje = "SALIR" Entonces
+                        terminarChat = Verdadero
+                        Escribir "Usuario 2 ha dejado el chat."
+                    SinoSi mensaje = "VER" Entonces
+                        mostrarMensajes()
+                    Sino
+                        numMensajes = numMensajes + 1
+                        mensajes[numMensajes] = "Usuario 2: " + mensaje
+                    FinSi
+                FinSi
+            FinMientras
+
+            Escribir "Chat finalizado."
+
+        FinAlgoritmo
+
+        Procedimiento mostrarMensajes()
+            Si numMensajes = 0 Entonces
+                Escribir "No hay mensajes en el chat."
+            Sino
+                Para i = 1 Hasta numMensajes Hacer
+                    Escribir mensajes[i]
+                FinPara
+            FinSi
+        Fin Procedimiento
+
+10.2 Programa que simule un sistema de recomendación de libros: el usuario puede agregar libros que le gustaron y el sistema sugiere libros similares.
+        Algoritmo SistemaRecomendacion
+
+            Definir librosGustados[1..50] Como Cadena
+            Definir numLibros Como Entero
+            numLibros = 0
+
+            Definir biblioteca Como Tipo
+                titulo Como Cadena
+                genero Como Cadena
+            Fin Tipo
+
+            Definir todosLibros[1..10] Como biblioteca
+            todosLibros[1] = { titulo: "El señor de los anillos", genero: "Fantasía" }
+            todosLibros[2] = { titulo: "Dune", genero: "Ciencia Ficción" }
+            todosLibros[3] = { titulo: "1984", genero: "Ciencia Ficción" }
+            // ... (y así sucesivamente, puedes agregar más libros)
+
+            Repetir
+                Escribir "MENU"
+                Escribir "1. Agregar libro que te gustó"
+                Escribir "2. Recibir recomendaciones"
+                Escribir "3. Salir"
+                Leer opcion
+
+                Segun opcion Hacer
+                    Caso 1:
+                        Escribir "Introduce el título del libro que te gustó:"
+                        Leer libro
+                        numLibros = numLibros + 1
+                        librosGustados[numLibros] = libro
+                        Escribir "Libro agregado a tus gustos."
+                    Caso 2:
+                        mostrarRecomendaciones()
+                    Caso 3:
+                        Escribir "¡Hasta luego!"
+                    De Otro Modo:
+                        Escribir "Opción no válida."
+                FinSegun
+            Hasta opcion = 3
+
+        FinAlgoritmo
+
+        Procedimiento mostrarRecomendaciones()
+            Si numLibros = 0 Entonces
+                Escribir "No has agregado libros que te gustaron. Agrega uno primero."
+                Regresar
+            FinSi
+
+            Definir generosGustados[1..numLibros] Como Cadena
+            Para i = 1 Hasta numLibros Hacer
+                Para j = 1 Hasta 10 Hacer
+                    Si todosLibros[j].titulo = librosGustados[i] Entonces
+                        generosGustados[i] = todosLibros[j].genero
+                        Salir
+                    FinSi
+                FinPara
+            FinPara
+
+            Escribir "Te recomendamos:"
+            Para i = 1 Hasta 10 Hacer
+                Si EnCadena(generosGustados, todosLibros[i].genero) Y No EnCadena(librosGustados, todosLibros[i].titulo) Entonces
+                    Escribir todosLibros[i].titulo
+                FinSi
+            FinPara
+        Fin Procedimiento
+
+10.3 Crear un programa que funcione como un corrector ortográfico simple, donde el usuario ingresa una palabra y el programa sugiere correcciones.
+        Algoritmo CorrectorOrtografico
+
+            Definir diccionario[1..10] Como Cadena
+            diccionario[1] = "amigo"
+            diccionario[2] = "computadora"
+            diccionario[3] = "silla"
+            // ... (puedes agregar más palabras)
+
+            Escribir "Introduce una palabra:"
+            Leer palabra
+
+            Si EnCadena(diccionario, palabra) > 0 Entonces
+                Escribir "La palabra está escrita correctamente."
+            Sino
+                Escribir "Palabra no reconocida. Sugerencias:"
+                mostrarSugerencias(palabra)
+            FinSi
+
+        FinAlgoritmo
+
+        Procedimiento mostrarSugerencias(p)
+            Definir candidatos[1..10] Como Cadena
+            numCandidatos = 0
+            
+            Para i = 1 Hasta 10 Hacer
+                Si distanciaSimple(p, diccionario[i]) = 1 Entonces
+                    numCandidatos = numCandidatos + 1
+                    candidatos[numCandidatos] = diccionario[i]
+                FinSi
+            FinPara
+
+            Si numCandidatos = 0 Entonces
+                Escribir "No se encontraron sugerencias."
+            Sino
+                Para i = 1 Hasta numCandidatos Hacer
+                    Escribir candidatos[i]
+                FinPara
+            FinSi
+        Fin Procedimiento
+
+        Funcion distanciaSimple(palabra1, palabra2)
+            // Esta función devuelve 0 si las palabras son iguales, 1 si difieren en una letra, y un valor mayor en otros casos.
+            Si longitud(palabra1) <> longitud(palabra2) Entonces
+                Devolver 1000
+            FinSi
+
+            diferencias = 0
+            Para i = 1 Hasta longitud(palabra1) Hacer
+                Si palabra1[i] <> palabra2[i] Entonces
+                    diferencias = diferencias + 1
+                FinSi
+            FinPara
+            
+            Devolver diferencias
+        Fin Funcion
