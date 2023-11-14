@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+</head>
+<!-- Consider integer numbers from 0 to n - 1 written down along the circle in 
+    such a way that the distance between any two neighbouring numbers 
+    is equal (note that 0 and n - 1 are neighbouring, too).
+
+Given n and firstNumber/first_number/first-number, find the number which 
+is written in the radially opposite position to firstNumber. -->
+<body>
+    <script>
+        valor = true
+
+        if(elevatorDistance([5,2,8])!=9) valor=false;
+        if(elevatorDistance([1,2,3])!=2) valor=false;
+        if(elevatorDistance([7,1,7,1])!= 18) valor=false;
+
+        if (valor) alert("ok"); else alert("error");
+
+        function elevatorDistance(array) {
+            let suma=0;
+            for (i=1;i<array.length;i++){
+                suma+=Math.abs(array[i-1]-array[i])
+            }
+            return suma;
+        }
+
+    </script>
+</body>
+
+</html>

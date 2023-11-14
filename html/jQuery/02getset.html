@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Título</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="00plantillajs.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+    <script>
+        $(function() {
+            $("#boton").on("click",function(){
+                var x=$("#parrafoUno").text();
+                var y=$("#parrafoDos").text();
+                console.log(x);
+                console.log(y);
+                $("#parrafoUno").text("- - - - - - ");
+                $("#parrafoDos").text("Este es el párrafo dos");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <p class="logo">Ejercicios JQuery CIP <button id="boton">✔️</button></p>
+    </header>
+    <section>
+        <div class="myDiv">
+            <article>
+                <p id="parrafoUno">Hola JQuery</p>
+            </article>
+        </div>
+        <div>
+            <article>
+                <p id="parrafoDos">Hola Alumnos</p>
+            </article>
+        </div>
+        <span></span>
+    </section>
+</body>
+
+</html>

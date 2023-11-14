@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+        canvas {
+
+            display: block;
+            margin: 0 auto;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="micanvas2" width="400px" height="400px"></canvas>
+    <script>
+        let mycanvas = document.getElementById("micanvas2")
+        let lienzo = mycanvas.getContext("2d")
+        lienzo.arc(200, 150, 100, 0, 2 * Math.PI)
+        lienzo.stroke()
+        lienzo.lineWidth = 10
+        lienzo.lineCap = "round"
+        lienzo.beginPath()
+        lienzo.arc(200, 170, 60, 0, Math.PI, false)
+        lienzo.stroke()
+        lienzo.lineWidth = 5;
+        lienzo.lineJoin = "round"
+        lienzo.beginPath();
+        lienzo.moveTo(195, 135)
+        lienzo.lineTo(215, 155)
+        lienzo.lineTo(195, 155)
+        lienzo.stroke()
+        lienzo.lineWidth=2;
+        lienzo.beginPath();
+        lienzo.arc(175,110,7,0,Math.PI*2,false)
+        lienzo.arc(225,110,7,0,Math.PI*2,false)
+        lienzo.fill()
+        lienzo.closePath();
+        lienzo.beginPath();
+        lienzo.arc(168,106,15,0,Math.PI*2,false)
+        lienzo.stroke()
+        lienzo.beginPath();
+        lienzo.arc(235,106,15,0,Math.PI*2,false)
+        lienzo.closePath();
+        lienzo.stroke()
+
+    </script>
+</body>
+
+</html>

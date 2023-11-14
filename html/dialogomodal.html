@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title></title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<style>
+    .grid1{
+        display: grid;
+        grid-template-rows: 100px  300px;
+        grid-template-columns: 10% 28% 60%;
+        gap:1%;
+    }
+    .flex1{
+        display: flex;
+        justify-content: space-around;
+    }
+    :root{
+        --tamafont:12px;
+    }
+    p{
+        border:1px solid red;
+        font-size: var(--tamafont);
+    }
+    video{
+        width:20%;
+        aspect-ratio: 16/9;
+        background-color: red;
+    }
+    .circle-colors{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border:1px solid red;
+        background:conic-gradient(red,yellow, green,red);
+    }
+    img{
+        filter: sepia(300%);
+    }
+    @media screen and (max-width:600px) {
+        :root{
+            --tamafont:20px;
+        }
+    }
+</style>
+</head>
+<body>
+<dialog open id="midialogo">
+    <h2>mi cuadro de dialogo</h2>
+    <p>Uso de la etiqueta</p>
+    <button id="closeButton">Cerrar</button>
+</dialog>
+<button id="openButton">Abrir</button>
+
+<div class="grid1">
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <p>p5</p>
+</div>
+<div class="flex1">
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <p>p5</p>
+</div>
+<video src="recursos/mixkit-children-sliding-down-a-slide-48253-medium.mp4"></video>
+<div class="circle-colors">
+</div>
+<img src="img/botebajoarbol.jpg" alt="">
+</body>
+</html>

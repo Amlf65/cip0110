@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title>3nombres y edades indicar el nombre del mayor</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<body class="container">
+    <main class="row">
+        <div class="form-floating col-md-5 p-1">
+            <input type="text" size="3" class="form-control p-2" id="cadena1" placeholder="xxxx">
+            <label for="cadena">Introducir Nombre (fin para terminar)</label>
+        </div>
+       <div class="col-md-2"></div>
+        <div class="form-floating col-md-5 p-1">
+            <input type="text" size="3" class="form-control p-2" id="cadena2" placeholder="xxxx">
+            <label for="cadena">Introducir Edad (-1 para terminar)</label>
+        </div>
+        <h2 class="col-md-5 mx-auto" id="salida">el Mayor es:</h2>
+        <button id="boton" class="d-block w-100 mt-3">Calcular</button>
+    </main>
+    <script>
+
+        let entrada1=document.getElementById("cadena1")
+        let entrada2=document.getElementById("cadena2")
+        let boton=document.getElementById("boton") 
+        let salida=document.getElementById("salida")
+        let edades=[]
+        let nombres=[]
+        boton.addEventListener("click",function(){
+            if(entrada1.value=="fin" || entrada2.value=="0"){
+                salida.textContent="El mayor es: " + nombres[edades.indexOf(Math.max(...edades))]
+            }else{
+                nombres.push(entrada1.value)
+                edades.push(parseInt(entrada2.value))
+                console.log(nombres)
+                console.log((edades))
+            }
+        })
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

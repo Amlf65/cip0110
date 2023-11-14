@@ -1,0 +1,146 @@
+<html>
+
+<head>
+  <title>JS Examples</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    section {
+      margin: 12px 0;
+      padding: 24px 12px;
+      border: 1px solid #ddd;
+    }
+
+    #resize-text {
+      line-height: 28px;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <p id="content" class="class-1 class-2">
+      JavaScript can change HTML content
+    </p>
+
+    <button id="content-change-button">
+      Change content
+    </button>
+  </section>
+
+  <section>
+    <p>We can change HTML Attributes</p>
+
+    <img id="lightbulb" src="img/pic_bulboff.gif">
+
+    <button id="on">Turn on the light</button>
+    <button id="off">Turn off the light</button>
+    <button id="toggle-light">Toggle Light</button>
+
+  </section>
+
+  <section>
+    <p id="resize-text">
+      This is some text
+    </p>
+
+    <button id="make-small">Small</button>
+    <button id="make-medium">Medium</button>
+    <button id="make-large">Large</button>
+
+    <button id="hide-text">Hide</button>
+    <button id="show-text">Show</button>
+
+  </section>
+
+  <!-- <script src="script.js"></script> -->
+  <script>
+    const content = document.getElementById('content');
+    const button = document.getElementById('content-change-button');
+
+    console.dir(content);
+
+    button.addEventListener('click', function (event) {
+      console.log(event);
+      content.innerHTML = 'Changed text of p tag.';
+    });
+
+    const onButton = document.getElementById('on');
+    const offButton = document.getElementById('off');
+    const lightBulb = document.getElementById('lightbulb');
+    //const onImg = 'https://www.w3schools.com/js/pic_bulbon.gif';
+    //const offImg = 'https://www.w3schools.com/js/pic_bulboff.gif';
+    onImg = "img/pic_bulbon.gif"
+    offImg = "img/pic_bulboff.gif"
+
+    onButton.addEventListener('click', function () {
+      lightBulb.src = onImg;
+    });
+
+    offButton.addEventListener('click', function () {
+      lightBulb.src = offImg;
+    });
+
+    const toggleButton = document.getElementById('toggle-light');
+    let currentState = 'off';
+
+    toggleButton.addEventListener('click', function () {
+      // if(currentState === 'off') {
+      //   lightBulb.src = onImg;
+      //   currentState = 'on';
+      // } else {
+      //   lightBulb.src = offImg;
+      //   currentState = 'off';
+      // }
+
+      //   Ternary Operator
+      lightBulb.src = (currentState === 'off' ? onImg : offImg);
+      currentState = (currentState === 'off' ? 'on' : 'off');
+    });
+
+    const resizeText = document.getElementById('resize-text');
+    const smallButton = document.getElementById('make-small');
+    const mediumButton = document.getElementById('make-medium');
+    const largeButton = document.getElementById('make-large');
+    const hideButton = document.getElementById('hide-text');
+    const showButton = document.getElementById('show-text');
+
+
+
+    function changeTextSize(event) {
+      if (event.target === smallButton) {
+        resizeText.style.fontSize = '12px';
+      } else if (event.target === mediumButton) {
+        resizeText.style.fontSize = '16px';
+      } else if (event.target === largeButton) {
+        resizeText.style.fontSize = '24px';
+      }
+
+      resizeText.style.color = event.target === largeButton ? 'red' : 'black';
+
+      //   Don't do this with a ternary. In my opinion the code gets too long and quickly becomes unreadable
+      // resizeText.style.fontSize = (event.target === smallButton ? '12px' : (event.target === mediumButton ? '16px' : (event.target === largeButton ? '24px' : '')));
+    };
+
+    smallButton.addEventListener('click', changeTextSize);
+    mediumButton.addEventListener('click', changeTextSize);
+    largeButton.addEventListener('click', changeTextSize);
+
+    hideButton.addEventListener('click', function () {
+      resizeText.style.visibility = 'hidden';
+    });
+
+    showButton.addEventListener('click', function () {
+      resizeText.style.visibility = 'visible';
+    });
+
+
+
+  </script>
+</body>
+
+</html>

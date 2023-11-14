@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <form action="#">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required>
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" required>
+        <label for="dni">DNI</label>
+        <input type="number" id="dni" required>
+        <label for="letra">Letra</label>
+        <input type="text" id="letra" maxlength="1" readonly>
+        <label for="fecha">Fecha caducidad</label>
+        <input type="date" id="fecha" required>
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" min="1" max="120" readonly>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <label for="movil">Tel Móvil</label>
+        <input type="tel" id="movil" max="9" required>
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion">
+        <label for="poblacion">Población</label>
+        <input type="text" id="poblacion">
+        <label for="provincia">Provincia</label>
+        <select id="provincia">
+            <option selected value="35">Las Palmas</option>
+            <option value="38">Santa Cruz de Tenerife</option>
+        </select>
+        <label>Estado civil</label>
+        <input type="radio" name="ecivil" id="soltero" value="soltero" checked>
+        <input type="radio" name="ecivil" id="casado" value="casado">
+        <label>Cada cuanto te conectas</label>
+        <input type="radio" name="conexion" id="diario" value="1" checked>
+        <input type="radio" name="conexion" id="semanal" value="2">
+        <input type="radio" name="conexion" id="mensual" value="3">
+        <input type="radio" name="conexion" id="anual" value="4">
+        <button type="submit">Validar</button>
+    </form>
+
+    <script>
+        window.addEventListener("load", function () {
+            //asignaciones 
+            let nombre = document.getElementById("nombre")
+            let apellido = document.getElementById("apellido")
+            let dni = document.getElementById("dni")
+            let letra = document.getElementById("letra")
+            let fecha = document.getElementById("fecha")
+            let edad = document.getElementById("edad")
+            let email = document.getElementById("email")
+            let movil = document.getElementById("movil")
+            let direccion = document.getElementById("direccion")
+            let poblacion = document.getElementById("poblacion")
+            //funciones
+            function longitud(valor, tama) {
+                return valor.length == tama;
+            }
+            function esNumerico(valor) {
+                return !isNaN(valor)
+            }
+            function letraDni(valor) {
+                letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"]
+                return letras[valor % 23];
+            }
+            function calcularEdad(fecha) {
+                var hoy = new Date();
+                var cumpleanos = new Date(fecha);
+                var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+                var m = hoy.getMonth() - cumpleanos.getMonth();
+
+                if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+                    edad--;
+                }
+
+                return edad;
+            }
+
+            //chivatos
+            nombre.addEventListener("blur", function () {
+                if (longitud(nombre.value,0)) {
+                    nombre.style.backgroundColor = "pink"
+                } else {
+                    nombre.style.backgroundColor = "white"
+                }
+            })
+            apellido.addEventListener("blur", function () {
+                if (longitud(apellido.value,0)) {
+                    apellido.style.backgroundColor = "pink"
+                } else {
+                    apellido.style.backgroundColor = "white"
+                }
+            })
+            dni.addEventListener("blur", function () {
+               
+                if (!longitud(dni.value, 8) || !esNumerico(dni.value)) {
+                    dni.style.backgroundColor = "pink"
+                    
+                } else {
+                    dni.style.backgroundColor = "white"
+                    letra.value=letraDni(dni.value)
+                }
+            })
+            
+            fecha.addEventListener("blur", function () {
+                if (longitud(fecha.value,0)) {
+                    fecha.style.backgroundColor = "pink"
+                } else {
+                    fecha.style.backgroundColor = "white"
+                    edad.value=calcularEdad(fecha.value)
+                }
+            })
+            
+            email.addEventListener("blur", function () {
+                if (longitud(email.value,0)) {
+                    email.style.backgroundColor = "pink"
+                } else {
+                    email.style.backgroundColor = "white"
+                }
+            })
+            movil.addEventListener("blur", function () {
+                if (!longitud(movil.value, 9)) {
+                    movil.style.backgroundColor = "pink"
+                } else {
+                    movil.style.backgroundColor = "white"
+                }
+            })
+            
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title></title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>FUNCIONES DE FECHA</h1>
+<script>
+const fechaActual = new Date();
+document.write("fecha actual: "+fechaActual); // Muestra la fecha y hora actual
+document.write("<br>")
+const fecha = new Date();
+const anno = fecha.getFullYear();
+document.write("año :"+ anno); // Devuelve el año actual
+document.write("<br>")
+document.write("mes: "+fecha.getMonth()) //Devuelve el mes de una fecha (0-11, donde 0 es enero y 11 es diciembre).
+document.write("<br>")
+meses=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]
+document.write("mes(letras): "+meses[fecha.getMonth()]) //Devuelve el mes de una fecha (0-11, donde 0 es enero y 11 es diciembre).
+document.write("<br>")
+document.write("dia mes :"+fecha.getDate()) //Devuelve el día del mes (1-31) de una fecha.
+document.write("<br>")
+document.write("dia semana: "+fecha.getDay()) //Devuelve el día de la semana (0-6, donde 0 es domingo y 6 es sábado).
+semana=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]
+document.write("<br>")
+document.write("dia semana(letras): "+semana[fecha.getDay()]) //Devuelve el mes de una fecha (0-11, donde 0 es enero y 11 es diciembre).
+
+//getHours(), getMinutes(), getSeconds(), getMilliseconds(): Devuelven respectivamente la hora, los minutos, los segundos y los milisegundos de una fecha.
+// setFullYear(), setMonth(), setDate(), setHours(), setMinutes(), setSeconds(): Estos métodos permiten establecer los componentes de fecha y hora de una instancia Date.
+document.write("<br>")
+const fecha1 = new Date();
+const fechaFormateada = fecha1.toLocaleDateString(); // Fecha formateada según la configuración regional
+document.write("fecha formateada : "+fechaFormateada);
+document.write("<br>")
+const fechaTexto = "2023-09-17T12:00:00";
+const tiempoEnMilisegundos = Date.parse(fechaTexto);
+document.write("fecha actual en milisegundos: "+tiempoEnMilisegundos)
+// desde 17/09/2023
+document.write("<br>")
+const fecha2 = new Date();
+const tiempoEnMilisegundos1 = fecha.getTime();
+document.write("fecha actual en milisegundos: "+tiempoEnMilisegundos1)
+
+document.write("<br>")
+const tiempoUtc = Date.UTC(2023, 8, 17, 12, 0, 0); // 17 de septiembre de 2023, 12:00 PM UTC
+document.write("tiempoUTC"+ tiempoUtc)
+document.write("<br>")
+setTimeout(function() {
+    console.log("Este código se ejecuta después de 2 segundos");
+}, 2000);
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

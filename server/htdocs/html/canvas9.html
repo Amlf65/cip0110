@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+        canvas {
+
+            display: block;
+            margin: 0 auto;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="micanvas" width="600px" height="600px"></canvas>
+    <script>
+
+        let c = document.getElementById("micanvas");
+        let ctx = c.getContext("2d");
+        let imagen = new Image()
+        imagen.src = "img/aguila.png"
+        imagen.addEventListener("load", function(){;
+            ctx.drawImage(imagen, 20, 20)
+            let info_imagen = ctx.getImageData(0, 0, 145, 145);
+            console.log(info_imagen);
+            let posicion;
+            for (x = 0; x <= 145; x++) {
+                for (y = 0; y <= 145; y++) {
+                    posicion = (info_imagen.width * 4 * y) + (x * 4)
+                    info_imagen.data[posicion] = 255 - info_imagen.data[posicion]
+                    info_imagen.data[posicion + 1] = 255 - info_imagen.data[posicion + 1] 
+                    info_imagen.data[posicion + 2] = 255 - info_imagen.data[posicion + 2]
+                }
+            }
+            ctx.putImageData(info_imagen, 0, 0)
+
+        })
+
+    </script>
+</body>
+
+</html>

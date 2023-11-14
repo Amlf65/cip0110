@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Título</title>
+    <link rel="stylesheet" href="00plantillajs.css">
+    <style>
+        body {
+            background-color: #6f2a3a;
+        }
+        #imagenes{
+            float:left;
+            width: 30%;
+        }
+
+        img {
+            margin: 20px 30px;
+        }
+
+        #mensaje_img1,
+        #mensaje_img2,
+        #mensaje_img3,
+        #mensaje_img4 {
+            position: absolute;
+            left: 323px;
+            top: 292px;
+            width: 581px;
+            height: 215px;
+            background-color: #FF9;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 25px;
+            border: dotted 2px #00F;
+        }
+    </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(function() {
+            $("#mensaje_img1").hide();
+            $("#mensaje_img2").hide();
+            $("#mensaje_img3").hide();
+
+            
+             $("#imagen1").on({
+                 mouseenter: function() { 
+                     $("#mensaje_img1").show(); }, 
+                 mouseleave: function() { 
+                     $("#mensaje_img1").hide();  }});
+          
+             $("#imagen2").on({
+                 mouseenter: function() { 
+                     $("#mensaje_img2").show(); }, 
+                 mouseleave: function() { 
+                     $("#mensaje_img2").hide();  }});
+           $("#imagen3").on({
+                 mouseenter: function() { 
+                     $("#mensaje_img3").show(); }, 
+                 mouseleave: function() { 
+                     $("#mensaje_img3").hide();  }});
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <p class="logo">Ejercicios JavaScript CIP </p>
+    </header>
+
+    <div class=hide id="mensaje_img1">diapositiva 1......</div>
+    <div class=hide id="mensaje_img2">diapositiva 2......</div>
+    <div class=hide id="mensaje_img3">diapositiva 3......</div>
+
+    <center>
+        <div id="imagenes">
+            <img src="foto0.svg" id="imagen1" width="10%">
+            <img src="foto1.svg" id="imagen2" width="10%">
+            <img src="foto2.svg" id="imagen3" width="10%">
+
+        </div>
+    </center>
+</body>
+</html>

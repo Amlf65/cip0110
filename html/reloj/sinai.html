@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Confección páginas web - CIP -
+2023">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>reloj_analogico</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="css/reloj_analogico.css">
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min
+.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div>
+    <canvas id="myCanvas" width="320" height="320"></canvas>
+    </div>
+    <script>
+    function x2(n, i, x1, r) { return x1 + r * Math.sin(2 * Math.PI * n / i); };
+    function y2(n, i, y1, r) { return y1 - r * Math.cos(2 * Math.PI * n / i); };
+    function myLine(ctx, x1, y1, x2, y2, width, color) {
+    ctx.beginPath(); // comenzar nueva linea
+    ctx.moveTo(x1, y1); // Comienzo de linea
+    ctx.lineTo(x2, y2); // Final de linea
+    ctx.strokeStyle = color; // color de linea
+    ctx.lineWidth = width; // anchura de linea: 5 puntos
+    ctx.stroke(); // dibujar linea
+    }
+    function myCircle(ctx, x, y, r, width, color) {
+    ctx.beginPath(); // comenzar figura
+    // añadir arco (circulo completo):
+    ctx.arc(x, y, r, 0, 2 * Math.PI); // ctx.arc(x, y, r, start, stop)
+    ctx.strokeStyle = color; // color de la linea del circulo
+    ctx.lineWidth = width; // anchura de la linea del 
+    circulo
+    ctx.stroke(); // dibujar circulo
+    }
+    function mostrar_hora(ctx) {
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    var ds =
+    Math.floor(d.getMilliseconds() / 100);
+    if (h < 10) h = "0" + h;
+    if (m < 10) m = "0" + m;
+    if (s < 10) s = "0" + s;
+    //$('#tex').html(h + ":" + m + ":" + s);
+    ctx.clearRect(0, 0, 320, 320); // borrar CANVAS
+    // hora dentro de la esfera
+    ctx.font = "1em 'Black Ops One'";
+    ctx.stroke(); // Produce efectos raros en la aguja de los decimales
+    myCircle(ctx, 160, 160, 100, 3, "orange"); // esfera del reloj
+    // myCircle(ctx,190,210,10,2,"orange"); // esfera de las décimas
+    myLine(ctx, 160, 160, x2(h, 12, 160, 60), y2(h, 12, 160, 60), 5, "grey"); // horas
+    myLine(ctx, 160, 160, x2(m, 60, 160, 80), y2(m, 60, 160, 80), 3, "grey"); // min.
+    myLine(ctx, 160, 160, x2(s, 60, 160, 100), y2(s, 60, 160, 100), 1, "red"); // seg.
+    // myLine(ctx,190,210,x2(ds,10,190,10),y2(ds,10,210,10),1,"blue"); // dec. seg.
+    }
+    $(function () {
+    var c = document.getElementById("myCanvas"); // obtiene CANVAS
+    if (c.getContext) { // CANVAS soportado?
+    var ctx = c.getContext("2d"); // define contexto 2D
+    mostrar_hora(ctx);
+    setInterval(function () { mostrar_hora(ctx); }, 10);
+    }
+    })
+    </script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+</html>

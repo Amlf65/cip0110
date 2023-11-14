@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel="stylesheet" href="actividad2_uf1306.css">
+<title></title>
+
+</head>
+<body>
+<canvas id="canvas">
+<p>Su navegador no soporta canva</p>
+</canvas>
+<svg width="500px" height="500px" viewBox="0 0 1024 1024"
+xmlns="http://www.w3.org/2000/svg">
+<path d="M 132 732 L 132 292 L 335 409 L 335 614 L 132 732 Z"
+style="fill: rgb(222, 101, 71);"/>
+<path d="M 513 953 L 513 722 L 334 614 L 132 732 L 513 953 Z"
+style="fill: rgb(253, 188, 77);"/>
+<path d="M 892 732 L 892 292 L 689 409 L 689 614 L 892 732 Z"
+style="fill: rgb(105, 179, 86);"/>
+<path d="M 513 953 L 513 722 L 690 614 L 892 732 L 513 953 Z"
+style="fill: rgb(209, 233, 147);"/>
+<path d="M 513 71 L 513 302 L 335 410 L 132 292 L 513 71 Z"
+style="fill: rgb(128, 183, 250);"/>
+<path d="M 513 71 L 513 302 L 689 410 L 892 292 L 513 71 Z"
+style="fill: rgb(69, 129, 225);"/>
+<path d="M 704 595 C 716 607 727 631 727 650 C 727 668 716 692
+704 704 C 692 716 668 727 650 727 C 631 727 607 716 595 704 C 593 702
+590 699 588 695 C 589 699 589 703 589 707 C 589 725 579 749 566 761 C
+554 773 531 784 512 784 C 493 784 470 773 458 761 C 445 749 435 725 435
+707 C 435 703 435 699 436 696 C 433 699 431 702 429 704 C 417 716 393
+727 374 727 C 355 727 332 716 320 704 C 308 692 297 668 297 650 C 297
+631 308 607 320 595 C 322 593 325 590 329 588 C 325 589 321 589 317 589
+C 299 589 275 579 263 566 C 251 554 240 531 240 512 C 240 493 251 470
+263 458 C 275 445 299 435 317 435 C 321 435 325 435 328 436 C 325 433
+322 431 320 429 C 308 417 297 393 297 374 C 297 356 308 332 320 320 C
+332 308 356 297 374 297 C 393 297 417 308 429 320 C 431 322 434 325 436
+329 C 435 325 435 321 435 317 C 435 299 445 275 458 263 C 470 251 493
+240 512 240 C 531 240 554 251 566 263 C 579 275 589 299 589 317 C 589
+321 589 325 588 328 C 591 325 593 322 595 320 C 607 308 631 297 650 297
+C 668 297 692 308 704 320 C 716 332 727 356 727 374 C 727 393 716 417
+704 429 C 702 431 699 434 695 436 C 699 435 703 435 707 435 C 725 435
+749 445 761 458 C 773 470 784 493 784 512 C 784 531 773 554 761 566 C
+749 579 725 589 707 589 C 703 589 699 589 696 588 C 699 591 702 593 704
+595 Z" style="fill: rgb(47, 47, 47);"/>
+<path d="M 585 542 L 675 542 C 683 551 694 556 707 556 C 731
+556 750 536 750 512 C 750 488 731 468 707 468 C 694 468 683 474 675 482
+L 585 482 L 649 418 C 649 418 649 418 650 418 C 674 418 693 398 693 374
+C 693 350 674 331 650 331 C 626 331 606 350 606 374 C 606 375 606 375
+606 375 L 542 439 L 542 349 C 551 341 556 330 556 317 C 556 293 536 274
+512 274 C 488 274 468 293 468 317 C 468 330 474 341 482 349 L 482 439 L
+418 375 C 418 375 418 375 418 374 C 418 350 399 331 374 331 C 350 331
+331 350 331 374 C 331 398 350 418 374 418 C 375 418 375 418 375 418 L
+439 482 L 349 482 C 341 474 330 468 317 468 C 293 468 274 488 274 512 C
+274 536 293 556 317 556 C 330 556 341 551 349 542 L 439 542 L 375 606 C
+375 606 375 606 374 606 C 350 606 331 625 331 650 C 331 674 350 693 374
+693 C 398 693 418 674 418 650 C 418 649 418 649 418 649 L 482 585 L 482
+675 C 473 683 468 694 468 707 C 468 731 488 750 512 750 C 536 750 556
+731 556 707 C 556 694 550 683 542 675 L 542 585 L 606 649 C 606 649 606
+649 606 650 C 606 674 625 693 650 693 C 674 693 693 674 693 650 C 693
+625 674 606 650 606 C 649 606 649 606 649 606 L 585 542 Z" style="fill:
+rgb(255, 255, 255);"/>
+</svg>
+<!-- Las imágenes SVG son gráficos vectoriales, esto significa que
+están compuestas por objetos geométricos ( líneas, curvas y formas )
+definidos por ecuaciones matemáticas. Esto permite que las imágenes se
+escalen a cualquier tamaño sin perder calidad, estan basadas en código
+XML Las imágenes SVG se definen utilizando código XML, lo que las hace
+legibles tanto por humanos como por máquinas. Puedes abrir un archivo
+SVG en un editor de texto y ver su estructura. -->
+<script>
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+canvas.width=300;
+canvas.height=300;
+var centerX=canvas.width/2;
+var centerY=canvas.height/2;
+//Función que dibuja la esfera en la pantalla, se ejecuta a cada
+//segundo
+function dibujarReloj() {
+// limpiamos el canvas entero
+context.clearRect(0, 0, canvas.width, canvas.height);
+context.lineWidth=1;
+context.strokeStyle="#000";
+// dibujamos el circulo
+context.beginPath();
+context.arc(centerX,centerY,centerX-10,0,2*Math.PI);
+context.stroke();
+// dibujamos la linea de los segundos
+for(i=0;i<60;i++) {
+var start_x =
+centerX+Math.round((centerX-15)*Math.cos(6*i*Math.PI/180));
+var start_y =
+centerY+Math.round((centerY-15)*Math.sin(6*i*Math.PI/180));
+var end_x =
+centerX+Math.round((centerX-10)*Math.cos(6*i*Math.PI/180));
+var end_y =
+centerY+Math.round((centerY-10)*Math.sin(6*i*Math.PI/180));
+context.beginPath();
+context.moveTo(start_x,start_y);
+context.lineTo(end_x,end_y);
+context.stroke();
+}
+context.lineWidth=2;
+// dibujamos la linea de los minutos
+for(i=0;i<12;i++) {
+var start_x =
+centerX+Math.round((centerX-30)*Math.cos(30*i*Math.PI/180));
+var start_y =
+centerY+Math.round((centerY-30)*Math.sin(30*i*Math.PI/180));
+var end_x =
+centerX+Math.round((centerX-10)*Math.cos(30*i*Math.PI/180));
+var end_y =
+centerY+Math.round((centerY-10)*Math.sin(30*i*Math.PI/180));
+context.beginPath();
+context.moveTo(start_x,start_y);
+context.lineTo(end_x,end_y);
+context.stroke();
+}
+}
+//función que se ejecuta cada segundo para actualizar el reloj
+function actualizarReloj() {
+dibujarReloj();
+var now = new Date();
+var hours = now.getHours();
+var minutes = now.getMinutes();
+var seconds = now.getSeconds();
+dibujarAguja(seconds, (centerX-20),1,"red");
+dibujarAguja(minutes, (centerX-35),3,"black");
+dibujarAguja(hours*5, (centerX-60),5,"grey");
+}
+//Función para dibujar las agujas del reloj
+//@param int valor- determina el valor de la aguja a mostrar en el reloj
+//@param int logitud - define la longitud de la aguja
+//@param int grueso - define el grueso de la aguja
+//@param string color - cadena con el color de la aguja en formato HTML
+function dibujarAguja(valor,longitud, grueso, color) {
+angle = ((Math.PI * 2) * (valor / 60)) - ((Math.PI * 2) / 4);
+var end_x = centerX+Math.cos(angle)*longitud;
+var end_y = centerY+Math.sin(angle)*longitud;
+context.beginPath();
+context.lineWidth=grueso;
+context.strokeStyle=color;
+context.moveTo(centerX,centerY);
+context.lineTo(end_x,end_y);
+context.stroke();
+}
+actualizarReloj();
+setInterval("actualizarReloj()",1000);
+</script>
+</body>
+</html

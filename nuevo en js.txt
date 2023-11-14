@@ -1,0 +1,35 @@
+ES2019 (ES10)
+
+Array.prototype.flatMap(): Combina map y flat en una sola operación.
+Array.prototype.flat(): Aplana arrays anidados.
+Object.fromEntries(): Convierte una lista de pares clave-valor en un objeto.
+String.prototype.trimStart() y String.prototype.trimEnd(): Triman espacios al inicio y al final de un string, respectivamente.
+ES2020 (ES11)
+
+Optional Chaining (?.): Permite leer el valor de x dentro de un objeto cuando no estás seguro de si ese objeto o sus propiedades intermedias existen.
+javascript
+Copy code
+const value = obj?.property?.x;
+Nullish Coalescing Operator (??): Es un lógico que devuelve su operando derecho cuando su operando izquierdo es null o undefined, y de lo contrario devuelve su operando izquierdo.
+javascript
+Copy code
+const value = data ?? 'default';
+BigInt: Un nuevo tipo de dato numérico que puede representar números enteros grandes.
+Promise.allSettled(): Devuelve una promesa que se resuelve después de que todas las promesas dadas se hayan resuelto o rechazado.
+ES2021 (ES12)
+
+Logical Assignment Operators: Combinan operadores lógicos (&&, || y ??) con asignación.
+javascript
+Copy code
+x ||= y; // x = x || y
+x &&= y; // x = x && y
+x ??= y; // x = x ?? y
+String.prototype.replaceAll(): Reemplaza todas las ocurrencias de una subcadena con otra subcadena.
+Numeric Separators: Mejora la legibilidad de los literales numéricos.
+javascript
+Copy code
+const billion = 1_000_000_000; 
+Propuestas en etapas avanzadas (a partir de 2021):
+
+Decoradores: Un patrón ampliamente utilizado en frameworks como Angular, que permite añadir anotaciones y metadatos a clases, propiedades y métodos.
+Pipeline Operator (|>): Permite una composición de funciones más limpia.

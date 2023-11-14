@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title>PEC1 uf1306</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<style>
+    *{
+        padding: 0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    label{
+        display: block;
+        margin-top: .8rem;
+    }
+    form{
+        width:40%;
+        margin: 0 auto;
+    }
+    input,select{
+        float:right;
+    }
+    .novale{
+        border:5px solid red;
+    }
+</style>
+</head>
+<body>
+<form action="#" metohd="GET">
+    <label>Nombre
+        <input type="text" name="nombre" id="nombre" required>
+    </label>
+    <label>DNI
+        <input type="text" name="dni" id="dni" required>
+    </label>
+    <label>F.Nac.
+        <input type="date" name="fecha" id="fecha">
+    </label>
+    <label>Teléfono
+        <input type="text" name="telefono" id="telefono">
+    </label>
+    <label>Email
+        <input type="email" name="email" id="email">
+    </label>
+    <label>
+        <select name="ocupacion" id="ocupacion" required>
+            <option value="0">Seleccion ocupacion:</option>
+            <option >Camarero</option>
+            <option >Cocinero</option>
+            <option >Fraile</option>
+        </select>
+    </label>
+    
+</form>
+<script>
+    //asignaciones
+    let nombre=document.getElementById("nombre")
+    let dni=document.getElementById("dni")
+    let fecha=document.getElementById("fecha")
+    let telefono=document.getElementById("telefono")
+    let email=document.getElementById("email")
+    let ocupacion=document.getElementById("ocupacion")
+    //funciones
+    function estaVacio(valor){
+        return valor.length==0;
+    }
+    function sololetras(valor){
+        return /^[a-zA-ZñÑáéíóúÁÉÍÓÚÜü ]{1,}$/.test(valor)
+    }
+    function dniValido(valor){
+            console.log(valor.charAt(8))
+            console.log(valor.substring(0,8)%23)
+            console.log("--"+/^\d{8}[A-Z]$/.test(valor.toUpperCase()))
+            if(/^[0-9]{8}[A-Z]$/.test(valor.toUpperCase())){
+                let letras="TRWAGMYFPDXBNJZSUVHLCKE"
+
+                console.log(letras.charAt(valor.substring(0,8)%23))
+            return letras.charAt(valor.substring(0,8)%23)==valor.charAt(8).toUpperCase()
+        }
+    }
+    function fechaValida(valor){
+        // mifecha=new Date("pepe");
+        // ayo=mifecha.getFullYear()
+        
+        ayo=valor.substring(0,4)
+        console.log(ayo)
+        return ayo>1913 && ayo<1995
+    }
+    function tlfValido(valor){
+        return /^[6-9][0-9]{8}$/.test(valor)
+    }
+    //chivatos
+    nombre.addEventListener("blur",function(){
+        if(estaVacio(nombre.value) || !sololetras(nombre.value)){
+            nombre.classList.add("novale");
+        }else{
+            nombre.classList.remove("novale");
+        }
+    })
+    dni.addEventListener("blur",function(){
+        if(estaVacio(dni.value) || !dniValido(dni.value)){
+            dni.classList.add("novale");
+        }else{
+            dni.classList.remove("novale");
+        }
+    })
+    ocupacion.addEventListener("blur",function(){
+        if(estaVacio(ocupacion.value)){
+            ocupacion.classList.add("novale");
+        }else{
+            ocupacion.classList.remove("novale");
+        }
+    })
+    fecha.addEventListener("blur",function(){
+        if(!fechaValida(fecha.value)){
+            fecha.classList.add("novale");
+        }else{
+            fecha.classList.remove("novale");
+        }
+    })
+    telefono.addEventListener("blur",function(){
+        if(!tlfValido(telefono.value)){
+            telefono.classList.add("novale");
+        }else{
+            telefono.classList.remove("novale");
+        }
+    })
+</script>
+</body>
+</html>

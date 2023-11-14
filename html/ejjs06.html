@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Confección páginas web - CIP - 2023">
+   <title>Porcentaje más o menos</title>
+   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+   <label for="importe">Importe</label>
+   <input type="text" id="importe">
+   <label for="tpc">Porcentaje</label>
+   <input type="number" id="tpc">
+   <label for="mom">¿Mas ó menos?</label>
+   <select id="mom">
+      <option value="0">Más</option>
+      <option value="1">Menos</option>
+   </select>
+   <button id="boton">Calcular</button>
+   <h2 id="salida"></h2>
+
+   <script>
+      let importe = document.getElementById("importe")
+      let porcentaje = document.getElementById("tpc")
+      let masomenos = document.getElementById("mom")
+      let boton = document.getElementById("boton")
+      let salida = document.getElementById("salida")
+
+      function calculo() {
+         let n_importe=parseFloat(importe.value)
+         let valor_parcial = n_importe * porcentaje.value / 100
+         if (masomenos.value == "0") {
+            salida.textContent = n_importe + valor_parcial
+         } else {
+            salida.textContent = n_importe - valor_parcial
+         }
+      }
+
+      boton.addEventListener("click", calculo)
+
+   </script>
+</body>
+
+</html>

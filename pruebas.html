@@ -6,6 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso CIP 2023 - Pruebas</title>
     <link rel="shortcut icon" href="html/img/favicon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        principal {
+            display: flex;
+        }
+
+        bloque {
+            display: block;
+            width: 20rem;
+        }
+
+        .grid-container {
+            width: 50%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-rows: 100px 300px;
+            grid-template-columns: 10% 28% 60%;
+            gap: 1%;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around
+        }
+
+        .grid-inside {
+            border: 1px solid blue;
+            width: 50px;
+            height: 50px;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        :root {
+            --color-primario: #3498db;
+            --espacio: 16px;
+        }
+
+        .boton {
+            background-color: var(--color-primario);
+            padding: var(--espacio);
+            margin: 1rem auto;
+            width: 100px;
+            text-align: center;
+        }
+
+        .video-16_9 {
+            width: 80%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-4_3 {
+            width: 80%;
+            aspect-ratio: 4 / 3;
+        }
+
+        .video-2_1 {
+            width: 80%;
+            aspect-ratio: 2 1;
+        }
+
+        td {
+            color: white;
+        }
+
+        .circle-colors {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(red, yellow, green);
+        }
+
+        .grises {
+            filter: grayscale(100%);
+        }
+
+        .sombras {
+            margin-top: 3rem;
+            box-shadow: 10px 10px 5px white;
+        }
+
+        .input-container {
+            position: relative;
+            margin: 20px 0;
+            width: 250px;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .input-container label {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: 0.3s ease-out;
+            color: #999;
+        }
+
+        .input-container input:not(:placeholder-shown)+label,
+        .input-container input:focus+label {
+            top: 0;
+            transform: translateY(-100%);
+            font-size: 12px;
+            color: #007BFF;
+            /* Cambia al color que prefieras para la etiqueta activa/flotante */
+        }
+    </style>
 </head>
 
 <body>
@@ -13,7 +135,7 @@
     <table width="100%">
         <tr>
             <td valign="top">
-                <ul> 
+                <ul>
                     <li><a href="html/regexp.html">Expresiones regulares</a></li>
                     <li><a href="html/fileapi.html">input file (fileapi)</a></li>
                     <li><a href="html/pdf.html">Generar Pdf</a></li>
@@ -24,7 +146,7 @@
                     <li><a href="html/canvas.html">Rectángulo canvas</a></li>
                     <li><a href="html/over.html">Overflow scroll</a></li>
                     <li><a href="html/sticky.html">Sticky</a></li>
-                    
+
                 </ul>
             </td>
             <td valign="top">
@@ -39,7 +161,7 @@
                     <li><a href="html/dialogo.html">Ventana modal (js)</a></li>
                     <li><a href="html/post_js1.html">Envio POST</a></li>
                     <li><a href="html/post_js2.html">Envio POST Ajax</a></li>
-                    
+
                 </ul>
             </td>
             <td valign="top">
@@ -51,6 +173,134 @@
             </td>
         </tr>
     </table>
+    <div class="principal">
+        <div>
+            <label for="" class="bloque">dni</label>
+            <input type="text" name="" id="">
+        </div>
+        <div>
+            <label for="" class="bloque">dni</label>
+            <input type="text" name="" id="">
+        </div>
+    </div>
+    <textarea name="" id="" cols="30" rows="10" placeholder="pryeba"></textarea>
+    <div class="flex-container">
+        <div class="grid-inside"></div>
+        <div class="grid-inside"></div>
+        <div class="grid-inside"></div>
+    </div>
+    <p class="boton">
+        Botón
+    </p>
+
+    <table>
+        <tr>
+            <td valign="middle" align="center">16:9</td>
+            <td valign="middle" align="center">4:3</td>
+            <td valign="middle" align="center">2:1</td>
+        </tr>
+        <tr>
+            <td valign="middle" align="center">
+                <video class="video-16_9" controls>
+                    <source src="html/recursos/mixkit-children-sliding-down-a-slide-48253-medium.mp4" type="video/mp4">
+                    Tu navegador no admite el elemento de video.
+                </video>
+            </td>
+            <td valign="middle" align="center">
+                <video class="video-4_3" controls>
+                    <source src="html/recursos/mixkit-children-sliding-down-a-slide-48253-medium.mp4" type="video/mp4">
+                    Tu navegador no admite el elemento de video.
+                </video>
+            </td>
+            <td valign="middle" align="center">
+                <video class="video-2_1" controls>
+                    <source src="html/recursos/mixkit-children-sliding-down-a-slide-48253-medium.mp4" type="video/mp4">
+                    Tu navegador no admite el elemento de video.
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="circle-colors" </div>
+            </td>
+        </tr>
+    </table>
+
+
+
+    <script>
+
+        const valor = 123_456_789
+        console.log(typeof (valor))
+
+        let a = 1;
+        let b = 0;
+        a &&= 1; console.log(a);// Equivale a=a && 1
+        b &&= 1; console.log(b);// Equivale b=b && 1
+
+        const obj = { x: 10 };
+        const obj1 = undefined;
+        console.log(obj?.x);
+        console.log(obj1?.x);
+        console.log(obj.x);
+
+
+        console.log("????")
+        data = undefined;
+        data1 = 0;
+        const valueStr = data ?? "default";
+        const valueNum = data1 ?? 10;
+        console.log(valueStr);
+        console.log(valueNum);
+
+        console.log("+++++++")
+        let text = "       Hello World!  ";
+        let result0 = text.trim();
+        let result1 = text.trimStart();
+        let result2 = text.trimEnd();
+        console.log(result0, result0.length)
+        console.log(result1, result1.length)
+        console.log(result2, result2.length)
+
+        console.log("funciones")
+        function miFuncion(arg1, arg2) {
+            console.log(arg1 + arg2);
+        }
+        miFuncion(10, 20);
+
+        const miFuncionAnonima = function (arg1, arg2) {
+            console.log(arg1 + arg2);
+        };
+        miFuncionAnonima(10, 20);
+        const miFuncionDeFlecha = (arg1, arg2) => {
+            console.log(arg1 + arg2);
+        };
+        miFuncionDeFlecha(10, 20);
+
+
+
+
+
+
+    </script>
+    <details>
+        <summary> Lorem ipsum </summary>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, est. Molestiae nostrum porro obcaecati,
+            laudantium dolorum corporis cumque quos atque. Distinctio, itaque cumque?.</p>
+    </details>
+    <figure class="grises">
+        <img src="html/img/img_white_flower.jpg" alt="flor">
+        <figcaption>Fig.1 – Flor blanca y rosa<figcaption>
+    </figure>
+    <p>No olvides comprar <mark>leche</mark> para hoy.</p>
+
+    <img class="sombras" src="html/img/Simpson-Lisa.png" alt="flor">
+    <div class="input-container">
+        <input type="text" id="username" required>
+        <label for="username">Nombre de usuario</label>
+    </div>
+
+
 </body>
 
 </html>

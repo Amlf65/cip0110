@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="css/.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script> -->
+<style>
+    #cajaimagen{
+        float:left; 
+        width: 300px;
+        margin: 30px;
+        padding: 10px;
+        border:1px solid red
+    }
+    #zonadestino{
+        float:left; 
+        width: 550px;
+        height: 300px;
+        margin: 30px;
+        border:1px solid blue
+    }
+    .destino{
+        background-color: lightgreen;
+    }
+</style>
+<script>
+
+    function comenzar(){
+        soltar=document.getElementById("zonadestino")
+        soltar.addEventListener("dragenter",function(e){
+            e.preventDefault()
+        },false)
+        soltar.addEventListener("dragover",function(e){
+            e.preventDefault()
+        },false)
+        soltar.addEventListener("drop",function(e){
+            e.preventDefault();
+            let archivos=e.dataTransfer.files;
+            let listado="";
+            for(let f=0;f<archivos.length;f++){
+                listado+=archivos[f].name + "  " +(archivos[f].size/1024).toFixed("2")+ "  " +archivos[f].lastModifiedDate.toLocaleDateString()+"<br>"
+            }
+            console.log=listado
+            soltar.innerHTML=listado
+        },false)
+
+    }
+    window.addEventListener("load",comenzar,false)
+</script>
+</head>
+
+<body>
+    <section id="zonadestino">
+        arrastra hata aquí
+    </section>
+    
+</body>
+
+</html>

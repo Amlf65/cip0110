@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .newspaper {
+            padding: 0.5rem;
+            text-transform: uppercase;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            transform: scale(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="newspaper">Ultimas noticias<br />bajan las temperaturas<br />😀😄😁😂🤣</div>
+    <script>
+        const newspaperSpinning = [
+        { transform: "rotate(0) scale(1)" },
+        { transform: "rotate(360deg) scale(0)" },
+           
+           
+        ];
+
+        const newspaperTiming = {
+            duration: 2000,
+            iterations: 1,
+            fill: 'backwards'
+        };
+
+        const newspaper = document.querySelector(".newspaper");
+
+        setTimeout(function(){
+            newspaper.animate(newspaperSpinning, newspaperTiming);
+        },1)
+
+        // window.addEventListener("click", () => {
+        //     newspaper.animate(newspaperSpinning, newspaperTiming);
+        // });
+    </script>
+</body>
+
+</html>

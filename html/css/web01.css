@@ -6,7 +6,7 @@
 
 html, body {
     height: 100%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: sans-serif;
 }
 
@@ -19,22 +19,21 @@ main {
 }
 
 header, footer {
-    height: 10%;
-    border: #F00 solid 2px;
+    clear: both;
+    border:1px solid black;
+    text-align: center;
     line-height: 3rem;
     margin: 3%;
     min-height: 60px; /* Para asegurar un mínimo de espacio, especialmente útil en dispositivos móviles */
 }
-
-section {
-    height: 62%;
-    border: #0F3 solid 2px;
+aside {
+    width: 40%;
     font: bold 2em sans-serif;
-    margin: 1rem 3%; /* Ligero ajuste al margen vertical para prevenir posibles problemas de desbordamiento */
     text-align: center;
-    overflow: auto; /* Para permitir el desplazamiento en caso de que el contenido exceda esta altura */
+    float: left;
 }
-
-footer {
-    border: 1px solid blue;
+section {
+    width: 60%;
+    font: bold 2em sans-serif;
+    float: left;
 }

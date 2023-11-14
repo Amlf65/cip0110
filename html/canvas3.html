@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="css/.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script> -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        #myCanvas,
+        #myCanvas2 {
+            background-color: antiquewhite;
+            color: white;
+            margin: 2rem 3rem;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="900" height="400">Su navegador no soporta la etiqueta HTML5 canvas </canvas>
+
+    <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            window.addEventListener("mousemove",animacion, false)
+           
+            function animacion(e) { 
+
+                ctx.clearRect(0, 0, 900,400)
+                var ratonx=e.clientX;
+                var ratony=e.clientY;
+                var centrox= 350;
+                var centroy= 185;
+                var angulo=Math.atan2(ratonx-centrox, ratony-centroy)
+                var x=centrox+Math.round(Math.sin(angulo)*10);
+                var y=centroy+Math.round(Math.cos(angulo)*10);
+                ctx.beginPath()
+                ctx.arc(centrox, centroy, 20, 0, Math.PI * 2, false)
+                ctx.moveTo(420,185)
+                ctx.arc(400, centroy, 20, 0, Math.PI * 2, false)
+                ctx.stroke();
+                ctx.beginPath();
+                //console.log(x +" --" + y)
+                ctx.arc(x, y, 10, 0, Math.PI * 2, false)
+                ctx.arc(x+50, y, 10, 0, Math.PI * 2, false)
+                ctx.fill();
+            }
+    </script>
+</body>
+
+</html>

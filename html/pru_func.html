@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title>funciones</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <input type="text" id="entrada">
+    <input type="text" id="entrada_a">
+    <input type="text" id="entrada_b">
+    <button id="boton">Llamar mensaje</button>
+<script>
+    let boton=document.getElementById("boton")
+    let entrada=document.getElementById("entrada")
+    let a=document.getElementById("entrada_a")
+    let b=document.getElementById("entrada_b")
+    function inicio(e){
+        console.log(e.key)
+        if(e.key=="Enter"){
+            console.log(factorial(3))
+        }else{
+            console.log("no has pulsado enter ")
+        }
+    }
+    function mensaje(texto){
+        alert(texto)
+    }
+    function suma(x,y){
+        return x+y
+    }
+    function factorial(n){
+        acu=1;
+        for(i=1;i<=n;i++){
+            acu*=i
+        }
+        return acu
+    }
+   
+    entrada.addEventListener("keydown",function(e){
+        inicio(e)
+    })
+   
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

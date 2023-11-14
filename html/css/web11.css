@@ -1,0 +1,219 @@
+body {
+       font-family: Tahoma;
+       text-align: center;
+       color: #797979;
+}
+
+#contenedor {
+       /*border:3px solid #000;*/
+       width: 693px;
+       margin: 0 auto;
+       text-align: left;
+
+}
+
+#cabecera {
+       height: 32px;
+       margin-bottom: 40px;
+}
+
+#contenido {
+       /*border:3px solid yellow;*/
+       width: 500px;
+       float: left;
+       margin-bottom: 70px;
+}
+
+#menu {
+       /*border:3px solid green;*/
+       width: 180px;
+       float: left;
+       text-transform: uppercase;
+}
+
+#pie {
+       /* border:3px solid fuchsia;*/
+       height: 296px;
+       clear: both;
+}
+
+#contenido h2 {
+       font-size: 18px;
+       color: #464545;
+       font-weight: normal;
+}
+
+#contenido h2 span {
+       color: #a7a7a7;
+}
+
+#contenido p {
+       font-size: 13px;
+}
+
+#pie h2 {
+       font-size: 18px;
+       color: #464545;
+       font-weight: normal;
+}
+
+#pie h2 span {
+       color: #a7a7a7;
+}
+
+#pie span {
+       font-size: 13px;
+       text-align: center;
+       padding-top: 10px;
+}
+
+#pie a {
+       text-decoration: none;
+       color: #a7a7a7;
+}
+
+#fotos {
+       width: 370px;
+}
+
+/* apartado 18 */
+#fotos div {
+       width: 100px;
+       height: 69px;
+       float: left;
+       margin: 10px 9px 15px 9px;
+       background-color: silver;
+}
+
+/* apartado 19 */
+#menu ul {
+       margin: 0;
+       padding-left: 80px;
+}
+
+/* apartado 20 */
+#menu ul li {
+       border-left: 4px solid #E93700;
+       margin-top: 6px;
+       padding: 2px 0 2px 4px;
+       list-style-type: none;
+}
+
+/* apartado 21 */
+#menu ul li a {
+       font-size: 12px;
+       color: #464545;
+       text-decoration: none;
+}
+
+/* apartado 22 */
+#menu ul li a:hover {
+       color: #E93700;
+}
+
+/* apartado 23 */
+#menu h3 {
+       color: #E93700;
+       font-size: 18px;
+       font-weight: normal;
+       padding-left: 80px;
+}
+
+/* apartado 24 */
+#cabecera {
+       background: url("../img/web11/titulo.jpg") no-repeat;
+       display: block;
+}
+
+/* apartado 25 */
+#pie {
+       background: url("../img/web11/camara.jpg") no-repeat right bottom;
+}
+
+/* apartado 26 */
+#fotos #foto1 {
+       display: block;
+       background: url("../img/web11/foto1.jpg") no-repeat;
+}
+
+#fotos #foto2 {
+       display: block;
+       background: url("../img/web11/foto2.jpg") no-repeat;
+}
+
+#fotos #foto3 {
+       display: block;
+       background: url("../img/web11/foto3.jpg") no-repeat;
+}
+
+#fotos #foto4 {
+       display: block;
+       background: url("../img/web11/foto4.jpg") no-repeat;
+}
+
+#fotos #foto5 {
+       display: block;
+       background: url("../img/web11/foto5.JPG") no-repeat;
+}
+
+#fotos #foto6 {
+       display: block;
+       background: url("../img/web11/foto6.jpg") no-repeat;
+}
+
+#fotos span {
+       visibility: hidden;
+}
+
+@media (max-width:600px) {
+
+       #cabecera,
+       #contenido,
+       #contenedor,
+       #menu,
+       #fotos,
+       #fotos div,
+       #pie {
+              width: 100%;
+       }
+/*
+       #pie {
+              background-position-x: center;
+              background-position-y: center;
+              background-size: auto;
+       }
+
+       #fotos {
+              display: none;
+       }
+*/
+       #pie {
+              background:none;
+       }
+
+       #fotos {
+              display:grid;
+              grid-template-columns: repeat(3,1fr);
+              justify-items: stretch;
+       }
+
+       h2 {
+              width: 100%;
+              text-align: center;
+
+       }
+
+       #menu ul li {
+              display: inline-block;
+              margin-bottom: 2em;
+              border: none;
+       }
+
+       #menu ul {
+              padding: 0;
+              display: grid;
+              grid-template-columns: repeat(5, 1fr);
+              justify-items: center;
+       }
+
+}

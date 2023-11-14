@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+</head>
+
+<!-- Te estás despidiendo de tu mejor amigo. Nos vemos el próximo feliz año.
+
+Happy Year es el año con solo dígitos distintos, (por ejemplo) 2018 -->
+<body>
+    <script>
+        valor = true
+        if (nextHappyYear(1001) != 1023) valor = false;
+        if (nextHappyYear(1123) != 1203) valor = false;
+        if (nextHappyYear(2001) != 2013) valor = false;
+        if (nextHappyYear(2334) != 2340) valor = false;
+        if (nextHappyYear(3331) != 3401) valor = false;
+        if (nextHappyYear(1987) != 2013) valor = false;
+        if (nextHappyYear(5555) != 5601) valor = false;
+        if (nextHappyYear(7712) != 7801) valor = false;
+        if (nextHappyYear(8088) != 8091) valor = false;
+        if (nextHappyYear(8999) != 9012) valor = false;
+        if (valor) alert("ok"); else alert("error");
+        function nextHappyYear(year) {
+            let flag = true;
+            let happy = "";
+            while (flag) {
+                year++
+                happy = year.toString()
+                flag = false
+                for (i = 0; i < happy.length; i++)
+                    if (happy.indexOf(happy[i], i + 1) > -1) flag = true;
+            }
+            return parseInt(happy);
+        }
+    </script>
+</body>
+
+</html>

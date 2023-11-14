@@ -1,0 +1,16 @@
+Elementos Semánticos: Aunque estos se introdujeron con HTML5, su adopción y uso se ha ido consolidando con el tiempo. Elementos como <article>, <aside>, <details>, <figcaption>, <figure>, <footer>, <header>, <main>, <mark>, <nav>, <section>, <summary>, y <time> ayudan a mejorar la semántica del contenido web.
+
+APIs y funcionalidades: A lo largo de los años, se han introducido o perfeccionado muchas APIs, como:
+
+API de Fetch: para realizar solicitudes de red.
+API de Service Workers: que permite experiencias offline y la capacidad de actuar como un proxy entre la web y la red.
+API de Notification: para mostrar notificaciones a los usuarios.
+API de Geolocalización: para obtener la ubicación del usuario.
+API de Media Capture and Streams: para acceder a la cámara y el micrófono del dispositivo.
+Mejoras en Formularios: Nuevos tipos de input, como color, date, datetime-local, month, week, range, entre otros, y atributos como required, pattern y placeholder que ayudan a crear formularios más ricos y fáciles de usar.
+
+Gráficos y multimedia: Elementos como <video> y <audio> para medios incorporados y <canvas> para gráficos 2D.
+
+Mejoras de accesibilidad: Aumento del soporte y las características para hacer que el web sea más accesible a usuarios con discapacidades.
+
+API de Web Components: Incluidos los elementos personalizados, las plantillas HTML, y el Shadow DOM que permiten la creación de componentes reutilizables.

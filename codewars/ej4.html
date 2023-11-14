@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title></title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+</head>
+<!--Usando n como parámetro en el patrón de función, donde n>0, 
+  complete los códigos para obtener el patrón (consulte la ayuda de los ejemplos):
+
+ Nota: No hay una nueva línea al final (después de que termina el patrón) -->
+<body>
+    <script>
+        valor=true
+        if(pattern(3)!="1\n1*2\n1**3") valor=false;
+        if(pattern(7)!="1\n1*2\n1**3\n1***4\n1****5\n1*****6\n1******7") valor=false;
+        if(pattern(20)!="1\n1*2\n1**3\n1***4\n1****5\n1*****6\n1******7\n1*******8\n1********9\n1*********10\n1**********11\n1***********12\n1************13\n1*************14\n1**************15\n1***************16\n1****************17\n1*****************18\n1******************19\n1*******************20") valor=false;
+        if(valor) alert("ok"); else alert("error");
+     function pattern(n){
+        var output="1\n";
+         for (i=2; i<=n;i++){
+           let longitud=i.toString().length-1
+           output+="1"+i.toString().padStart(i+longitud,"*")+"\n"
+         }
+        return output.substr(0,output.length-1);
+       }
+    </script>   
+</body>
+</html>

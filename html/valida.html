@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title>validaciones</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/micss.css">
+    <script src="js/libreria.js"></script>
+</head>
+
+<body>
+    <form action="">
+        <label>Campo obligatorio
+            <input type="text" id="obligatorio"></label>
+        <label>Campo Texto
+            <input type="text" id="campotexto"></label>
+        <label>Campo Dni
+            <input type="text" id="dni" placeholder="99999999A"></label>
+        <label>Campo Fecha
+            <input type="text" id="fecha" placeholder="dd/mm/yyyy"></label>
+        <label>Campo Teléfono
+            <input type="text" id="telefono" placeholder="999-999-999"
+                pattern="[9687][0-9]{2}-[0-9]{3}-[0-9]{3}"></label>
+        <label>Campo E-mail
+            <input type="text" id="email" placeholder="user@servidor.dominio"></label>
+        <label>Campo Select
+            <select type="text" id="select">
+                <option value="0">Seleccione opción:</option>
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+                <option value="3">Opción 3</option>
+            </select></label>
+        <label>Campo checkbox
+            <input type="checkbox" id="checbox">
+        </label>
+        <label>Campo radiobutton
+            <input type="radio" name="radio" id="rad0" checked> Sólido
+            <input type="radio" name="radio" id="rad1"> Líquido
+            <input type="radio" name="radio" id="rad2"> Gaseoso
+        <button type="submit" disabled id="boton"> Enviar</button>
+    </form>
+    <script>
+        window.addEventListener("load", function () {
+            //area de definiciones
+            let obligatorio = document.getElementById("obligatorio");
+            let campotexto = document.getElementById("campotexto");
+            let dni = document.getElementById("dni")
+            let fecha = document.getElementById("fecha")
+            let telefono = document.getElementById("telefono")
+            let email = document.getElementById("email")
+            let select = document.getElementById("select")
+            let checkbox = document.getElementById("checbox")
+            let boton= document.getElementById("boton")
+            //area de chivatos y funciones
+            obligatorio.addEventListener("blur", function () {
+                if (esta_vacio(obligatorio.value)) {
+                    obligatorio.classList.add("novalido");
+                } else {
+                    obligatorio.classList.remove("novalido");
+                }
+                comprobarBoton()
+            })
+            campotexto.addEventListener("blur", function () {
+                if (esta_vacio(campotexto.value) || !sololetras(campotexto.value)) {
+                    campotexto.classList.add("novalido");
+                } else {
+                    campotexto.classList.remove("novalido");
+                }
+                comprobarBoton()
+            })
+            dni.addEventListener("blur", function () {
+                if (esta_vacio(dni.value) || !dnivalido(dni.value)) {
+                    dni.classList.add("novalido");
+                } else {
+                    dni.classList.remove("novalido");
+                }
+                comprobarBoton()
+            })
+            fecha.addEventListener("blur", function () {
+                if (!fecha_valida(fecha.value)) {
+                    fecha.classList.add("novalido");
+                } else {
+                    fecha.classList.remove("novalido");
+                }
+                comprobarBoton()
+            })
+            telefono.addEventListener("blur", function () {
+                if (!tel_valida(telefono.value)) {
+                    telefono.classList.add("novalido");
+                } else {
+                    telefono.classList.remove("novalido");
+                }
+                comprobarBoton()
+            })
+            email.addEventListener("blur", function () {
+                if (!email_valido(email.value)) {
+                    email.classList.add("novalido");
+                } else {
+                    email.classList.remove("novalido");
+                }
+                comprobarBoton()
+            })
+
+            select.addEventListener("change", function () {
+                if (!select_valido(select.value)) {
+                    select.classList.add("novalido");
+                } else {
+                    select.classList.remove("novalido");
+                }
+                comprobarBoton()
+            })
+
+            checkbox.addEventListener("change", function () {
+                if (!check_valido(checkbox.value)) {
+                    checkbox.classList.add("novalido");
+                } else {
+                    checkbox.classList.remove("novalido");
+                }
+                comprobarBoton()
+            })
+
+            function comprobarBoton(){
+                console.log(!esta_vacio(obligatorio.value))
+                console.log(!esta_vacio(campotexto.value) && sololetras(campotexto.value))
+                console.log(!esta_vacio(dni.value) || dnivalido(dni.value))
+                console.log(fecha_valida(fecha.value))
+                console.log(tel_valida(telefono.value))
+                console.log(email_valido(email.value))
+                console.log(select_valido(select.value))
+                console.log(check_valido(checkbox))
+                if(!esta_vacio(obligatorio.value) && (!esta_vacio(campotexto.value) || sololetras(campotexto.value)) && (!esta_vacio(dni.value) || dnivalido(dni.value)) && fecha_valida(fecha.value) && tel_valida(telefono.value) && email_valido(email.value) && select_valido(select.value) && check_valido(checkbox)){
+                    boton.disabled=false
+                }else{
+                    boton.disabled=true
+                }
+            }
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

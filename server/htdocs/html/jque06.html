@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title>traversing</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<div>
+    <ul>
+        <li class="uno" ><span>Uno </span></li>
+        <li class="dos">Dos </li>
+        <li class="dos">Tres </li>
+    </ul>
+</div>
+
+<script>
+    $(function(){
+         console.log($("span").parent());
+         console.log($("span").parents());
+         console.log($("span").parents("ul"));
+         console.log($("span").parentsUntil("body"));
+         console.log("---------------")
+         console.log($("li").first().text())
+         console.log($("li").last().text())
+         console.log($("li").eq(1).text())
+         console.log($("li").filter(".uno").text())
+         console.log($("li").not(".uno").text())
+         console.log("---------------")
+    })
+</script>
+</body>
+</html>

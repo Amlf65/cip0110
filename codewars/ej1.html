@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+</head>
+<!-- In this kata you should simply determine, whether a given year is a leap year or not. 
+    In case you don't know the rules, here they are:
+
+Years divisible by 4 are leap years,
+but years divisible by 100 are not leap years,
+but years divisible by 400 are leap years. -->
+<body>
+    <script>
+        valor = true
+        if (!isLeapYear(2020)) valor = false;
+        if (!isLeapYear(2000)) valor = false;
+        if (isLeapYear(2015)) valor = false;
+        if (isLeapYear(2100)) valor = false;
+
+        if (valor) alert("ok"); else alert("error");
+
+        function isLeapYear(year) {
+            return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0
+        }
+    </script>
+</body>
+
+</html>

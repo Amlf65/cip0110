@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Título</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="00plantillajs.css">
+
+    <style>
+        *{
+            font-size:1.1em;
+        }
+       section p:first-child {
+            color: red;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#b3").click(function() {
+                $("#d3 p").first().append("Hola <i>alumnos!</i>");
+            });
+            $("#b3a").click(function() {
+                $("#d3 p").eq(1).append("Hola <i>alumnos!</i>");
+            });
+            $("#b4").click(function() {
+                $("#d4 p").eq(0).prepend("Hola <i>alumnos!</i>");
+            });
+            $("#b4a").click(function() {
+                $("#d4 p").last().prepend("Hola <i>alumnos!</i>");
+            });
+            $("#b5").click(function() {
+                $("#d5 p").before("<span>Hola <i>alumnos!</i></span>");
+            });
+            $("#b6").click(function() {
+                $("#d6 p").after("<p class='logo'>Hola <i>alumnos!</i></p>");
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <p class="logo">Ejercicios JavaScript CIP</p>
+    </header>
+    <section>
+
+        <button id="b3">APLICAR APPEND primero</button>
+        <button id="b3a">APLICAR APPEND 2º</button>
+        <div id="d3">
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+        </div>
+        <br/>
+        <button id="b4">APLICAR PREPEND 1º</button>
+         <button id="b4a">APLICAR PREPEND último</button>
+        <div id="d4">
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+        </div>
+        <br/>
+        <button id="b5">APLICAR BEFORE</button>
+        <div id="d5">
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+        </div>
+        <br/>
+        <button id="b6">APLICAR AFTER</button>
+        <div id="d6">
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+        </div>
+    </section>
+</body>
+
+</html>

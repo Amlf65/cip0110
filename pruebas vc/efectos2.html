@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* The future is here... */
+/* @property --primaryColor {
+  syntax: color;
+  inherits: true;
+  initialValue: #af0760;
+} */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+button {
+  position: relative; 
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1em 3em;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(90deg, #AA00FF, #FF2661);
+  overflow: hidden; 
+  transition: 5s; 
+  z-index: 1; /* Asegura que el contenido del botón siempre esté encima del pseudo-elemento */
+}
+
+button::before {
+  content: "";
+  position: absolute; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #FF2661, #AA00FF);
+  opacity: 0;
+  transition: opacity 2s; 
+  z-index: -1; /* Esto coloca el pseudo-elemento detrás del contenido del botón */
+}
+
+button:hover::before {
+  opacity: 1; 
+}
+
+    </style>
+</head>
+<body>
+    <button>CSS Rocks!</button>
+</body>
+</html>

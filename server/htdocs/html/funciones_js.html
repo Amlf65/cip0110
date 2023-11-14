@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Confección páginas web - CIP - 2023">
+   <title>Funciones Javascript</title>
+   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <form action="">
+        <button type="button">Pulsar botón</button>
+    </form>
+   <script>
+        document.write("FUNCIONES DE CADENA");
+        cadena="la casa de la pradera";
+        document.write("<br>")
+        document.write("   Longitud -> " + cadena.length)
+        document.write("<br>")
+        document.write("--- Concatenar -> " + cadena.concat(", está en la montaña"))
+        document.write("<br>")
+        document.write("--- Carácter en posición -> " + cadena.charAt(8))
+        document.write("<br>")
+        document.write("--- Posición del caracter -> " + cadena.indexOf("d"))
+        document.write("<br>")
+        document.write("--- Ultima posición de caracter ->" + cadena.lastIndexOf("d"))
+        document.write("<br>")
+        document.write("--- Subcadena -> " + cadena.substring(3,6))
+        document.write("<br>")
+        document.write("--- Subcadena -> " + cadena.slice(3,6))
+        document.write("<br>")
+        document.write("--- A Mayúscula -> " + cadena.toUpperCase())
+        document.write("<br>")
+        document.write("--- A Minúscula ->" + cadena.toLowerCase())
+        document.write("<br>")
+        document.write("--- Sustitución -> " + cadena.replace("la","pepe"))
+        pepe= cadena.replace("la","pepe")
+        document.write(pepe.replace("la","pepe"))
+        document.write("<br>")
+        document.write("FUNCIONES NUMÉRICAS")
+        numero=45.658
+        document.write("<br>")
+        document.write("--- toFixed -> " + numero.toFixed(2)+2) 
+        document.write("<br>")
+        document.write("--- parseInt -> " + parseInt("45.658"))
+        document.write("<br>")
+        document.write("--- parseFloat -> " + parseFloat("45.658"))
+        document.write("<br>")
+        document.write("--- isNaN -> " + isNaN("45.658a"))
+        document.write("<br>")
+        document.write("--- isFinite -> " + isFinite(Math.PI))
+        console.log(Math.PI)
+        document.write("<br>")
+        document.write("--- isInteger -> " + Number.isInteger(45658))
+        document.write("<br>")
+        document.write("FUNCIONES MATEMÁTICAS")
+        numero=45.658
+        document.write("<br>")
+        document.write("--- round -> " + Math.round(numero))
+        document.write("<br>")
+        document.write("--- floor -> " + Math.floor(numero))
+        document.write("<br>")
+        document.write("--- ceil -> " + Math.ceil(numero))
+        document.write("<br>")
+        document.write("--- abs -> " + Math.abs("-45.658"))
+        document.write("<br>")
+        document.write("--- min -> " + Math.min(7,15,2))
+        document.write("<br>")
+        a=7;b=13;c=2
+        document.write("--- max -> " + Math.max(a,b,c))
+        document.write("<br>")
+        document.write("--- pow -> " + Math.pow(8,1/3))
+        document.write("<br>")
+        document.write("--- sqrt -> " + Math.sqrt(numero))
+        document.write("<br>")
+        for(i=1;i<8;i++)
+        {document.write("--- random -> " + Math.trunc(Math.random()*49+1))}
+        
+        document.write("<br>")
+        document.write("DOM - forms")
+        document.write("<br>")
+        document.write(document.forms[0].elements[0].type)
+        document.write("<br>")
+        document.write(document.forms[0].elements[0].textContent)
+   </script> 
+
+
+</body>
+
+</html>

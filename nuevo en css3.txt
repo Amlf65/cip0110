@@ -1,0 +1,28 @@
+Grid Layout: Un sistema bidimensional de diseño que permite diseñar interfaces de usuario complejas con menos esfuerzo que con sistemas anteriores como Flexbox (que sigue siendo muy útil, pero principalmente para diseños unidimensionales).
+
+Variables CSS (Custom Properties): Permiten definir valores que puedes reutilizar en todo tu CSS. Ejemplo:
+
+css
+Copy code
+:root {
+    --main-color: #ff4500;
+}
+
+body {
+    background-color: var(--main-color);
+}
+Media Queries Level 4: Incorporan características mejoradas y nuevas formas de diseñar según las capacidades del dispositivo. Un ejemplo es el media feature prefers-color-scheme que detecta si el usuario prefiere un tema claro u oscuro.
+
+Logical Properties and Values: Proporcionan un sistema de diseño que es más agnóstico respecto a la dirección del texto y el modo de escritura.
+
+Scroll Snap: Permite hacer que los elementos se "ajusten" al desplazarse, proporcionando una experiencia de usuario similar a las aplicaciones nativas cuando se desplaza por galerías o carruseles.
+
+Subgrid: Una extensión del Grid Layout que permite que un elemento que es un ítem de grid tenga su propio grid que herede algunas definiciones de su grid padre.
+
+:is() y :where() pseudo-classes: Proporcionan formas más potentes y flexibles de seleccionar elementos.
+
+Containment: Permite aislar estilísticamente un elemento y su contenido del resto del árbol del documento, lo que puede ser útil en ciertos contextos y tiene implicaciones de rendimiento.
+
+Aspect Ratio: Permite definir relaciones de aspecto para elementos.
+
+Conical Gradients: Similar a los gradientes lineales y radiales, pero permite crear gradientes que giran alrededor de un punto central.

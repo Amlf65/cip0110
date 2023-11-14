@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="css/.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script> -->
+<style>
+    #cajaimagen{
+        float:left; 
+        width: 300px;
+        margin: 30px;
+        padding: 10px;
+        border:1px solid red
+    }
+    #zonadestino{
+        float:left; 
+        width: 550px;
+        height: 300px;
+        margin: 30px;
+        border:1px solid blue
+    }
+    .destino{
+        background-color: lightgreen;
+    }
+</style>
+<script>
+
+    function comenzar(){
+
+        let elem_origen=document.getElementById("imagen")
+        let elem_destino=document.getElementById("zonadestino")
+
+        elem_origen.addEventListener("dragstart",function(e){
+            var codigo="<img src='" + e.target.getAttribute("src")+"'>"
+            console.log(codigo)
+            e.dataTransfer.setData("Text",codigo)
+        },false)
+        elem_destino.addEventListener("dragenter",function(e){
+            e.preventDefault();
+            e.target.classList.add("destino")
+        },false)
+        elem_destino.addEventListener("dragleave",function(e){
+            e.preventDefault();
+            e.target.classList.remove("destino")
+        },false)
+        elem_destino.addEventListener("dragover",function(e){
+            e.preventDefault();
+        },false)
+        elem_destino.addEventListener("drop",function(e){
+                        e.preventDefault()
+            e.target.innerHTML=e.dataTransfer.getData("Text")
+        },false)
+        elem_origen.addEventListener("dragend",function(e){
+            e.target.style.visibility="hidden"
+        },false)
+    }
+    window.addEventListener("load",comenzar,false)
+</script>
+</head>
+
+<body>
+    <section id="zonadestino">
+        arrastra hata aquí
+    </section>
+    <section id="cajaimagen">
+        <img src="img/mono.png" alt="" id="imagen">
+    </section>
+    <p id="Salida"></p>
+</body>
+
+</html>

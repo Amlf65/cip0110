@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        form {
+            width: 30%;
+            margin: 1rem auto;
+            border: 1px solid black;
+            box-shadow: 5px 5px 2px grey;
+        }
+
+        label {
+            display: block;
+            margin: 5px auto;
+            width: 95%;
+
+        }
+
+        input,
+        select {
+            float: right;
+            display: block;
+            width: 50%;
+        }
+
+        button {
+            width: 95%;
+            margin: 1rem auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 2px 2px grey;
+        }
+
+        .red {
+            border-color: red;
+        }
+
+        .bred {
+            background-color: red;
+        }
+
+        .puntos {
+            margin-top: .5rem;
+            float: right;
+            width: 50%;
+            display: flex;
+        }
+
+        #checbox {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label>Campo obligatorio
+            <input type="text" id="obligatorio"></label>
+        <label>Campo Texto
+            <input type="text" id="campotexto"></label>
+        <label>Campo Dni
+            <input type="text" id="dni" placeholder="99999999A"></label>
+        <label>Campo Fecha
+            <input type="text" id="fecha" placeholder="dd/mm/yyyy"></label>
+        <label>Campo Teléfono
+            <input type="text" id="telefono" placeholder="999-999-999"></label>
+        <label>Campo E-mail
+            <input type="text" id="email" placeholder="user@servidor.dominio"></label>
+        <label>Campo Select
+            <select type="text" id="select">
+                <option value="0">Seleccione opción:</option>
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+                <option value="3">Opción 3</option>
+            </select></label>
+        <label>Campo checkbox
+            <input type="checkbox" id="checbox">
+        </label>
+        <label>Campo radiobutton
+            <div class="puntos"><input type="radio" name="radio" id="chec4"><input type="radio" name="radio"
+                    id="chec5"><input type="radio" name="radio" id="chec6"></div>
+            <button type="submit">Enviar</button>
+    </form>
+    <script>
+        // Función validarCampoObligatorio()
+        $("#obligatorio").blur(function (event) {
+            if (!validarCampoObligatorio(event)) {
+                $(event.target).addClass("red");
+            } else {
+                $(event.target).removeClass("red");
+            }
+        });
+
+        function validarCampoObligatorio(e) {
+            return e.target.value.length != 0;
+        }
+        // Función validarCampoTexto()
+        $("#campotexto").blur(function (event) {
+            if (!validarCampoTexto(event)) {
+                $(event.target).addClass("red");
+            } else {
+                $(event.target).removeClass("red");
+            }
+        });
+
+        function validarCampoTexto(e) {
+            let letras = "abcdefghijklmnopqrstuvwxyz"
+            let entrada = $(e.target).val().toLowerCase()
+            console.log(entrada)
+            let flag = true;
+            for (let i = 0; i < entrada.length; i++) {
+                if (letras.indexOf(entrada.charAt(i)) == -1) {
+                    flag = false
+                }
+            }
+            return flag
+        }
+        // Función validarDni()
+        $("#dni").blur(function (event) {
+            if (!validarDni(event)) {
+                $(event.target).addClass("red");
+            } else {
+                $(event.target).removeClass("red");
+            }
+        });
+
+        function validarDni(e) {
+            let letras = "TRWAGMYFPDXBNJZSQVHLCKE"
+            let entrada = e.target.value;
+            return entrada.charAt(8) == letras[entrada.substring(0, 8) % 23]
+        }
+        // Función validarFecha()
+        $("#fecha").blur(function (event) {
+            if (!validarFecha(event)) {
+                $(event.target).addClass("red");
+            } else {
+                $(event.target).removeClass("red");
+            }
+        });
+
+        function validarFecha(e) {
+            let entrada = e.target.value;
+            console.log(entrada)
+            let pos1 = entrada.indexOf("/");
+            let pos2 = entrada.lastIndexOf("/");
+            let dia = parseInt(entrada.substring(0, pos1))
+            let mes = parseInt(entrada.substring(pos1 + 1, pos2))
+            let ayo = parseInt(entrada.substring(pos2 + 1))
+            console.log(dia + " " + mes + " " + ayo)
+            let v_ayo = false, v_mes = false, v_dia = false
+            if (ayo > 0) { v_ayo = true }
+            if (mes > 0 && mes <= 12) { v_mes = true }
+            if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12 && dia > 0 && dia <= 31) { v_dia = true }
+            if (mes == 4 || mes == 6 || mes == 9 || mes == 11 && dia > 0 && dia <= 30) { v_dia = true }
+            if (mes == 4 || mes == 6 || mes == 9 || mes == 11 && dia > 0 && dia <= 30) { v_dia = true }
+            if (mes == 2 && esBisiesto(ayo) && dia > 0 && dia <= 29) { v_dia = true }
+            if (mes == 2 && !esBisiesto(ayo) && dia > 0 && dia <= 28) { v_dia = true }
+            console.log(v_dia + " " + v_mes + " " + v_ayo)
+            return v_dia && v_mes && v_ayo
+        }
+        function esBisiesto(año) {
+            if (año % 4 !== 0) {
+                return false;
+            } else if (año % 100 !== 0) {
+                return true;
+            } else if (año % 400 !== 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        // Función validarTelefono()
+        $("#telefono").blur(function (event) {
+            if (!validarTelefono(event)) {
+                $(event.target).addClass("red");
+            } else {
+                $(event.target).removeClass("red");
+            }
+        });
+
+        function validarTelefono(e) {
+            entrada = e.target.value
+            console.log(entrada + "/" + entrada.substring(0, 3) + "/" + entrada.substring(4, 7) + "/" + entrada.substring(8, 11) + "/" + entrada.length)
+            return !isNaN(entrada.substring(0, 3)) && !isNaN(entrada.substring(4, 7)) && !isNaN(entrada.substring(8, 11)) && entrada.length == 11
+        }
+        // Función validarEmail()
+        $("#email").blur(function (event) {
+            if (!validarEmail(event)) {
+                $(event.target).addClass("red");
+            } else {
+                $(event.target).removeClass("red");
+            }
+        });
+
+        function validarEmail(e) {
+            entrada = e.target.value
+            pos1 = entrada.indexOf("@");
+            pos2 = entrada.lastIndexOf(".")
+            return pos1 > 1 && pos2 < entrada.length - 2 && pos2 > pos1 + 2
+        }
+        // Función validarSelect()
+        $("#select").blur(function (event) {
+            if (!validarSelect(event)) {
+                $(event.target).addClass("red");
+            } else {
+                $(event.target).removeClass("red");
+            }
+        });
+
+        function validarSelect(e) {
+            return e.target.selectedIndex > 0;
+        }
+        // Función validarCheckbox()
+        $("#checbox").click(function (event) {
+            if (!validarCheckbox(event)) {
+                $(event.target).addClass("bred");
+            } else {
+                $(event.target).removeClass("bred");
+            }
+        });
+
+        function validarCheckbox(e) {
+            console.log(e.target.checked)
+            return e.target.checked;
+        }
+        // Función validarRadiobutton()
+        $("#chec4, #chec5, #chec6").change(function (event) {
+            if (!validarRadiobutton()) {
+                $(event.target).addClass("red");
+            } else {
+                $("#chec4, #chec5, #chec6").removeClass("red");
+            }
+        });
+
+        function validarRadiobutton() {
+            console.log($("#chec4").is(':checked') ||
+                $("#chec5").is(':checked') ||
+                $("#chec6").is(':checked'))
+            return $("#chec4").is(':checked') ||
+                $("#chec5").is(':checked') ||
+                $("#chec6").is(':checked');
+        }
+
+    </script>
+</body>
+
+</html>

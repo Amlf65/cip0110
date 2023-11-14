@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Título</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="00plantillajs.css">
+  <style>
+
+#titulo{
+	margin-left:150px;
+}
+
+#foto p{
+	background-color:#000;
+	color:#FFF;
+	font-size:24px;
+	text-align:center;
+	font-weight:bold;
+	width:300px;
+}
+h1{
+	text-align:center;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+	
+    $(".titulo").hide();
+    $("#foto img").width(60).height(40).click(function(){
+        $(this).animate({
+            marginLeft:"150px",
+            width:"300px",
+            height:"200px"
+            
+        },1500,function(){
+            $(this).next(".titulo").fadeIn(1000).delay(1000).fadeOut(1000);
+        }).delay(3000);// termina animate
+        $(this).animate({
+            marginLeft:"0px",
+            width:"60px",
+            height:"40px"
+    },1500);
+        
+  });// termina función ready  
+	
+});// termina función ready
+
+
+
+
+</script>
+</head>
+
+<body>
+    <header>
+        <p class="logo">Manejando Animacion...</p>
+      </header>
+
+<div id="foto">
+
+	<img src="foto0.svg" width="300" height="200" >
+
+	
+    <p class="titulo">Casa</p>
+
+	<img src="foto1.svg" width="300" height="200" >
+
+	<p class="titulo">Casa 2</p>
+
+</div>
+
+</body>
+</html>

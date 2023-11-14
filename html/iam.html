@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title></title>
+<style>
+    @import "https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css";
+
+form p {
+  height: 0.1rem;
+  line-height: 0rem;
+  color: red;
+  font-style: italic;
+}
+
+</style>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+</head>
+<body>
+
+
+    <form>
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombre" />
+      <p>* Obligatorio</p>
+      <label for="dni">DNI</label>
+      <input type="text" name="dni" id="dni" />
+      <p>* Obligatorio</p>
+      <label for="fecha-nacimiento">Fecha de nacimiento</label>
+      <input type="date" name="fecha-nacimiento" id="fecha-nacimiento" />
+      <p></p>
+      <label for="telefono">Teléfono</label>
+      <input type="number" name="telefono" id="telefono" />
+      <p></p>
+      <label for="email">E-Mail</label>
+      <input type="email" name="email" id="email" />
+      <p></p>
+      <label for="ocupacion">Ocupación</label>
+      <select name="ocupacion" id="ocupacion">
+        <option value="null">Selecciona una opción</option>
+        <option value="empleado">Empleado</option>
+        <option value="desempleado">Desempleado</option>
+      </select>
+      <p>* Selecciona una ocupación</p>
+      <button type="button">Enviar</button>
+    </form>
+    <script>
+        let nombre = [false, ""];
+let dni = [false, ""];
+let fechaN = [false, ""];
+let num = [false, ""];
+let email = [false, ""];
+let select = [false, ""];
+
+// Esta función cargará todos los nodos de html en la posición 1 de las variables
+
+function formSelect() {
+  nombre[1] = $("#nombre").keyup(function (e) {
+    validateName();
+  });
+
+  dni[1] = $("#dni").keyup(function (e) {
+    validateDNI();
+  });
+
+  fechaN[1] = $("#fecha-nacimiento").change(function (e) {
+    validateDate();
+  });
+
+  num[1] = $("#telefono").keyup(function (e) {
+    validateNumber();
+  });
+
+  email[1] = $("#email").keyup(function (e) {
+    wrongFormat(email);
+  });
+
+  select[1] = $("#ocupacion").change(function (e) {
+    validateSelect();
+  });
+}
+
+/* Esta función se encarga únicamente de rellenar el <p> siguiente al elemento que le envíe por parámetros
+
+Por ejemplo, digamos que le envío el elemento con id nombre, que está almacenado en la variable nombre[1].
+  Al hacer la llamada wrongFormat(nombre[1]) primero comprobará si el objeto recibido es de tipo SELECT, utilizando el método .prop()
+  y diciéndole que la propiedad que quiero consultar es "tagName".
+  En caso de ser un select, entonces quiero que le imprima el valor "* Por favor, selecciona una ocupación". 
+  En caso contrario se trata de cualquier otro campo y sólo quiero que imprima "Formato incorrecto".
+
+  el método .next() de los objetos de jquery se encarga de seleccionar el siguiente nodo, por lo que al
+  decirle que mi objeto es el input con id nombre, lo que realmente hará será coger el <p> que está justo debajo
+
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombre" />   <--- Nodo que le he enviado
+      <p>* Obligatorio</p>    <--- El siguiente, el que seleccionará con el .next()
+*/
+
+function wrongFormat(object) {
+  if (object.prop("tagName") == "SELECT") {
+    object.next().html("* Por favor, selecciona una ocupación");
+  } else {
+    object.next().html("Formato incorrecto");
+  }
+}
+
+function validateName() {
+  if (
+    nombre[1].val().length == 0 ||
+    !/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$/.test(nombre[1].val())
+  ) {
+    wrongFormat(nombre[1]);
+    nombre[0] = false;
+  } else {
+
+    /* Vaciamos el p siguiente, ya que al entrar en esta posición del if
+    deducimos que el valor en principio deberia ser correcto, además asignamos la flag a true para la
+    última validación del botón enviar */
+
+    nombre[1].next().html("");
+    nombre[0] = true;
+  }
+}
+
+function validateDNI() {
+  let letras = [
+    "T",
+    "R",
+    "W",
+    "A",
+    "G",
+    "M",
+    "Y",
+    "F",
+    "P",
+    "D",
+    "X",
+    "B",
+    "N",
+    "J",
+    "Z",
+    "S",
+    "Q",
+    "V",
+    "H",
+    "L",
+    "C",
+    "K",
+    "E",
+  ];
+  console.log("hola")
+console.log(dni[1].val().substring(0, dni[1].val().length - 1))
+  if (
+    0 <= dni[1].val().substring(0, dni[1].val().length - 1) % 23 <= 22 &&
+    letras[dni[1].val().substring(0, dni[1].val().length - 1) % 23] ==
+      dni[1]
+        .val()
+        .toUpperCase()
+        .substring(dni[1].val().length - 1)
+  ) {
+    dni[1].next().html("");
+    dni[0] = true;
+  } else {
+    wrongFormat(dni[1]);
+    dni[0] = false;
+  }
+}
+
+function validateDate() {
+  fechaSplit = fechaN[1].val().split("-");
+
+  if (fechaSplit[0] > 1913 && fechaSplit[0] < 1995) {
+    fechaN[1].next().html("");
+    fechaN[0] = true;
+  } else {
+    wrongFormat(fechaN[1]);
+    fechaN[0] = false;
+  }
+}
+
+function validateNumber() {
+  if (/^\d{9}$/.test(num[1].val())) {
+    num[1].next().html("");
+    num[0] = true;
+  } else {
+    wrongFormat(num[1]);
+    num[0] = false;
+  }
+}
+
+function validateSelect() {
+  if (select[1].val() != "null") {
+    select[1].next().html("");
+    select[0] = true;
+  } else {
+    wrongFormat(select[1]);
+    select[0] = false;
+  }
+}
+
+formSelect();
+
+function enviar() {
+
+  // Si todas las flags son true, entonces puede ejecutar la lógica de envío de los datos
+  
+  if (nombre[0] && dni[0] && select[0]) {
+    // lógica para enviar los datos al siguiente paso
+
+  } else {
+    alert("Faltan campos obligatorios o los datos no son correctos");
+  }
+}
+
+$("button").click(() => {
+  enviar();
+});
+
+    </script>
+</body>
+</html>

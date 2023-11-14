@@ -1,0 +1,24 @@
+1.-  En una casa de cambio necesitan construir un program tal que dado como dato una cantidad expresadaa en dolares, convierta esa caantidad a euros.
+
+2.-  Construye un algoritmo que sea capazza de intercambir el valor de tres variables, de tal manera que si leemos A, B, C, el vlor de A se almacene en B, el de B pase a C, y el de C pase a A.
+
+3.-  Conseguir un algoritmo tal que dada una cadena de caracteres, nos devuelva la cadena invertida
+
+4.-  Construya un pseudocódigo tal que dado como dato la calificación de un alumno en un examen escriba "Aprobado" een caso de que la calificacion fuese mayor o igual que 5, y escriba  "Suspendido" en caso contrario.
+
+5.-  Construya un pseudocodigo tal que dado un número entre 1 y 7 (validado) nos devuelva el día de la semana que le corresponde (1->Lunes, 2->Martes ....)
+
+6.-  Construya un pseudocódigo tal que dados tres números por teclado nos devuelva el mayor de los tres
+
+7.-  Construya un pseudocódigo tal que dada una cadena, no devuelva el número de vocales que tiene
+
+8.-  Diseñe un algoritmo tal que leida una fecha en la forma DD/MM/AAAA nos la devuelva en la forma "Es DD del mes MM del año AAAA". Debe suponerse que la fecha ingresada es válida y el mes en letras.
+
+9.-  Diseñe un algoritmo tal que leidas las notas de un alumno, nos devuelva el promedio de estas calificaciones
+
+10.- Determinar si un numero dado e primo (solo divisible por él mismo y por la unidad)
+
+11.- Determinar el factorial de un número dado
+
+
+

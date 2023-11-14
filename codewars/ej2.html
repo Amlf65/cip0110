@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width!=  initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+</head>
+<!-- Para ganar un capital enorme, es necesario tener una mentalidad poco convencional. 
+    Por supuesto, en un trabajo tan complejo, también deben existir mecanismos 
+    especiales de recreación y entretenimiento. Para ello, el casino creó un juego 
+    de dominó especial. Las fichas de dominó ordinarias son un conjunto de 
+    diferentes combinaciones de dos fichas, cada una de las cuales muestra de 0 a 6 puntos. 
+    Y este conjunto es una combinación similar de fichas, pero la cantidad de 
+    puntos en cada una puede ser de cero a un valor establecido que depende del 
+    nivel intelectual de los jugadores. Hay todo tipo de combinaciones de fichas 
+    en este juego de dados, pero ninguna de ellas debe repetirse (combinaciones 
+    como 2 | 5 y 5 | 2 se consideran iguales). -->
+<body>
+    <script>
+        valor = true
+        if (dotsOnDominoBones(2) != 12) valor = false;
+        if (dotsOnDominoBones(5) != 105) valor = false;
+        if (dotsOnDominoBones(13) != 1365) valor = false;
+        if (dotsOnDominoBones(20) != 4620) valor = false;
+        if (dotsOnDominoBones(33) != 19635) valor = false;
+        if (dotsOnDominoBones(50) != 66300) valor = false;
+        if (dotsOnDominoBones(0) != 0) valor = false;
+        if (dotsOnDominoBones(137) != 1313967) valor = false;
+        if (dotsOnDominoBones(198) != 3940200) valor = false;
+        if (valor) alert("ok"); else alert("error");
+
+        function dotsOnDominoBones(n) {
+            suma = 0;
+            for (i = 0; i <= n; i++) {
+                for (j = 0; j <= n; j++) {
+                    if (i <= j) suma += i + j
+                }
+            }
+            return suma;
+        }
+    </script>
+</body>
+
+</html>

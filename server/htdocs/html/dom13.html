@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title>Dom 13 - Tabulador</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    <style>
+        /* Estilos básicos para ocultar todos los contenidos de las pestañas inicialmente */
+        .contenido-tab {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Botones de las pestañas -->
+<div id="navegacion-tabs">
+    <button class="boton-tab" data-tab="1">Pestaña 1</button>
+    <button class="boton-tab" data-tab="2">Pestaña 2</button>
+    <button class="boton-tab" data-tab="3">Pestaña 3</button>
+</div>
+
+<!-- Contenidos de las pestañas -->
+<div id="contenidos-tabs">
+    <div class="contenido-tab" data-content="1">
+        <h2>Contenido de la Pestaña 1</h2>
+        <p>Este es el contenido de la primera pestaña.</p>
+    </div>
+    <div class="contenido-tab" data-content="2">
+        <h2>Contenido de la Pestaña 2</h2>
+        <p>Este es el contenido de la segunda pestaña.</p>
+    </div>
+    <div class="contenido-tab" data-content="3">
+        <h2>Contenido de la Pestaña 3</h2>
+        <p>Este es el contenido de la tercera pestaña.</p>
+    </div>
+</div>
+
+<script src="js/dom13.js"></script> <!-- Asumiendo que tu JavaScript está en app.js -->
+
+</body>
+</html>

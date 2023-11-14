@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Confección páginas web - CIP - 2023">
+   <title>Funciones Javascript</title>
+   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <form action="">
+        <button type="button">Pulsar botón</button>
+    </form>
+   <script>
+        document.write("FUNCIONES DE ARRAY");
+        fruits =["apple","banana","uva","mango","pera","manzana"];
+        document.write("<br>")
+        document.write("--- Push -> " + fruits.push("orange"));
+        console.log(fruits);
+        document.write(fruits[5])
+        document.write("<br>")
+        document.write("--- Pop -> " + fruits.pop()) //elimina al final
+        console.log(fruits)
+        document.write("<br>")
+        document.write("--- Shift -> " + fruits.shift()) // elimina al princippo
+        console.log(fruits)
+        document.write("<br>")
+        document.write("--- Unshift -> " + fruits.unshift("strawberry"))
+        console.log(fruits)
+        document.write("<br>")
+        document.write("--- Slice ->" + fruits.slice(1,3))
+        document.write("<br>")
+        document.write("--- Splice -> " + fruits.splice(1,2,"durazno","mandarina"))
+        document.write("<br>")
+        console.log(fruits)
+        document.write("--- ForEach -> " + fruits.forEach(function(elem_fruits){console.log(elem_fruits.toUpperCase())}))
+        document.write("<br>")
+        document.write("--- Map() -> " + fruits.map(texto=>texto.toUpperCase()))
+        document.write("<br>")
+        document.write("--- Filter ->" + fruits.filter(texto=>texto.length>8))
+        document.write("<br>")
+        document.write("--- Reduce -> " + fruits.reduce((total,texto)=>total+"-"+texto))
+        document.write("<br>")
+        document.write("--- Find -> " + fruits.find(texto=>texto=="pera"))
+        document.write("<br>")
+        document.write("--- Some -> " + fruits.some(texto=>texto.length>3))
+        document.write("<br>")
+        document.write("--- Every -> " + fruits.every(texto=>texto.length>3))
+        document.write("<br>")
+        document.write("--- Sort -> " + fruits.sort())
+        document.write("<br>")
+        document.write("--- Reverse -> " + fruits.reverse())
+        document.write("<br>")
+        document.write("--- Concat -> " + fruits.concat(["melón","sandía"]))
+        fruits=fruits.concat(["melón", "sandía"])
+        document.write("<br>")
+        document.write("--- join -> " + fruits.join("/"))
+        document.write("<br>")
+        document.write("--- IndexOf y LasindexOf -> " + fruits.indexOf("manzana"))
+        document.write("<br>")
+        document.write("--- Includes -> " + fruits.includes("manzanas")) //si contiene
+        document.write("<br>")
+        numer=[]
+        document.write("--- IsArray -> " + Array.isArray(numer))
+
+   </script> 
+
+
+</body>
+
+</html>

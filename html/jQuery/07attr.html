@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Título</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="00plantillajs.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+    <script>
+
+ /*       $(document).on("ready",function(){
+            $("img").on({
+             mouseover: function(e) {
+            if (e.target==img1){
+            $("#img1").attr("src","img/foto9.jpg");
+            } else if(e.target==img2){
+            $("#img2").attr("src","img/foto8.jpg");
+            } else if(e.target==img3){
+            $("#img3").attr("src","img/foto6.jpg");
+            } else if(e.target==img4){
+            $("#img4").attr("src","img/foto5.jpg");
+            }
+                    
+                },
+            mouseout: function(e) {
+            if (e.target==img1){
+            $("#img1").attr("src","img2/foto9.jpg");
+            } else if(e.target==img2){
+            $("#img2").attr("src","img2/foto8.jpg");
+            } else if(e.target==img3){
+            $("#img3").attr("src","img2/foto6.jpg");
+            } else if(e.target==img4){
+            $("#img4").attr("src","img2/foto5.jpg");
+            }
+                    
+                }
+             })
+        })*/
+        $(function(){
+            $("img").attr("style","opacity:0.3")
+            $("img").on({
+             mouseenter: function() {
+            $(this).attr("style","opacity:1")
+                    
+                },
+            mouseleave: function() {
+            $(this).attr("style","opacity:0.3")
+                    
+                }
+             })
+        })
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <p class="logo">Manejando attr (II)...</p>
+    </header>
+    <section>
+    <img src="foto0.svg" id=img1 width="33%">
+    <img src="foto1.svg" id=img2 width="33%">
+    <img src="foto2.svg" id=img3 width="33%">
+           
+    <script>
+      
+    </script>
+    
+    </section>
+</body>
+
+</html>

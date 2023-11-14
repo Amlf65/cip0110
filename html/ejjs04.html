@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title>Convertir a farenheit</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+<label for="cadena">Por favor ingresar grados celsius</label>
+<input type="number" id="celsius">
+<p id="salida"></p>
+
+
+<script>
+
+    let entrada=document.getElementById("celsius")
+    let salida=document.getElementById("salida")
+    function farenheit(){
+        salida.textContent=`${entrada.value} grados celsius son ${entrada.value*9/5+32} grados farenheit`;
+    }
+    entrada.addEventListener("blur",farenheit)
+</script>
+</body>
+</html>
