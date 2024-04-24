@@ -1,0 +1,60 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+.sprite-animation {
+    width: 100px;        /* Ancho de un frame */
+    height: 100px;       /* Altura de un frame */
+    background-image: url('../img/aguila.png');
+    animation: play 3s steps(9) infinite;  /* 9 pasos, porque tienes 10 frames en total */
+}
+
+@keyframes play {
+    100% { background-position: -900px; }  /* Mueve el fondo -900px (9 frames de 100px) */
+}
+header {
+    background: element("#logo") no-repeat;  /* Prefijo específico de Firefox */
+    /* background: element(#logo) no-repeat;  En un mundo ideal sin prefijos */
+    height: 60px;  /* Asumiendo un tamaño para el ejemplo */
+}
+
+.elemento {
+    background-image: image("../img/aguila.png" size(300px 200px));
+}
+
+.imagen-con-sombra-box {
+    /*box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); */
+    /* filter: sepia(1); */
+    /* filter: hue-rotate(300deg); */
+    filter:blur(3px); 
+}
+
+.caja-perspectiva {
+    transform: perspective(404px) rotateX(15deg);
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+ol {
+    counter-reset: item;
+}
+
+li {
+    display: block;
+}
+
+li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+}
+.conica {
+    height: 150px;
+    background: conic-gradient(red, yellow, green);
+}
+
+
+
+

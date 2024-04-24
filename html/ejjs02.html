@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title>Javascript 02</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<!-- <link rel="stylesheet" href="css/.css"> -->
+</head>
+<body>
+
+    <label>¿Cómo te llamas? </Label><input type="text" id="entrada"></label>
+<!-- <button id="boton"></button> -->
+<p id="salida"></p>
+
+<script>
+    let entrada= document.getElementById("entrada");
+    let salida=document.getElementById("salida");
+    // let boton=document.getElementById("boton");
+    // boton.addEventListener("click",mifuncion);
+    entrada.addEventListener("blur",mifuncion);
+    entrada.addEventListener("keypress",mifuncion2)
+    function mifuncion(){
+        salida.textContent="Bienvenido " + entrada.value;
+    }
+    function mifuncion2(evento){
+        if (evento.key ==='Enter'){
+            salida.textContent="Bienvenid@ " + entrada.value;
+        }
+    }
+</script>
+
+</body>
+</html>

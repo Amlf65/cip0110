@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta name='description' content='Confección páginas web - CIP - 2023'>
+<title>Dialogo modal</title>
+<link rel='shortcut icon' href='img/favicon.png' type='image/x-icon'>
+</head>
+<body>
+<!-- Botón para abrir el diálogo -->
+<button id="openDialog">Abrir Diálogo</button>
+
+<!-- El diálogo en sí -->
+<dialog id="myDialog">
+  <p>Este es un diálogo simple.</p>
+  <button id="closeDialog">Cerrar Diálogo</button>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('myDialog');
+  const openBtn = document.getElementById('openDialog');
+  const closeBtn = document.getElementById('closeDialog');
+
+  // Evento para abrir el diálogo
+  openBtn.addEventListener('click', function() {
+    dialog.showModal();
+    openBtn.style.display='none';
+  });
+
+  // Evento para cerrar el diálogo
+  closeBtn.addEventListener('click', function() {
+    dialog.close();
+    openBtn.style.display='block';
+  });
+</script>
+
+</body>
+</html>

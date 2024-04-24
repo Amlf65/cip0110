@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title></title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+
+<style>
+    h1{
+        border:1px solid red;
+    }
+</style>
+</head>
+<body>
+<p id="text">Hola a tod@s</p>
+<p id="texb">Hola a tod@s</p>
+<input type="text" id="texi" value="esto es un input">
+
+<button id="btn">Enter</button>
+<hr>
+
+<a id="enlace"href="https://w3schools.com/">w3</a>
+<button id="btn1">Enter</button>
+<hr>
+<h1 id="hh">Hola</h1>
+<button id="btn2">pulsar</button>
+<script >
+    $(function(){
+        $("#btn").click(function(){
+            console.log($("#text").text())
+            $("#text").text("Bienvenidos")
+            $("#texb").html("<b>Bienvenidos</b>")
+            console.log($("#texi").val())
+            $("#texi").val("este valor no sirve")
+        })
+        $("#btn1").click(function(){
+            console.log($("#enlace").attr("href"))
+            $("#enlace").attr("href","https://www.google.es/")
+            $("#enlace").text("google")
+        })
+        $("#btn2").click(function(){
+            console.log($("#hh").width("50%"))
+            $("#hh").css("text-align","center")
+            $("*").css({"backgroundColor":"black","color":"white","font-size":"1.2rem"})
+        })
+    })
+</script>
+</body>
+</html>

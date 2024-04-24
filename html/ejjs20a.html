@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title>extraer subcadenas entre paréntesis</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<body>
+    <main class="row">
+        <div class="form-floating p-1">
+            <input type="text" size="3" class="form-control p-2" id="cadena" placeholder="xxxx" value="uno (dos) tres">
+            <label for="cadena">Introducir Cadena</label>
+        </div>
+       
+        <h2 class=" mx-auto" id="salida"></h2>
+        <button id="boton" class="d-block w-100 mt-3">Calcular</button>
+    </main>
+    <script>
+        let entrada=document.getElementById("cadena")
+        let boton=document.getElementById("boton")
+        let salida=document.getElementById("salida")
+
+        boton.addEventListener("click",function(){
+            let pos1=entrada.value.indexOf("(")
+            let pos2=entrada.value.indexOf(")")
+            if (pos1==-1||pos2==-1){
+                salida.textContent="Faltan paréntesis"
+
+            }else{
+            salida.textContent=entrada.value.substring(pos1+1,pos2)
+            }
+
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

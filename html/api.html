@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+        div#movieInfo{
+            width: 30%;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+            color:#525286
+        }
+    </style>
+</head>
+
+<body>
+    <label>Título: <input type="text" id="titulo" placeholder="título original"></label>
+    <div id="movieInfo">
+        <!-- The movie information will be populated here using JavaScript -->
+    </div>
+    <script>
+        // The URL to fetch movie data from the OMDB API
+        window.addEventListener("load", function () {
+            titulo = document.getElementById("titulo");
+            titulo.addEventListener("change", function () {
+                const apiUrl = 'https://www.omdbapi.com/?apikey=d4f97ecf&t="'+ titulo.value 
+                console.log (apiUrl);
+                // Fetch movie data from the API
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Once we have the data, display the title and poster in the HTML
+                        displayMovieInfo(data);
+                    })
+                    .catch(error => {
+                        console.error('Error leyendo de datos:', error);
+                    });
+
+                // Function to display movie title and poster
+                function displayMovieInfo(movieData) {
+                    console.log(movieData)
+                    const movieInfoDiv = document.getElementById('movieInfo');
+
+                    movieInfoDiv.innerHTML = `<h1>${movieData.Title}</h1><img src="${movieData.Poster}" width="80%" title="${movieData.Title}" alt="${movieData.Title}">`;
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The template Element</h1>
+
+    <p>Click the button below to display the hidden content from the template element.</p>
+    
+    <button onclick="showContent()">Show hidden content</button>
+    
+    <template>
+      <h2>Flower</h2>
+      <img src="../img/img_white_flower.jpg" width="214" height="204">
+    </template>
+    
+    <script>
+        function showContent() {
+        let temp = document.getElementsByTagName("template")[0];
+        let clon = temp.content.cloneNode(true);
+        document.body.appendChild(clon);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+@charset "utf-8";
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+    padding: 2rem;
+}
+input{
+    width: 5rem;
+    display: block;
+    margin: 0 auto;
+}
+.fondo{
+    background-color: lightgoldenrodyellow;
+}
+#salida{
+    background-color: lightcyan;
+    border: 2px solid lightskyblue;
+    min-height: 1rem;
+    overflow: hidden;
+    
+}
+button{
+    margin: 1rem auto;
+    display: block;
+    padding: .5rem;
+    width: 5rem
+    ;
+}

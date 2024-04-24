@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/formulario4.css">
+</head>
+
+<body>
+    <main>
+
+        <form method="post" action="#">
+            
+           
+                        <div>
+                            <label for="nom">Nombre:</label>
+                            <input type="text" id="nom" name="nom" value="" />
+                        </div>
+                        <div>
+                            <label for="ape">apellidos:</label>
+                            <input type="text" id="ape" name="ape" value="" />
+                        </div>
+                        <div>
+                            <label for="nac">f. nacimiento:</label>
+                            <input type="date" id="nac" name="nac" value="" />
+                        </div>
+                        <div>
+                            <label for="dom">calle y numero:</label>
+                            <input type="text" id="dom" name="dom" value="" />
+                        </div>
+                        <div>
+                            <label for="cpo">código postal:</label>
+                            <input type="text" id="cpo" name="cpo" value="" />
+                        </div>
+                       
+                        <div>
+                            <label for="prv">provincia</label>
+                            <input type="text" id="prv" name="prv" value="" />
+                            <label for="tel" class="telef">telefonos</label>
+                            <input type="text" id="tel" name="tel" value="" />
+                        </div>
+                         <div>
+                            <label>Sexo</label>
+                            <label><input type="radio" id="Hom" name="sex" value="" />&nbsp;Hombre:</label>
+                            <label><input type="radio" id="muj" name="sex" value="" />&nbsp;Mujer:</label>
+                            <label for="estado">Estado Civil:</label>
+                            <select id="ape" name="ape" value="" >
+                                <option >soltero</option>
+                                <option >casado</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Idiomas</label>
+                            <label><input type="checkbox" id="esp" name="esp" value="" />&nbsp;Español</label>
+                            <label><input type="checkbox" id="fra" name="fra" value="" />&nbsp;Frances</label>
+                            <label><input type="checkbox" id="ing" name="ing" value="" />&nbsp;Inglés</label>
+                            <label><input type="checkbox" id="ale" name="ale" value="" />&nbsp;Alemán</label>
+                        </div>
+                        <div>
+                            <label for="obs">Comentarios personales</label>
+                            <textarea id="obs" name="obs" value="" /></textarea>
+                        </div>
+                        <div>
+                            <p class="izquierda">Pulse aquí</p>
+                            <p class="centro"> 
+                                <button type="submit" id="boton">Enviar los datos</button>
+                                <button type="reset" id="boton">Borrar los datos</button>
+                            </p>
+                        </div>
+                
+             
+        </form>
+    </main>
+</body>
+
+</html>

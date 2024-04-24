@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title>jquery 01</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        div {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+
+    </script>
+    <p>Hola </p>
+    <p>a</p>
+    <p>tod@s</p>
+    <p id="p1">Bienvenidos</p>
+    <p id="p2">al curso de web</p>
+
+    <form action="">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </form>
+
+    <button>toggle</button>
+    <div>Hola</div>
+
+</body>
+<script>
+    $(function () {
+      $("button").click(function(){
+        console.log($("#p2").text())
+        $("#p2").text("de página web")
+      })
+    })
+
+</script>
+
+</html>

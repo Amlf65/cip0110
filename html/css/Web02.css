@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 80%;
+    margin: 0 auto;
+}
+/* Cabecera*/
+.logo{
+    width: 20%;
+    float: left;
+}
+.titulo{
+    width: 80%;
+    float: left;
+}
+ img{
+    width: 100%;
+}
+/*Menu de opciones*/
+nav{
+    clear: both;
+}   
+nav ul{
+    padding: 10px;
+    list-style: none;
+    display:flex;
+    justify-content: space-around;
+}
+/*Ofertas del mes*/
+footer{
+    font-size: 1.4em;
+}
+/*Menu anclas*/
+aside{
+    float:left;
+    width: 35%;
+}
+aside ul{
+    list-style: none;
+}
+/*Articulo introductorio*/
+article{
+    float: left;
+    width: 65%;
+    margin-bottom: 2em;
+}
+/*Resto de articulos (secciones)*/
+section{
+    clear: both;
+    margin-top: 2em;
+}
+p{
+    font-size: 1.2em;
+    text-align: justify;
+}

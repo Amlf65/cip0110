@@ -1,0 +1,33 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+article{
+    padding: 1rem;
+}
+section{
+    clear: both;
+    width:60%;
+    margin: 0 auto;
+}
+img:first-child{
+    width: 100%;
+}
+img:last-child{
+    width: 2rem;
+    float: right;
+}
+.dos{
+    width: 50%;
+    float:left;
+}
+.tres{
+    width: 66%;
+    float:left;
+}
+.uno{
+    width: 34%;
+    float:left;
+}

@@ -1,0 +1,19 @@
+@charset "utf-8";
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+label, button{
+    display: block;
+    width: 90%;
+    margin:0 auto;
+}
+form{
+    width: 50%;
+    margin:0 auto;
+}
+.novalido{
+    border-color: red;
+    border-width: 3px;
+}

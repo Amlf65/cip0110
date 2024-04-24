@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="css/.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script> -->
+<style>
+    form{
+        width: 30%;
+        margin: 0 auto;
+    }
+   label{
+    display: block ;
+    margin-bottom: .5rem;
+   }
+   #datos{
+    margin: 3rem;
+    border:1px solid red;
+   }
+   input,textarea{
+    float:right;
+   }
+   button{
+    width: 100%;
+    margin-top: 1rem;
+   }
+
+</style>
+<script>
+    /*sesionstorage almacena por pestaña*/
+    /*localStorage almacena de forma permanente*/
+    /*metodos setItem y getItem*/
+    function comenzar(){
+        let  miboton=document.getElementById("grabar")
+        miboton.addEventListener("click",guardar,false)
+
+        function guardar(){
+            let clave=document.getElementById("clave").value;
+            let valor=document.getElementById("valor").value;
+            localStorage.setItem(clave,valor)
+            console.log (localStorage)
+            leerMostrar()
+            document.getElementById("clave").value="";
+            document.getElementById("valor").value="";
+        }
+
+
+        function leerMostrar(){
+            var zonadatos=document.getElementById("datos")
+            zonadatos.innerHTML='<button onclick="eliminatodo()">Eliminar todo</button>'
+            for(i=0;i<localStorage.length;i++){
+                zonadatos.innerHTML+="<div>Clave : "+localStorage.key(i)+ " -Valor :" +localStorage.getItem(localStorage.key(i))+"</div>" 
+            }
+        }
+        function eliminatodo() {
+            localStorage.clear();
+            leerMostrar();
+        }
+        // Exponer la función eliminatodo al ámbito global para que sea accesible desde el HTML.
+        // no haría falta si llamamos a la función con addEventListener
+        window.eliminatodo=eliminatodo
+    }
+
+    window.addEventListener("load",comenzar,false)
+</script>
+</head>
+
+<body>
+<form name="miformulario">
+    <label >Clave <input type="text" name="clave" id="clave"> </label>
+    <label >Valor <textarea  id="valor"></textarea> </label>
+    <button id="grabar" type="button">Grabar</button>
+</form>
+<section id="datos">
+    esperando lectura
+</section>
+</body>
+
+</html>

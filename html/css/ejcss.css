@@ -1,0 +1,224 @@
+<<<<<<< HEAD
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+  width: 60%;
+  margin: 1rem auto;
+  background-color: #b2eeee;
+}
+=======
+>>>>>>> 72f7ab2c11f349498ad549c95c91a30e9e5013d5
+/* Hojas de estilo */
+.internalStyle {
+    color: blue;
+}
+
+.externalStyle {
+    color: green;
+}
+
+/* Selección de Elementos */
+#a p {
+    background-color: red;
+}
+
+.dc {
+    background-color: blue;
+}
+
+#darkhorse {
+    background-color: black;
+    color: white;
+    /* Para hacer el texto legible en el fondo negro */
+}
+
+.roundedImage {
+    border-radius: 50%;
+}
+
+/* 3. Posicionamiento y Diseño
+  3.1. Posicionamiento */
+
+.relativeContainer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.absoluteBox {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
+/* 4. Tipografía
+4.1. Fuentes Externas */
+.customFont {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Transiciones y Animaciones
+Transiciones */
+.transitionButton {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    transition: background-color 0.5s;
+}
+
+.transitionButton:hover {
+    background-color: red;
+}
+
+/* Animaciones Keyframes: */
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+.animatedBox {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    animation: moveRight 2s infinite alternate;
+    /* Va y viene */
+}
+
+/* Responsividad:
+  Media Queries: */
+.responsiveColor {
+    color: red;
+}
+
+@media screen and (min-width: 600px) {
+    .responsiveColor {
+        color: green;
+    }
+}
+
+/* Estilos Avanzados
+    Sombras */
+
+.shadowBox {
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Formularios
+Estilización de Entradas */
+.styledInput {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .styledButton {
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  .styledButton:hover {
+    background-color: darkorange;
+  }
+  
+/* Conceptos Avanzados
+Filtros */
+.filteredImage {
+    filter: grayscale(100%) brightness(120%);
+  }
+
+/* Efecto Parallax */
+.parallaxContainer {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  .parallaxImage {
+    background-image: url('../img/botebajoarbol.jpg');
+    height: 150%; /* Greater than the container */
+    width: 100%;
+    position: absolute;
+    top: -25%; /* Adjust this for the effect */
+    background-attachment: fixed; /* Key property for the effect */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .parallaxContent {
+   position: relative;
+   z-index: 1; /*To place it above the background*/
+   color: white; /* Or any other color to ensure it stands out against the background */
+  }
+
+/* Proyectos
+Barra de Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #333;
+  }
+  
+  .navbar-logo {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+  
+  .navbar-links a:hover {
+    background-color: #555;
+  }
+
+  /* Pie de Página */
+  
+  .footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .socialLinks a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .socialLinks a:hover {
+    text-decoration: underline;
+  }
+  
+   
+  

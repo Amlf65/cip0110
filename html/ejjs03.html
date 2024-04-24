@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title>longitud de cadena</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+<label for="cadena">Por favor ingresar una palabra</label>
+<input type="text" id="cadena">
+<p id="salida"></p>
+
+
+<script>
+    let entrada=0;
+    entrada=document.getElementById("cadena")
+    let salida=document.getElementById("salida")
+    function longitud(){
+        salida.textContent=`La cadena ${entrada.value} tiene ${entrada.value.length} caracteres`;
+    }
+    entrada.addEventListener("blur",longitud)
+</script>
+</body>
+</html>

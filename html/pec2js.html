@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title>PEC2 Javascript</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="css/.css"> -->
+</head>
+
+<body>
+    <input type="number" id="numero">
+    <select id="impuesto">
+        <option value="0" selected>Sin igic</option>
+        <option value="1">Importaciones 0%</option>
+        <option value="2">Reducido 3%</option>
+        <option value="3">Incrementado 9.5%</option>
+        <option value="4">Incrementado 13.5%</option>
+    </select>
+    <button id="boton">Resultado</button>
+
+    <script>
+        window.addEventListener('load', inicio)
+        numero.addEventListener("blur", ver_numero)
+        boton.addEventListener("click", calcula)
+
+        function inicio() {
+            alert("Bienvenid@!!!")
+
+            let numero = document.getElementById("numero")
+            let impuesto = document.getElementById("impuesto")
+            let boton = document.getElementById("boton")
+        }
+
+        function ver_numero() {
+            let contenido = numero.value
+            if (isNaN(contenido) || contenido == 0 || contenido == "") {
+                numero.style.backgroundColor = "lightcoral"
+            }else{
+            numero.style.backgroundColor = "white"
+            }
+        }
+        function calcula() {
+            let contenido = parseInt(numero.value)
+            let calculo=0
+            let salida=""
+            if (isNaN(contenido) || contenido == 0) {
+                salida = "error:importe incorrecto"
+            } else {
+                switch (impuesto.selectedIndex) {
+                    case 0, 1:
+                        calculo = 0;
+                        break;
+                    case 2:
+                        calculo = contenido * 3 / 100;
+                        break;
+                    case 3:
+                        calculo = contenido * 9.5 / 100;
+                        break;
+                    case 4:
+                        calculo = contenido * 13.5 / 100;
+                        break;
+                }
+                salida = `Importe igic: ${calculo} 
+Total importe: ${contenido + calculo}`
+            }
+            alert(salida)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <dialog id="miDialogo">
+        <h2>Un diálogo simple</h2>
+        <p>Este es un ejemplo de un cuadro de diálogo.</p>
+        <button id="cerrar">Cerrar</button>
+    </dialog>
+      
+    <button id="abrir">Abrir diálogo</button>
+      
+    <script>
+        let dialogo = document.getElementById('miDialogo');
+        let botonAbrir = document.getElementById('abrir');
+        let botonCerrar = document.getElementById('cerrar');
+        
+        botonAbrir.onclick = function() {
+            dialogo.show();  // Abre el diálogo
+        }
+        
+        botonCerrar.onclick = function() {
+            dialogo.close();  // Cierra el diálogo
+        }
+    </script>
+      
+</body>
+</html>

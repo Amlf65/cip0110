@@ -1,0 +1,98 @@
+/* organizado por tipo y  por orden de aparición */
+
+/* general */
+@font-face {
+    font-family: letra;
+    src: url(../fuentes/Playball-Regular.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: letra;
+}
+/* etiquetas */ 
+body{
+    margin: 0 .5em;
+}
+main{
+    padding: .5em .5em;
+}
+
+article{
+    margin-bottom: .5em;
+}
+
+main{
+    border-left: .5em solid orangered;
+    border-right: .5em solid orangered;
+}
+header{
+    padding: 1em;
+}
+img {
+    display: block;
+    margin: 0.5em auto;
+    width:60%;
+}
+
+aside p{
+    text-align: center;
+}
+/* id */
+/* clases */
+.naranja{
+    background-color:orangered;
+    color:white;
+}
+.palido{
+    background-color:#f6c8ad
+}
+.blanco{
+    background-color:#ffffff
+}
+
+/* estados */
+
+/* responsive */
+/* pc */
+@media screen and (min-width:800px){
+    body{
+        font-size: 1em
+    }
+    main{
+        margin-top: 1em;  
+        padding: 0 2em;
+    }
+    section{
+        padding-bottom: 1em;
+    }
+    h2 {
+        padding: .4em;
+    }
+    article{
+        margin: 1em 2em;
+        overflow: auto; 
+    }
+    aside{
+        float:right;
+        border-left:4px solid orangered;
+        width: 30%;
+    }
+    article>p{
+        margin:0 1% 0 1%;
+        width: 68%;
+    }
+    img {
+        width: 70%;
+    }
+    h3{
+        margin-bottom: 1em;
+        padding: .3em;
+    }
+   
+    p{
+        padding-right:1em;
+    }
+
+} 

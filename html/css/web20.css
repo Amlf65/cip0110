@@ -1,0 +1,321 @@
+﻿/* Define custom fonts */
+/* Primeramente definimos las fuentes personalizadas que vamos a utilizar (ballpark y dayrom)*/
+
+@font-face {
+    font-family: 'BallparkWeiner';
+    src: url('../fuentes/ballpark.eot');
+    src: url('../fuentes/ballpark.eot?#iefix') format('embedded-opentype'),
+        url('../fuentes/ballpark.woff') format('woff'),
+        url('../fuentes/ballpark.ttf') format('truetype'),
+        url('../fuentes/ballpark.svg#BallparkWeiner') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dayrom';
+    src: url('../fuentes/dayrom.eot');
+    src: url('../fuentes/dayrom.eot?#iefix') format('embedded-opentype'),
+        url('../fuentes/dayrom.woff') format('woff'),
+        url('../fuentes/dayrom.ttf') format('truetype'),
+        url('../fuentes/dayrom.svg#Dayrom') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Main elements of the page */
+/*Ralizamos el reset recomendado*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* y como valores generales asignamos un fondo de página (yellow_background.png)
+una fuente ('Trebuchet MS', Arial, sans-serif) y un color #181818*/
+
+body
+{
+    background: url('../img/web20/yellow_background.png');
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #181818;
+}
+
+/* El contenedor principal (main) lo establecemos al  70% centrado */
+
+main
+{
+    width: 70%;
+    margin: auto;
+}
+
+/*Los encabezados principales de section y de footer así como los enlaces de nav tendrán como fuente (Dayrom) peso normal y mayúsculas*/
+
+section h1, footer h1, nav a
+{
+    font-family: Dayrom, serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/* Header */
+/*el fondo de la cabecera es (line.png) alineado abajo y repetido horizontalmente*/
+
+header {
+    background: url('../img/web20/line.png') repeat-x bottom;
+
+}
+
+/*en la cabecera el main_title y el menu de navegación estén en la misma linea*/
+
+#main_title {
+    display: inline-block;
+}
+
+/*El encabezado principal de la cabecera tiene como fuente (ballpark), 2.5em de tamaño u peso normal.*/
+
+header h1 {
+    font-family: 'BallparkWeiner', serif;
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+/*El logo y el encabezado principal de la cabecera están e la misma linea*/
+#logo,
+header h1 {
+    display: inline;
+}
+/*El encabezado secundario de la cabecera tiene como fuente (Dayrom), 1.1em de tamaño u peso normal.*/
+header h2 {
+    font-family: Dayrom, serif;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+/* Navigation */
+/*El menú de navegación está en línea con el main title, 
+ocupando todo el contenido y el texto alineado a la derecha */
+
+nav {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+/*Eliminar estilos de la lista del menú de navegación*/
+nav ul {
+    list-style-type: none;
+}
+
+/*Colocar las líneas de la lista en línea con un margen derecho de 1em*/
+
+nav li {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+/*A los enlaces del menú de navegación les aplicaremos el color #181818, 
+un tamaño de fuente de 1.3em un relleno inferor de .3em y eliminar el subrayado */
+
+nav a {
+    font-size: 1.3em;
+    color: #181818;
+    padding-bottom: .3em;
+    text-decoration: none;
+}
+/*Y cuando pasamos el ratón por encima cambiaremos el color (#760001) 
+y mostraremos el border-top solido, de ancho de .3em y el mismo color (#760001)*/
+nav a:hover {
+    color: #760001;
+    border-top: 3px solid #760001;
+}
+
+/* Banner */
+
+/*El banner_image tiene una imagen de fondo (sanfrancisco.jpg) sin reptición, un alto de 200px, un margen superior de 1em e inferior de 2em, 
+un borde redondeado de 1em de radio, con posición relativa y un sobreado vertical de .3em y difuminado de .3em de color #1c1a19*/
+
+#banner_image {
+    margin-top: 1em;
+    height: 200px;
+    border-radius: 1em;
+    background: url('../img/web20/sanfrancisco.jpg') no-repeat;
+    position: relative;
+    box-shadow: 0px 4px 4px #1c1a19;
+    margin-bottom: 2em;
+}
+/*En la parte inferior del banner, con position absolute. Ubicaremos una descripcion, con bordes redondeados inferiores, 
+ocupando todo el espacio, de 2.5em de altura, un relleno superior de 1em y uno inferior de .5em, con un color de fondo (24,24,24)
+con 0.8 de opacidad, color blanco y tamaño de fuente de .8em*/
+
+#banner_description {
+    position: absolute;
+    bottom: 0;
+    border-radius: 0px 0px 5px 5px;
+    width: 100%;
+    height: 3em;
+    padding-top: 1em;
+    padding-left: .5em;
+    background-color: rgb(24, 24, 24);
+    /* Old browsers will read this */
+    background-color: rgba(24, 24, 24, 0.8);
+    /* New browsers will read this */
+    color: white;
+    font-size: 0.8em;
+
+}
+
+/*Para la clase red_button usarenos el fondo (red_background.png) repetido horizontalmente de 2em de altura, y posición absoluta 
+de .2em desde abajo y .4em desde la derecha un borde solido de 1px y color #760001, radio de los border .4em, 
+tamaño del texto de 1.2em alineado al centro color blanco y eliminando subrayados de enlace. El relleno sería de .2em arriba y 
+.6em a la derecha e izquierda  */
+.red_button {
+    height: 2em;
+    position: absolute;
+    right: .4em;
+    bottom: .2em;
+    background: url('../img/web20/red_background.png') repeat-x;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    padding: .2em .6em 0;
+    color: white;
+    text-decoration: none;
+}
+/*A la imagen del interior del boton le quitamos el borde*/
+.red_button img {
+    border: 0;
+}
+
+/* Body */
+/*Dentro del body, el aside y el article tienen estructura en linea pero con posibilidad de darle alto y ancho, 
+alineamiento vertical arriba y texto justificado*/
+article,
+aside {
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+}
+
+/*Además el article, tiene un ancho de 70% */
+
+article {
+    width: 70%;
+}
+
+/*a la clase cat_icon le daremos un alineamiento vertical medio*/
+.cat_icon {
+    vertical-align: middle;
+}
+
+/*El tamaño de la fuente de los párrafos de article de .8em*/
+article p {
+    font-size: 0.8em;
+}
+
+/*El aside lo definiremos con un ancho de 25% y postion relative, para ajustarlo a la derecha lo moveremos desde la izquierda un 4%
+el color de fondo será (#706b64), un sombreado de color (#1c1a19) en vertical .2em y difuminado .3em, cuyos bordes tengan radio  de .3em,
+con un rellno de 1em, texto de color blanco y tamaño de .9em*/
+
+aside {
+    position: relative;
+    width: 25%;
+    left:4%;
+    background-color: #706b64;
+    box-shadow: 0px .2em .3em #1c1a19;
+    border-radius: -3em;
+    padding: 1em;
+    color: white;
+    font-size: 0.9em;
+}
+
+/*El identificador arrow tiene posicion absoluta, desde arriba de 100px y desde la izquierda -.8em*/
+#arrow {
+    position: absolute;
+    top: 25%;
+    left: -.8em;
+}
+/*El identificador zozor_picture centrado*/
+#zozor_picture {
+    text-align: center;
+}
+/*y la imagen que contiene con un borde solido de 1px de color #181818*/
+#zozor_picture img {
+    border: 1px solid #181818;
+}
+/*el párrafo que contiene las imágenes de redes sociales, lo establecemos como un grid de 5 columnas y 1 gap de .1em*/ 
+
+aside p:last-child {
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap:.1em;
+}
+/*Las imñagenes ocuparán todo el ancho y tendrán un margen superior de .3em*/
+aside p:last-child img {
+    margin-top: .3em;
+    width: 100%;
+}
+
+/* Footer */
+/*el footer ocupa todo el ancho,tiene un margen superior de 1em,  un relleno superior e inferior de 2em. Además conviven 
+tres fondos top.png, line.png y shadow.png, combina las distintas opciones de 
+repeat-x,no-repeat, top, center, para conseguir el resultaado deseado,*/
+footer {
+    background: url('../img/web20/top.png') no-repeat top center, url('../img/web20/line.png') repeat-x top, url('../img/web20/shadow.png') repeat-x top;
+    padding: 2em 0;
+    width: 100%;
+    margin-top: 1em;
+}
+/*los tamaños en el footer van a ser de .8em para los párrafos y las listas y de 1.1em para encabezados principales*/
+footer p,
+footer ul {
+    font-size: 0.8em;
+}
+
+footer h1 {
+    font-size: 1.1em;
+}
+/*Los tres identificadores del footer estarán en líneac(con posibilidad de darle altura) y con alineación vertical superior*/
+#tweet,
+#my_pictures,
+#my_friends {
+    display: inline-block;
+    vertical-align: top;
+}
+/*Ademáss tendrán los anchos siguientes: tweet 30% my_pictues 35% y my_friends 30% y este último flotando a la derecha*/
+#tweet {
+    width: 30%;
+}
+
+#my_pictures {
+    width: 35%;
+}
+#my_friends {
+    width: 30%;
+    float: right;
+}
+/*el párrafo de my_pictures será un grid de 4 columnas con separación de .1em*/
+#my_pictures p{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:.1em;
+    
+}
+/*ademas a las imñagenes le añadiremos un borde solioo de 1px y color #181818*/
+#my_pictures img {
+    border: 1px solid #181818;
+}
+/*Las listas de my_friends las ponemos em modo en linea con ancho de 48% alineados verticamente arriba, un padding left de .3em 
+y utilizaremos como estilo de la lista, la imagen (external_link.png)*/
+#my_friends ul {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    list-style-image: url('../img/web20/external_link.png');
+    padding-left: .3em;
+}
+/*A los enlaces de my_friends le quitamos el subrayado y le aplicamos al texto el color #760001*/
+#my_friends a {
+    text-decoration: none;
+    color: #760001;
+}

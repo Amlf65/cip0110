@@ -1,0 +1,143 @@
+
+/* body * {
+    border: 1px solid black;
+    margin: 5px
+} */
+
+main {
+    border: 1px solid black;
+    float: left;
+    padding: 5px;
+    width: 80%;
+    margin: 0 10%;
+}
+
+header {
+    border: 1px solid black;
+    float: left;
+    height: 60px;
+    width: 98%;
+    margin: 1%;
+}
+
+#caja1 {
+    border: 1px solid black;
+    width: 34%;
+    height: 125px;
+    float: left;
+    margin-left: 1%;
+}
+
+#caja10 {
+    border: 1px solid black;
+    width: 62%;
+    height: 200px;
+    float: right;
+    margin-right: 1%;
+}
+
+#caja2 {
+    border: 1px solid black;
+    width: 34%;
+    height: 125px;
+    float: left;
+    clear: both;
+    margin: 1%
+}
+
+#caja20 {
+    border: 1px solid black;
+    width: 62%;
+    height: 200px;
+    float: right;
+    margin: 1% 1% 0 0;
+}
+
+#caja30 {
+    border: 1px solid black;
+    width: 62%;
+    height: 200px;
+    float: right;
+    margin: 1% 1% 0 0;
+}
+
+#caja40 {
+    border: 1px solid black;
+    width: 62%;
+    height: 200px;
+    float: right;
+    margin: 1% 1% 0 0;
+}
+
+#caja3 {
+    border: 1px solid black;
+    width: 34%;
+    height: 125px;
+    float: left;
+    margin:0 1%;
+}
+
+#caja11 {
+    border: 1px solid black;
+    width: 30%;
+    height: 90px;
+    float: left;
+    margin: 1%;
+}
+
+#caja12 {
+    border: 1px solid black;
+    width: 30%;
+    height: 90px;
+    float: right;
+    clear: both;
+    margin: 3% 1%;
+}
+
+#caja21 {
+    border: 1px solid black;
+    width: 30%;
+    height: 90px;
+    float: left;
+    margin: 1%;
+}
+
+#caja22 {
+    border: 1px solid black;
+    width: 30%;
+    height: 90px;
+    float: right;
+    margin: 1%;
+}
+
+#caja31 {
+    border: 1px solid black;
+    width: 30%;
+    height: 90px;
+    float: left;
+    margin: 1%;
+}
+
+#caja32 {
+    border: 1px solid black;
+    width: 30%;
+    height: 90px;
+    float: left;
+    margin-top: 1%;
+}
+
+#caja41 {
+    border: 1px solid black;
+    width: 30%;
+    height: 90px;
+    float: right;
+    margin: 1%;
+}
+
+#caja42 {
+    border: 1px solid black;
+    width: 30%;
+    height: 90px;
+    float: right;
+    margin-top: 1%;
+}

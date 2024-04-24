@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time</title>
+</head>
+<body>
+
+    
+    <p>La hora actual es: <time id="current-time"></time></p>
+    
+    <script>
+    function updateTime() {
+      const timeElement = document.getElementById('current-time');
+      const now = new Date();
+      timeElement.innerHTML = now.toTimeString();
+      timeElement.dateTime = now.toISOString();
+    }
+    
+    // Actualizar la hora ahora y cada segundo después
+    updateTime();
+    setInterval(updateTime, 1000);
+    </script>
+
+       
+</body>
+</html>

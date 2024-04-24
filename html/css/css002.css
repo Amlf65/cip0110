@@ -1,0 +1,50 @@
+@charset "utf-8";
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+.veinte{
+    width:20%;
+    float:left;
+}
+.ochenta{
+    width:80%;
+    float:left;
+}
+header{
+    border:1px solid black;
+}
+nav{
+    clear:both;
+    border:1px solid black;
+}
+nav a{
+    border:1px solid blue;
+    width:25%;
+    float:left;
+    text-align: center;
+}
+h2{
+border:1px solid black;
+padding: .5rem;
+clear: both;
+}
+.izquierda{
+    width: 30%;
+    float:left;
+}
+.derecha{
+width:70%;
+float:left;
+
+}
+.izquierda li{
+    list-style-type: none;
+    padding-left: 1rem;
+}
+section{
+    clear:both;
+    margin-top: 1rem;
+}
+

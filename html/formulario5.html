@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/formulario5.css">
+</head>
+
+<body>
+    <main>
+        <h2>Formulario de alta</h2>
+        <form method="get" action="Servidor.html">
+            <div class="linea">
+                <label  for="nombre">Nombre y apellidos <span class="requerido">*</span></label>
+                <section class="uno">
+                    <article >
+                        <input type="text" id="nombre" name="nombre" value="" />
+                        <label for="nombre">Nombre</label>
+                    </article>
+                    <article >
+                        <input type="text" id="apellido1" name="apellido1" value="" />
+                        <label for="apellido1">Primer apellido</label>
+                    </article>
+                    <article >
+                        <input type="text" id="apellido2" name="apellido2" value="" />
+                        <label for="apellido2">Segundo apellido</label>
+                    </article>
+                    <p class="ayuda">No te olvides de escribir también tu segundo apellido</p>
+                </section>
+                
+            </div>
+            <div class="linea">
+                <label  for="direccion">Dirección <span class="requerido">*</span></label>
+                <section >
+                    <article >
+                        <input type="text" id="direccion" name="direccion" value=""  />
+                        <label for="direccion">Calle, número, piso, puerta</label>
+                    </article>
+                    
+                    <div class="dos">
+                        <article >
+                            <input type="text" id="codigopostal" name="codigopostal" value="" />
+                            <label for="codigopostal">Código postal</label>
+                        </article>
+                        <article >
+                            <input type="text" id="municipio" name="municipio" value="" />
+                            <label for="municipio">Municipio</label>
+                        </article>
+                    </div>
+                    <div class="dos">
+                        <article >
+                            <select id="provincia" name="provincia">
+                                <option value=""></option>
+                                <option value="provincia1">Provincia 1</option>
+                                <option value="provincia2">Provincia 2</option>
+                                <option value="provincia3">Provincia 3</option>
+                            </select>
+                            <label for="provincia">Provincia</label>
+                        </article>
+                        <article >
+                            <select id="pais" name="pais">
+                                <option value=""></option>
+                                <option value="pais1">Pais 1</option>
+                                <option value="pais2">Pais 2</option>
+                                <option value="pais3">Pais 3</option>
+                            </select>
+                            <label for="pais">Pais</label>
+                        </article>
+                    </div>
+                <p class="ayuda">El código postal es imprescindible para poder recibir los pedidos</p>
+                </section>
+                
+            </div>
+            <div class="linea">
+                <label  for="email">Email</label>
+                <section>
+                    <article>
+                        <input type=email  id="email" name="email" value="" />
+                    </article>
+                    <p class="ayuda">Asegúrate de que sea válido</p>
+                </section>
+                
+            </div>
+            <div class="linea">
+                <label  for="telefonofijo">Teléfono <span class="requerido">*</span></label>
+                <section class="dos" >
+                    <article>
+                        <input type="tel" id="telefonofijo" name="telefonofijo" value=""  />
+                        <label for="telefonofijo">Fijo</label>
+                    </article>
+                    <article>
+                        <input type="tel" id="telefonomovil" name="telefonomovil" value="" />
+                        <label for="telefonomovil">Móvil</label>
+                    </article>
+                    <p class="ayuda">Sin prefijo de pais y sin espacios en blanco</p>
+                </section>
+                
+            </div>
+
+                <footer>
+                     <input id="alta" type="submit" value="Darme de alta &rarr;" /> 
+                </footer>
+
+
+        </form>
+    </main> 
+    <script src="form2.js"></script>
+</body>
+
+</html>

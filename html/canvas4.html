@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title></title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<style>
+    canvas{
+        width:600px;
+        height:300px;
+        display:block;
+        margin: 0 auto;
+        background-color: bisque;
+    }
+</style>
+</head>
+<body>
+<canvas id="micanvas"></canvas>
+<script>
+    let mycanvas=document.getElementById("micanvas")
+    let lienzo=mycanvas.getContext("2d")
+    lienzo.strokeStyle="blue"
+    lienzo.beginPath()
+        lienzo.arc(50,50,30,Math.PI,3*Math.PI/2,false)
+    lienzo.stroke()
+    lienzo.fillStyle="green"
+    lienzo.beginPath()
+        lienzo.arc(100,50,30,0,2*Math.PI)
+        lienzo.closePath()
+    lienzo.fill()
+    lienzo.beginPath()
+        lienzo.moveTo(150,50)
+        lienzo.quadraticCurveTo(200,200,250,50)
+    lienzo.stroke()
+    lienzo.fillStyle="red"
+    lienzo.beginPath()
+        lienzo.arc(150,50,3,0,2*Math.PI)
+        lienzo.arc(200,200,0,2*Math.PI)
+        lienzo.arc(250,50,3,0,2*Math.PI)
+    lienzo.stroke()
+
+
+</script>
+</body>
+</html>

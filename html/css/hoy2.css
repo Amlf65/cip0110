@@ -1,0 +1,35 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+ body{
+    position: static;
+ }
+div{
+    width: 100px;
+    height: 100px;
+    border:1px solid green;
+}
+div.relativo{
+    position: relative;
+    left:50px;
+    top:50px;
+}
+div.abs{
+    position: absolute;
+    left: 150px;
+    top:50px;
+}
+div.fijo{
+    position: fixed;
+    left: 250px;
+    top:50px;
+}
+div.rel2{
+
+    width:300px;
+    height: 300px;
+    border:1px solid red;;
+}

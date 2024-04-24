@@ -1,0 +1,51 @@
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+h1{
+    text-shadow: .3rem .3rem .3rem #999;
+}
+
+h1, h3, .banda {
+    text-align: center;
+    margin: 2rem;
+}
+h4,p{
+    text-align: center;
+}
+/*Ajuste completo*/
+section{
+    width: 70%;
+    margin: 2rem auto;
+    border:1px solid black;
+    box-shadow: 1rem 1rem 1rem #999;
+
+}
+/*ajustes imagen*/
+img{
+    width: 70%;
+    display: block;
+    margin:1em auto
+}
+/*ajustes lista*/
+ul {
+    width: 40%;
+    margin:0 auto;
+} 
+li {
+    list-style-position: inside;
+}
+/*ajustes tabla*/
+table{
+    width: 80%;
+    margin:0 auto;
+    border-spacing: 10px
+}
+/* ajustes enlace*/
+a{
+    display: block;
+    text-align: right;
+    padding: 1rem;
+}
+

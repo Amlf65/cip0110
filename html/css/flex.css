@@ -1,0 +1,88 @@
+<<<<<<< HEAD
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+
+=======
+>>>>>>> 72f7ab2c11f349498ad549c95c91a30e9e5013d5
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+<<<<<<< HEAD
+    flex-wrap: wrap;
+    }
+
+    .flex-container  * {
+    background-color: LightSkyBlue;
+    text-align: center;
+    line-height: 100px;
+    
+    }
+    .header{
+        border:1px solid brown;
+        width: 100%;
+    }
+    .main{
+        width: 80%;
+    }
+    .section,.article{
+        height: 100px;
+        border:1px solid brown
+    }
+    .aside{
+        width: 20%;
+        height: 200px;
+        line-height: 200px;
+        border:1px solid brown
+    }
+    .footer{
+        width: 100%;
+        border:1px solid brown
+    }
+=======
+    }
+
+    .flex-container > div {
+    width: 100px;
+    height: 100px;
+    background-color: LightSkyBlue;
+    text-align: center;
+    line-height: 100px;
+    border: 1px solid brown;
+    }
+
+    .flex-container > div:nth-child(2) {
+    flex-shrink: 0;
+    }
+
+.flex-container1 {
+    display: flex;
+    width: 600px;
+    }
+
+    .box {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    }
+
+    .box1 {
+    flex-shrink: 2;  /* Se encogerá el doble de rápido que los otros si hay poco espacio */
+    background-color: red;
+    }
+
+    .box2 {
+    flex-grow: 1;  /* Ocupará cualquier espacio extra disponible */
+    flex-basis: 200px;  /* Tamaño base antes de crecimiento o encogimiento */
+    background-color: green;
+    }
+
+    .box3 {
+    background-color: blue;
+    }
+>>>>>>> 72f7ab2c11f349498ad549c95c91a30e9e5013d5

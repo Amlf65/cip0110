@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article id="post-1" data-author="John Doe" data-date="2023-07-30" data-category="Tech">
+        <h2>Post de ejemplo</h2>
+    </article>
+    <ul id="milista">
+        <li><data value="21053">Cherry Tomato</data></li>
+        <li><data value="21054">Beef Tomato</data></li>
+        <li><data value="21055">Snack Tomato</data></li>
+      </ul>
+    <script>
+        let article = document.getElementById('post-1');
+
+        let author = article.dataset.author;
+        let date = article.dataset.date;
+        let category = article.dataset.category;
+
+        console.log(author); // "John Doe"
+        console.log(date); // "2023-07-30"
+        console.log(category); // "Tech"  
+
+        let lista = document.getElementById("milista");
+
+        let elementosData=lista.querySelectorAll('data');
+        elementosData.forEach((elemento) => {console.log(elemento.value)})
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confección páginas web - CIP - 2023">
+    <title>traversing</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Primer párrafo</p>
+        <p>la casa <span>roja</span></p>
+        <h1>hola<p><span>a todos</span></p>
+            <p>Primer párrafo</p>
+        </h1>
+        <p>Primer párrafo</p>
+        <ul>
+            <li>uno  <p class="black">Primer párrafo</p></li>
+            <li>dos</li>
+            <li>tres <p class="black">Primer párrafo</p></li>
+            <li>tres </li>
+            <li>cuatro<p class="black">Primer párrafo</p></li>
+            <li>cinco</li>
+            <li>seis</li>
+        </ul>
+    </div>
+
+    <script>
+        $(function () {
+            
+            $("span").parentsUntil("h1").css("color", "green")
+            $("li").first().css("color", "red")
+            $("li").last().css("color", "blue")
+            $("li").eq(3).css("color", "yellow")
+            $("p").filter(".black").css("color", "black")
+            $("p").not(".black").css("color", "pink")
+        })
+    </script>
+</body>
+
+</html>

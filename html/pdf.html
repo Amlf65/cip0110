@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta name='description' content='Confección páginas web - CIP - 2023'>
+<title></title>
+<link rel='shortcut icon' href='img/favicon.png' type='image/x-icon'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" integrity="sha512-a9NgEEK7tsCvABL7KqtUTQjl69z7091EVPpw5KxPlZ93T141ffe1woLtbXTX+r2/8TtTvRX/v4zTL2UlMUPgwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.min.js" integrity="sha512-P0bOMePRS378NwmPDVPU455C/TuxDS+8QwJozdc7PGgN8kLqR4ems0U/3DeJkmiE31749vYWHvBOtR+37qDCZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+<script>
+    var docDefinition = {
+        content: [
+            '¡Hola desde JavaScript Vanilla!',
+            'Más contenido aquí...'
+        ]
+    };
+
+    //pdfMake.createPdf(docDefinition).download('documento.pdf').print();
+    pdfMake.createPdf(docDefinition).download("doc.pdf");
+
+</script>
+</body>
+</html>

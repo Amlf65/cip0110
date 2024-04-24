@@ -1,0 +1,27 @@
+/* === IMPORTANTE ===================================================
+   No modificar estos estilos, ya que son imprescindibles para
+   que la p�gina se vea correctamente.
+   ================================================================== */
+
+
+   
+/*-- Layout ----------------------------------------------------------*/
+body{min-width: 750px;}
+main {width: 80%;margin: 0 auto;}
+header { clear: both; }
+nav{ clear: both;margin-bottom: .5em; border-bottom: 1px solid #004C99; }
+li {display:inline;list-style: none;}
+img{float: left; width: 20%;}
+aside { float: left; width: 20%; clear:both }
+aside #noticias {border: 1px solid #C5C5C5;padding:.5em;}
+aside #publicidad {margin-top: 1em;border: 1px dashed #C60;padding:.5em;}
+section { float: right; width: 78%; }
+section #principal { float: left; width: 76%; }
+section #secundario { float: right; width: 20%;  border: 1px solid #C60;padding:.5em; } 
+footer { clear: both; float:left;  width:100% ;  padding: .5em 0; margin-top: 1em;border-top: 1px solid #C5C5C5;border-bottom: 1px solid #C5C5C5;}
+footer .enlaces {float:left;}
+footer .copyright{float:right;}
+
+
+
+

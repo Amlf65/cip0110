@@ -1,0 +1,18 @@
+<form id="myForm">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Evita el envío tradicional del formulario
+
+    const formData = new FormData(event.target);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+    console.log(data);  // Aquí puedes ver o procesar los datos capturados
+});
+</script>

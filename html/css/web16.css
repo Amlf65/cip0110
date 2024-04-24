@@ -1,0 +1,59 @@
+@import url("mclibre-pie.css");
+
+/* Paginas web HTML y hojas de estilo CSS         */
+/* Bartolome Sintes Marco                         */
+/* https://www.mclibre.org                         */
+/*                                                */
+/* CSS ejercicio: Sonetos de amor de Lope de Vega */
+/*                                                */
+/* 7 de enero de 2017                             */
+/*                                                */
+
+body {
+  background: url("../img/fondos/corazon-1.svg") repeat-y top left  , 
+  url("../img/fondos/corazon-2.svg") repeat-y right top;
+  background-color: hsl(343, 100%, 96%);
+  background-size: 150px,150px;
+  /*background-attachment: fixed;*/
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+div {
+  border: black 2px solid;
+  margin: 10px 150px;
+  font-weight: bold;
+}
+
+div.s1 {
+  background: url("../img/fondos/manchas.png");
+  color: white;
+}
+
+div.s2 {
+  background: url("../img/fondos/tallos.jpg"),url("../img/fondos/fuego.svg") no-repeat bottom right, 
+  url("../img/fondos/fuego.svg") no-repeat bottom left
+  ;
+  color: hsl(52, 100%, 50%);
+}
+
+div.s3 {
+  background:  url("../img/fondos/ojo.svg") no-repeat center,  
+  url("../img/fondos/hexagonos.jpg");
+  background-size: 10%, auto;
+  color: hsl(0, 100%, 25%);
+}
+
+div.s4 {
+  padding-bottom: 50px;
+  background: url("../img/fondos/caballo.svg") repeat-x bottom, 
+  url("../img/fondos/estrellas.png") repeat;
+  background-size: 125px, auto;
+  color: hsl(125, 100%, 15%);
+}

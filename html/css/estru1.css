@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y bordes están incluidos en el tamaño total del elemento */
+}
+
+html, body {
+    height: 100vh;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+}
+
+main {
+    height: 100vh; /* Uso vh para asegurar que se base en el viewport, no en el contenido total de la página */
+    border: #333 solid 2px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+header, footer {
+    height: 10vh;
+    border: #F00 solid 2px;
+    line-height: 3rem;
+    margin: 3vh 3%;
+    min-height: 3em; /* Para asegurar un mínimo de espacio, especialmente útil en dispositivos móviles */
+}
+
+section {
+    height: 65vh;
+    border: #0F3 solid 2px;
+    font: bold 1.3em sans-serif;
+    margin: 0 3%; /* Ligero ajuste al margen vertical para prevenir posibles problemas de desbordamiento */
+    text-align: center;
+}
+
+footer {
+    border: 1px solid blue;
+}

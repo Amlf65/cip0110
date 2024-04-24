@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexión API Marvel</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.2/build/md5.min.js"></script>
+</head>
+<body>
+
+<h1>Personajes Marvel</h1>
+<ul id="charactersList"></ul>
+
+<script>
+    const publicKey = 'de867c8cbcebd9857682c793c2078377';
+    const privateKey = '11c04eac1dc0b8e0c57c5aa3d1b3a0f2ae32b15eA';
+    //const hash = 'HASH_GENERADO';  // Deberías generar el hash en un entorno seguro, no en el cliente.
+    //const crypto = require('crypto');
+    //const hash = crypto.createHash('md5').update(ts + privateKey + publicKey).digest('hex');
+    //const ts = 'TU_TIMESTAMP';    // Igualmente, generar el timestamp en un entorno más seguro.
+    // Generar un sello de tiempo
+    const ts = new Date().getTime();
+
+    const preHash = timestamp + publicKey + privateKey;
+    const hash = md5(preHash);
+
+    const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const characters = data.data.results;
+        const charactersList = document.getElementById('charactersList');
+        
+        characters.forEach(character => {
+            const listItem = document.createElement('li');
+            listItem.textContent = character.name;
+            charactersList.appendChild(listItem);
+        });
+      })
+      .catch(error => {
+        console.log('There was a problem with the fetch operation:', error.message);
+      });
+</script>
+
+</body>
+</html>

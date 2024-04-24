@@ -1,0 +1,46 @@
+@charset "utf-8";
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+main{
+width: 80%;
+margin:0 auto
+}
+aside{
+    width:48%;
+    float:left;
+
+}
+footer{
+    width:48%;
+    float:right;
+
+}
+textarea{
+    width: 100%;
+    resize:none
+}
+footer{
+    display:flex;
+    flex-wrap: wrap;
+    gap:1%
+}
+footer div{
+    width: 48.5%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:1rem;
+    padding: 1rem 0;
+}
+button{
+    width: 100%;
+}
+i{
+    color:limegreen;
+}

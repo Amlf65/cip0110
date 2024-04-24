@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title></title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="css/canvas.css">
+</head>
+<body>
+<canvas id="mycanvas">
+    su navegador no soporta canvas
+</canvas>
+</body>
+<script>
+    window.addEventListener("load",function(){
+        let micanvas=document.getElementById("mycanvas");
+        let lienzo=micanvas.getContext("2d");
+        lienzo.strokeStyle="#00f";
+        lienzo.fillStyle="#0f0";
+        lienzo.strokeRect(10,10,50,80);
+        lienzo.fillRect(80,10,50,80);
+        lienzo.clearRect(90,20,30,60)
+        lienzo.font="bold 20px Arial";
+        lienzo.textAlign="start";
+        lienzo.textBaseline="bottom";
+        lienzo.strokeText("primer texto",130,20)
+        lienzo.fillText("primer texto",130,50)
+        let medidas=lienzo.measureText("hola")
+        console.log (medidas)
+        lienzo.strokeText("hola",(300-medidas.width)/2,130)
+        
+    })  
+</script>
+</html>

@@ -1,0 +1,53 @@
+body {
+background-color: rgb(126,0,0);
+box-sizing: border-box;
+}
+
+
+
+
+h1{
+    color:rgb(209, 202, 209);
+    background-color: blue;
+    font-size: 3rem;
+    font-style: italic;
+    background-image: linear-gradient(blue,red);
+    text-align: center;
+}
+h2{
+    color:rgb(209, 202, 209);
+    background-color: blue;
+    font-size: 2rem;
+    font-style: italic;
+    text-align: right;
+    padding: 0 1rem 0 1rem  ;
+}
+h3{
+    color:rgb(209, 202, 209);
+    background-color: blue;
+    font-size: 1.5rem;
+
+}
+p{
+    color:cyan;
+}
+p{
+    width: 50%;
+}
+p#parrafo1{
+    color:pink;
+    border:1px dotted blue;
+    padding:1rem;
+    margin-bottom: 10rem;
+    box-shadow:10px 10px
+}
+.negro{
+    color:red;
+}
+.negativo{
+    color:white;
+    background-color: black;
+}
+img{
+    width:40%;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Informática</title>
+    <link rel="stylesheet" href="css/formulario9.css">
+</head>
+<body>
+    <form action="servidor.html" method="get" accept-charset="iso8955-1">
+    <h1>Encuesta informática</h1>
+    <fieldset>
+        <legend>Datos personales</legend>
+        <ul>
+            <li>
+                <label for="id_edad">Edad:</label>
+                <input type="number" id="id_edad" name="edad" required>
+            </li>
+            <li>
+                <label>Sexo:</label>
+                <label><input type="radio" name="hombre" id="id_hombre"> Hombre</label>
+                <label><input type="radio" name="mujer" id="id_mujer" checked> Mujer</label>
+            </li>
+            <li>
+                <label for="id_estudios">Estás estudiando:</label>
+                <select name="estudios" id="id_estudios">
+                    <option>Primaria</option>
+                    <option>Secundaria</option>
+                    <option>Grado</option>
+                    <option>Máster</option>
+                    <option>Doctorado</option>
+                </select>
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>Preguntas generales</legend>
+        <ul>
+            <li>
+                <Label>¿Tienes ordenador en tu casa?</Label>
+                <label><input type="radio" name="ordenador" id="id_ordenador_si" value="si"> Si</label>
+                <label><input type="radio" name="ordenador" id="id_ordenador_no" value="no" checked> No</label>
+            </li>
+            <li>
+                <Label>¿Lo utilizas sólo tú o lo compartes con otras personas?</Label>
+                <label><input type="radio" name="uso" id="id_propio" value="propio"> Propio</label>
+                <label><input type="radio" name="uso" id="id_compartido" value="compartido" checked> Compartido</label>
+            </li>
+            <li>
+                <label>En periodos de clase:</label>
+                <ul>
+                    <li>
+                        <label for="id_dias1">Cuántos días a la semana sueles encender el ordenador</label>
+                        <input type="number" name="dias1" id="id_dias1">
+                    </li>
+                    <li>
+                        <label for="id_dias1">Cuántas horas diarias sueles gastar el ordenador (cada día) </label>
+                        <input type="number" name="horas1" id="id_horas1">
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <label>En periodos de vacaciones:</label>
+                <ul>
+                    <li>
+                        <label for="id_dias2">Cuántos días a la semana sueles encender el ordenador</label>
+                        <input type="number" name="dias2" id="id_dias2">
+                    </li>
+                    <li>
+                        <label for="id_dias2">Cuántas horas diarias sueles gastar el ordenador (cada día) </label>
+                        <input type="number" name="horas2" id="id_horas2">
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <label>¿A qué dedicas tu tiempo en el ordenador?</label>
+                <div>
+                    <label><input type="checkbox" name="Escribir"> Escribir</label>
+                    <label><input type="checkbox" name="Dibjar"> Dibjar</label>
+                    <label><input type="checkbox" name="Programar"> Programar</label>
+                    <label><input type="checkbox" name="Hacer música"> Hacer música</label>
+                    <label><input type="checkbox" name="Retoque fotográfico"> Retoque fotográfico</label>
+                    <label><input type="checkbox" name="Jugar"> Jugar</label>
+                    <label><input type="checkbox" name="Ver páginas web"> Ver páginas web</label>
+                    <label><input type="checkbox" name="Cluster"> Cluster</label>
+                    <label><input type="checkbox" name="Intercambiar música"> Intercambiar música</label>
+                    <label><input type="checkbox" name="Intercambiar películas"> Intercambiar películas</label>
+                </div>
+                <label for="id_otras">Otras actividades (especifica):</label>
+                <input type="text" name="otras1" id="id_otras1">
+                <input type="text" name="otras2" id="id_otras2">
+                <input type="text" name="otras3" id="id_otras3">
+            </li>
+        </ul>
+    </fieldset>   
+   
+    <fieldset>
+       
+        <legend>Descripción</legend>
+    
+        <ul>
+            <li>
+                <label>Tipo:</label>
+                <label><input type="radio" name="tipo" id="sobremesa" value="sobremesa" checked> Sobremesa</label>
+                <label><input type="radio" name="tipo" id="portatil" value="portatil" > Portátil</label>
+                <label><input type="radio" name="tipo" id="tablet" value="tablet" > Tablet PC</label>
+            </li>
+            <li>
+                <label for="id_antiguedad">Antigüedad</label>
+                <input type="number" name="antiguedad" id="id_antiguedad">
+
+            </li>
+            <li>
+                <label><input type="radio" name="marca" id="sobremesa" value="no" checked> Sin marca</label>
+                <label><input type="radio" name="marca" id="portatil" value="si" > De marca (especificar):</label> 
+                <input type="text" name="nombre_marca" id="id_marca">
+            </li>
+            <li>
+                <label>Procesador</label>
+                <label for="id_mimarca">Marca</label>
+                <select name="mimarca" id="id_mimarca">
+                    <option selected>Intel</option>
+                    <option>Amd</option>
+                </select> 
+                <label for="id_mimodelo">Modelo</label>
+                <select name="mimodelo" id="id_mimodelo">
+                    <option>I3</option>
+                    <option selected>I5</option>
+                    <option>I7</option>
+                </select> 
+                <label for="id_mivelocidad">Velocidad</label>
+                <select name="mivelocidad" id="id_mivelocidad">
+                    <option>1.8 MHz</option>
+                    <option>2MHz</option>
+                    <option selected>2.3MHz</option>
+                </select> 
+            </li>
+            <li>
+                <label for="id_ram">Memoria RAM</label>
+                <select name="ram" id="id_ram">
+                    <option>4 Gb</option>
+                    <option>8 Gb</option>
+                    <option selected>16 Gb</option>
+                </select>  
+            </li>
+            <li>
+                <label for="id_disco">Disco duro</label>
+                <select name="disco" id="id_disco">
+                    <option> SSD 500Gb</option>
+                    <option> SSD 1Tb</option>
+                    <option> HD 1Tb</option>
+                </select>  
+            </li>
+            <li>
+                <label>CD/DVD</label>
+                <label><input type="checkbox" name="cdrom"> CD-ROM</label>
+                <label><input type="checkbox" name="cdrw"> CD-RW</label>
+                <label><input type="checkbox" name="dvdrom"> DVD-ROM</label>
+                <label><input type="checkbox" name="dvdrw"> DVD-RW i/o +RW</label>
+            </li>
+            <li>
+                <label>Monitor: tipo</label>
+                <label><input type="radio" name="tipomonitor"> CRT</label>
+                <label><input type="radio" name="tipomonitor" checked> TFT</label>
+                <label>- Tamaño</label>
+                <label><input type="radio" name="tama" value="-17"> Menos de 17"</label>
+                <label><input type="radio" name="tama" value="17" checked > 17"</label>
+                <label><input type="radio" name="tama" value="19"> 19"</label>
+                <label><input type="radio" name="tama" value="+19"> Más de 19"</label>
+            </li>
+            <li>
+                <label for="id_acceso">Acceso a internet</label>
+                <select name="acceso" id="id_acceso" >
+                    <option>fibra</option>
+                    <option>adsl</option>
+                    <option>rdsi</option>
+                </select> 
+            </li> 
+    </fieldset>
+
+    <button type="submit">Enviar</button>
+</form>
+    
+</body>
+</html>

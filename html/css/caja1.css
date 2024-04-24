@@ -1,0 +1,23 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+header, footer{
+    clear: both;
+    border:1px solid black;
+    height: 5rem;
+}
+aside{
+    border:1px solid black;
+    height: 10rem;
+    width:30%;
+    float: left;
+}
+main{
+    border:1px solid black;
+    height: 10rem;
+    width: 70%;
+    float:right;
+}

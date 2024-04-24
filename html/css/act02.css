@@ -1,0 +1,64 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+
+}
+/*
+El texto principal:
+El color del texto es azul: #00F.
+El color de fondo del texto es verde claro: #CFC.
+El tipo de letra es la secuencia: Georgia, Cambria, serif.
+El tamaño del texto: 16px.
+*/
+main{
+color:#00F;
+background-color: #CFC;
+font-family:Georgia, Cambria, serif;
+font-size: 16px;
+width: 80% ;
+margin: 0 auto;
+}
+/*
+El encabezado de nivel 1:
+El color del texto es rojo claro: #F00.
+El tipo de letra es la secuencia: Verdana, Calibri, sans-serif.
+El tamaño del texto: 32px.
+*/
+h1{
+    color:#F00;
+    font-family: Verdana, Calibri, sans-serif;
+    font-size: 32px;
+}
+/*El encabezado de nivel 2:
+El color del texto es rojo claro: #A00.
+El tipo de letra es la secuencia: Verdana, Calibri, sans-serif.
+El tamaño del texto: 24px.*/
+h2{
+    color:#A00;
+    font-family: Verdana, Calibri, sans-serif;
+    font-size: 24px;
+}
+/* El color de los campos de los datos del libro es verde oscuro: #060. */
+span.verde{
+    color:#060;
+}
+/* El texto "Internet" y la "Web" cuando actúan como sustantivos:
+El tamaño del texto: 20px.
+Texto en negrita. */
+b{
+    font-size: 20px;
+}
+/*El texto "Hypertext Markup Language", "Cascading Style Sheets" y los acrónimos "HTML" y "CSS":
+El color del texto es blanco: #FFF.
+El color de fondo del texto es negro: #000.
+Texto en cursiva.*/
+i{
+    color:#FFF;
+    background-color: #000;
+}
+/*Alineacoón de los bullet en la lista no ordenada*/
+ul{
+    padding-left: 30px;
+}

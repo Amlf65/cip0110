@@ -1,0 +1,46 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+    background-color: #CFC;
+    color: #00F;
+    font-family: Georgia, Cambria, serif;
+    font-size:16px;
+}
+header,footer{
+    padding: 3rem;
+}
+aside{
+    width: 20%;
+    float: left;
+}
+section{
+    width: 80%;
+    float: left;
+}
+h1{
+    color:#F00;
+    font-family: Verdana, Calibri, sans-serif;
+    font-size: 32px;
+    text-align: center;
+ 
+}
+h2{
+    clear: both;
+    color:#A00;
+    font-family: Verdana, Calibri, sans-serif;
+    font-size: 24px;
+    text-align: center;
+ 
+}
+img{
+    width: 33%;
+    display: block;
+    float: left;
+
+}

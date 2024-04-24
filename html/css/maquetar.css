@@ -1,0 +1,29 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+section p{
+    column-count: 3;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+}
+p{
+    text-align: justify;
+}
+section{
+    border:1px solid green;
+    float:right;
+    width: 80% ;
+
+}
+aside{
+    border:1px solid blue;
+    float:left;
+    width: 20% ;
+    line-height: 1.2rem
+}
+aside{
+    padding: 1.2rem;
+}

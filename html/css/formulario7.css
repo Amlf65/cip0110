@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: .3em .3em .3em red;
+}
+section{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    row-gap: .5em;
+}
+h3{
+    margin: .5em;
+}
+footer{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: .5em;
+    margin:1em;
+    justify-content: center;
+}
+
+input:valid{
+    outline:none;
+    border:1px solid green;
+}
+input:invalid{
+    outline:none;
+    border:1px solid red;
+}

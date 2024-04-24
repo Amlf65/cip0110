@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/formulario8.css">
+</head>
+
+<body>
+  <form action="Servidor.html" oninput="resultado.value=parseInt(precio.value) * (100+parseInt(impuestos.value))/100">
+    <fieldset>
+      <legend>&nbsp;&nbsp; Datos Básicos &nbsp;&nbsp;</legend>
+      <label for="id_nombre">* Nombre</label>
+      <input type="text" name="nombre" id="id_nombre" required>
+      <label for="id_descripcion">* Descripción</label>
+      <textarea name="descripcion" id="id_descripcion" cols="15" rows="5" required></textarea>
+      <label for="foto">Foto <input type="file" name="foto" id="foto"></label>
+    </fieldset>
+    <fieldset>
+      <legend>&nbsp;&nbsp; Datos Económicos &nbsp;&nbsp;</legend>
+      <div>
+        <label for="id_precio" >Precio</label>
+        <input type="text" name="precio" id="id_precio" value="0"> €
+        <label for="id_impuestos">Impuestos</label>  
+        <input type="text" name="impuestos" id="id_impuestos" value="7"> %
+        <label for="id_resultado">Importe</label>
+        <output id="id_resultado" name="resultado" for="precio impuestos">0</output>
+      </div>
+      <label>Promoción</label>
+      <label><input type="radio" name="promocion" id="ninguno" value="ninguno" checked> Ninguno</label>
+      <label><input type="radio" name="promocion" id="Trans" value="gratis"> Transporte gratuido</label>
+      <label><input type="radio" name="promocion" id="desc" value="dto"> Descuento</label>
+    </fieldset>
+    <footer>
+      <button type="submit">Enviar</button>
+      <button type="reset">Restablecer</button>
+    </footer>
+    <p>* Obligatorios</p>
+  </form>
+  <a href="....">hola</a>
+  <a href="https://">Adiós</a>
+</body>
+
+</html>

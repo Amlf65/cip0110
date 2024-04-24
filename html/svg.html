@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title></title>
+<style>
+
+
+</style>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 100,30 
+                 C 40,30 40,110 100,150 
+                 C 160,110 160,30 100,30" 
+              fill="red" />
+    </svg>
+    <svg height="130" width="200">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"
+            style="stop-color:rgb(255,255,0);stop-opacity:1" />
+            <stop offset="100%"
+            style="stop-color:rgb(255,0,0);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+        <text fill="#ffffff" font-size="45" font-family="Verdana"
+        x="50" y="86">SVG</text>Su navegador no soporta la etiqueta SVG.
+      </svg>
+    <svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
+        <!-- Define el camino que el texto seguirá: un círculo -->
+        <path id="myCircle" d="M 50,100 
+                               A 25,25 0 1,1 175,100 
+                               A 25,25 0 1,1 50,100" 
+              fill="none" stroke="white" />
+        <!-- Dibuja el texto siguiendo el camino del círculo -->
+        <text font-size="20">
+            <textPath href="#myCircle">
+                Este es un texto que sigue la forma de un círculo!
+            </textPath>
+        </text>
+    </svg>
+    
+    <svg width="200" height="200">
+        <polygon points="100,10 40,198 190,78 10,78 160,198"
+        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+      Su navegador no soporta la etiqueta SVG.
+      </svg>
+      <svg width="200" height="100">
+        <rect width="200" height="100" 
+        style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+      Su navegador no soporta la etiqueta SVG.
+      .
+      </svg>
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40"
+        stroke="green" stroke-width="4" fill="yellow" />
+      Su navegador no soporta la etiqueta SVG.
+      </svg>
+      
+       
+</body>
+</html>

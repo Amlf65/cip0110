@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta name='description' content='Confección páginas web - CIP - 2023'>
+<title>Regex</title>
+<link rel='shortcut icon' href='img/favicon.png' type='image/x-icon'>
+<link rel='stylesheet' href='css/regexp.css'>
+</head>
+<body>
+    <form action="#" method="get">
+        <input type="text" pattern="\d{5}" title="Introduce un código postal de 5 dígitos">
+        <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Introduce una dirección de correo válida">
+        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos un número, una letra mayúscula, una letra minúscula y tener al menos 8 caracteres de longitud">
+        <input type="submit" value="enviar  ">
+    </form>
+</body>
+
+<!-- 
+1.-Caracteres literales: *************************************************************
+**************************************************************************************
+
+a, b, 1, A, B, etc. Estos coinciden con ellos mismos.
+
+2.-Meta caracteres: ******************************************************************
+**************************************************************************************
+
+.: Coincide con cualquier caracter excepto el salto de línea (a menos que se use la bandera s en algunos motores de regex).
+\d: Coincide con cualquier dígito (0-9).
+\D: Coincide con cualquier caracter que no sea un dígito.
+\w: Coincide con cualquier caracter alfanumérico o guion bajo (_).
+\W: Coincide con cualquier caracter que no sea alfanumérico ni guion bajo.
+\s: Coincide con cualquier espacio en blanco (espacios, tabuladores, saltos de línea, etc.).
+\S: Coincide con cualquier caracter que no sea un espacio en blanco.
+^: Coincide con el inicio de una línea o cadena.
+$: Coincide con el final de una línea o cadena.
+[]: Define una clase de caracteres. Por ejemplo, [aeiou] coincidiría con cualquier vocal.
+
+3.- Cuorificadores: ******************************************************************
+**************************************************************************************
+
+*: Coincide con 0 o más ocurrencias del patrón anterior.
++: Coincide con 1 o más ocurrencias del patrón anterior.
+?: Coincide con 0 o 1 ocurrencia del patrón anterior.
+{n}: Coincide con exactamente n ocurrencias del patrón anterior.
+{n,}: Coincide con n o más ocurrencias del patrón anterior.
+{n,m}: Coincide entre n y m ocurrencias del patrón anterior.
+
+4.- Grupos y referencias: ************************************************************
+**************************************************************************************
+
+(): Define un grupo. Por ejemplo, (ab)+ coincidiría con "ab", "abab", "ababab", etc.
+|: Operador OR. Por ejemplo, a|b coincidirá con "a" o "b".
+\n: Donde n es un número. Referencia a un grupo capturado anteriormente en la expresión regular.
+
+5.- Escape de caracteres: *************************************************************
+***************************************************************************************
+
+\\: Escapa el siguiente caracter, permitiendo usar meta caracteres como caracteres literales. Por ejemplo, \\d coincidiría con la cadena "\d", no con un dígito.
+
+6.- <Asertos: *************************************************************************
+***************************************************************************************
+
+(?=...): Aserción positiva hacia adelante. Coincide con una posición donde la subexpresión encerrada (denotada por ...) coincida, pero no consume caracteres en la coincidencia.
+(?!...): Aserción negativa hacia adelante. Coincide con una posición donde la subexpresión encerrada no coincida.
+
+7.- Banderas (no forman parte de la regex en sí, pero afectan su comportamiento): *****
+***************************************************************************************
+
+i: Ignora mayúsculas y minúsculas.
+g: Coincidencia global. Encuentra todas las coincidencias en lugar de detenerse en la primera.
+m: Modo multilínea. Permite que ^ y $ coincidan con el inicio y el final de líneas individuales en lugar de solo el inicio y el final de la cadena.
+s: (No disponible en todos los motores) Hace que . coincida también con el salto de línea. -->
+</html>

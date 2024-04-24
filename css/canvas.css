@@ -1,0 +1,14 @@
+*{
+    margin:0;   
+    padding:0;
+    box-sizing: border-box;
+}
+
+canvas{
+    width: 50%;
+    height: 50%;
+    display:block;
+    margin: 0 auto;
+    background-color: bisque;
+    border:1px solid red;
+}

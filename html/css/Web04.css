@@ -1,0 +1,39 @@
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+/*fila de noticia*/
+section{
+    width: 90%;
+    margin: 0 auto;
+    clear: both;
+}
+/*imágenes completa*/
+img{
+    width: 100%;
+}
+/*Clases ordenadas*/
+/*ajustes icono mas*/
+.derecha{
+   float: right;
+    width:2rem;
+}
+/* ajustes noticia 50%*/
+.dos{
+    width: 50%;
+    padding: .5rem;
+    float:left;
+}
+/*ajustes noticia 66%*/
+.tres{
+    width: 66%;
+    padding: .5rem;
+    float:left;
+}
+/*Ajustes noticia 33%*/
+.uno{
+    width: 33%;
+    padding: .5rem;
+    float:right;
+}

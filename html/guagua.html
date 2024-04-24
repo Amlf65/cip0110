@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guagua</title>
+</head>
+<body>
+    <label>Desde: <select name="paradas1" id="p1"></select></label>
+    <label>Hasta: <select name="paradas2" id="p2"></select></label> 
+    <input type="button" value="Calcular" id="boton">
+    <hr>
+    <div>Tiempo trayecto: <span id="total"><span></div>
+    <script>
+        const paradas=["Castillo la luz","Juan Rejón","La Naval","León y Castillo","Iglesia del Pino","JMDurán","Mercado Central","Pío XII","Parque Doramas","Clinica del Pino"]
+        const tiempos=[0,3,5,4,2,3,5,7,4,2]
+
+        function carga(){
+            const boton=document.getElementById("boton")
+            const sel1 = document.getElementById('p1');
+            for (var i = 0; i < paradas.length; i++) {
+                var option = document.createElement('option');
+                option.value = paradas[i];
+                option.textContent = paradas[i];
+                sel1.appendChild(option);
+                console.log(sel1)
+            }
+            const sel2 = document.getElementById('p2');
+            for (var i = 0; i < paradas.length; i++) {
+                var option = document.createElement('option');
+                option.value = paradas[i];
+                option.textContent = paradas[i];
+                sel2.appendChild(option);
+                console.log(sel2)
+            }
+        }
+        function tiempo(){
+            let desde= document.getElementById("p1").value;
+            let hasta= document.getElementById("p2").value;
+            //alert(desde + " -  "+ hasta)
+            let p1=paradas.indexOf(desde);
+            let p2=paradas.indexOf(hasta);
+            //alert(p1 + " -  "+ p2)
+            var suma=0;
+            if(p1>=0 && p2>0 && p2>p1) {
+                
+                for (let i=p1+1;i<=p2;i++){
+                    suma+=tiempos[i];
+                }
+                document.getElementById("total").innerHTML=suma;
+            }else{
+                document.getElementById("total").innerHTML="Error de datos";
+            }
+        }
+        boton.addEventListener("click",function(){
+            tiempo();
+        })
+        document.addEventListener('DOMContentLoaded', function() {
+        carga();
+        });
+
+</script>
+</body>
+</html>

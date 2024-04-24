@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+form{
+    width: 80%;
+    margin: 1em auto;
+    padding: 1em 2em;
+}
+fieldset{
+    margin-top: 1em;
+    box-shadow: .3em .3em .3em gray;
+    padding: 1em;
+}
+li{
+    margin-top: .2em;
+    list-style: none;
+}
+ul ul{
+    margin-left: 1em;
+    
+}
+
+legend{
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #131313;
+    color: #ebebeb;
+}
+legend::before{
+    content: "[ ";
+}
+legend::after{
+    content: " ]";
+}
+div{
+    display: grid;
+    grid-template-columns: repeat(5,20%);
+}
+button{
+    width: 20%;
+    font-size: 1.2em;
+    padding: 1em;
+    margin: 1em 40%;
+    box-shadow: .3em .3em .3em gray;
+}
+input:invalid{
+    border-color: red;
+}
+input:valid{
+    border-color:greenyellow;
+}
+form:valid button{
+    opacity:1
+}
+form:invalid button{
+    opacity:.2;
+}
+@media screen and (max-width:600px) {
+    fieldset>*{
+        width: 100%;
+    }
+    
+}

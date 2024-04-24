@@ -1,0 +1,13 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+
+label{
+    display: block;
+}
+input{
+    margin: .2rem .5rem;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content='Confección páginas web - CIP - 2023'>
+    <title></title>
+    <link rel='shortcut icon' href='img/favicon.png' type='image/x-icon'>
+    <link rel='stylesheet' href='css/pru.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    :root {
+  --card-height: 400px;
+  --card-width: calc(var(--card-height));
+}
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #191c29;
+}
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+
+
+
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+
+.title {
+  width: 100%;
+  transition: transform 5s;
+}
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 0;
+  transform: translate3d(0%, -30%, 100px);
+}
+h1{
+  width: 10%;
+  height: 1rem;
+  color:white;
+  border: 1px solid lavender;
+  padding: 5px;
+  font-size: 3rem;
+}
+button{
+  background-color: pink;
+  margin-bottom: 10px;
+  font-size:.5rem
+}
+</style>
+</head>
+
+<body>
+<!--     <article>
+        <header>Hola</header>
+    </article>
+    <i class="fa fa-sun-o" aria-hidden="true"></i>
+    <form action="">
+        <label for="uno">UNO</label>
+        <input type="text" id="uno" name="ni nombre">
+        <input type="submit" value="enviar">
+    </form> -->
+
+    <a href="https://www.mythrillfiction.com/the-dark-rider" alt="Mythrill" target="_blank">
+        <div class="card">
+          <div class="wrapper">
+            <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg" class="cover-image" />
+          </div>
+          <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />
+          <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp" class="character" />
+        </div>
+      </a>
+      
+      <a href="https://www.mythrillfiction.com/force-mage" alt="Mythrill" target="_blank">
+        <div class="card">
+          <div class="wrapper">
+            <img src="https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg" class="cover-image" />
+          </div>
+          <img src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png" class="title" />
+          <img src="https://ggayane.github.io/css-experiments/cards/force_mage-character.webp" class="character" />
+        </div>
+      </a>
+<h1>hola<button>a todos</button></h1>
+</body>
+
+</html>

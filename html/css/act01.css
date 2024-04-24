@@ -1,0 +1,27 @@
+@charset 'utf-8';
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+list-style-position: inside;
+}
+/*01*/body>p:first-child{ background-color: yellow;}
+/*02*/.highlight{color:blue;}
+/*03*/#special-text{font-size: 24px;}
+/*04*/div>p{color:blue;}
+/*05*/button:hover{background-color: green;}
+/*06*/ul{list-style: none;}
+/*07*/li:first-child{color:green;}
+/*08*/li:last-child{color:purple;}
+/*09*/a{text-decoration: none;}
+/*10*/li:nth-child(3){color:plum;}
+/*11*/img{border-radius: 10px;}
+/*12*/p:not(.exclude){color:orange;}
+/*13*/input{border:2px solid blue}
+/*14*/table{border-spacing: 10px;}
+/*15*/button:active{background-color: gray;}
+/*16*/div h2{color:darkgreen;}
+/*17*/div>p{color:brown}
+/*18*/li{list-style-type: upper-roman;}
+/*19*/input:focus{border:3px solid purple;outline: 0px;}
+/*20*/th{background-color: gainsboro;}

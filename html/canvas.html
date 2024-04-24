@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas</title>
+</head>
+
+<body bgcolor="#e6fcd9">
+
+  <canvas id="myCanvas" width="200" height="200" style="border:1px solid #d3d3d3;background-color: #e6fcd9;">
+    Tu navegador no soporta el elemento canvas de HTML5.
+  </canvas>
+  
+  <script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(20, 20, 150, 100);
+  </script>
+    
+
+</body>
+
+</html>

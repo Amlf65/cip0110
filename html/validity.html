@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta name='description' content='Confección páginas web - CIP - 2023'>
+<title></title>
+<link rel='shortcut icon' href='img/favicon.png' type='image/x-icon'>
+
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="magicWord" placeholder="Escribe 'magic'">
+        <button type="submit">Enviar</button>
+      </form>
+      
+      <script>
+        const magicInput = document.getElementById('magicWord');
+      
+        magicInput.addEventListener('input', function() {
+          if (this.value !== 'magic') {
+            this.setCustomValidity('La palabra ingresada no es mágica!');
+          } else {
+            this.setCustomValidity(''); // limpia el mensaje de error
+          }
+        });
+      
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+          // Impide la presentación del formulario si hay un error de validación
+          if (!magicInput.checkValidity()) {
+            e.preventDefault();
+            alert(magicInput.validationMessage); // Mostrar el mensaje de error
+          }
+        });
+      </script>
+      
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Confección páginas web - CIP - 2023">
+<title></title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+<input type="number" id="n1">
+<input type="number" id="n2">
+<input type="number" id="n3">
+<button id="resultado">Calcular</button>
+<p id="salida"></p>
+<script>
+    window.addEventListener("load",function(){
+    //asignaciones
+    let input1=document.getElementById("n1")
+    let input2=document.getElementById("n2")
+    let input3=document.getElementById("n3")
+    let boton=document.getElementById("resultado")
+    let salida=document.getElementById("salida")
+    //funciones
+    function esNumerico(valor){
+        return !isNaN(valor);
+    }
+    function mayor0(valor){
+        return valor>0;
+    }
+    function mayor(a,b,c){
+        if(a>b && a>c){
+            return a
+        }else if(b>c){
+            return b
+        }else{
+            return c
+        }
+    }
+    function menor(a,b,c){
+        if(a<b && a<c){
+            return a
+        }else if(b<c){
+            return b
+        }else{
+            return c
+        }
+    }
+    function sumar(a,b,c){
+        return parseFloat(a)+parseFloat(b)+parseFloat(c)
+    }
+    //chivatos
+    input1.addEventListener("blur",function(){
+        if(esNumerico(input1.value) && mayor0(input1.value)){
+            input1.style.backgroundColor = "white"
+        }else{
+            input1.style.backgroundColor = "pink"
+        }
+    })
+    input1.addEventListener("blur",function(){
+        if(esNumerico(input1.value) && mayor0(input1.value)){
+            input1.style.backgroundColor = "white"
+        }else{
+            input1.style.backgroundColor = "pink"
+        }
+    })
+    input2.addEventListener("blur",function(){
+        if(esNumerico(input2.value) && mayor0(input2.value)){
+            input2.style.backgroundColor = "white"
+        }else{
+            input2.style.backgroundColor = "pink"
+        }
+    })
+    input3.addEventListener("blur",function(){
+        if(esNumerico(input3.value) && mayor0(input3.value)){
+            input3.style.backgroundColor = "white"
+        }else{
+            input3.style.backgroundColor = "pink"
+        }
+    })
+    boton.addEventListener("click",function(){
+        let may=mayor(input1.value,input2.value,input3.value)
+        let men=menor(input1.value,input2.value,input3.value)
+        let total=sumar(input1.value,input2.value,input3.value)
+        salida.innerHTML="mayor: " + may + "<br> menor:"+ men + "<br> suma:"+total
+    })
+})
+</script>
+</body>
+</html>
